@@ -37,4 +37,4 @@ begin
 					ALU_FUNC <= "0001";
 			end case;
 	end case;
-end Behavioral;
+end Behavioral; 
