@@ -77,8 +77,8 @@ architecture Behavioral of com is
 begin
 
   STATE_MACHINE : process(clk, reset)
-    constant STATE_IDLE  : std_logic_vector(2 downto 0) := "000";
-    constant STATE_WI    : std_logic_vector(2 downto 0) := "001";
+    constant STATE_IDLE  : std_logic_vector(2 downto 0) := O"0";
+    constant STATE_WI    : std_logic_vector(2 downto 0) := O"1";
     constant STATE_WD    : std_logic_vector(2 downto 0) := "010";
     constant STATE_RD1   : std_logic_vector(2 downto 0) := "011";
     constant STATE_RUN   : std_logic_vector(2 downto 0) := "100";
