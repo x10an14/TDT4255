@@ -27,7 +27,8 @@ end control_unit;
 
 architecture Behavioral of control_unit is
 
-	type state is (ALU_FETCH, ALU_EXE, READ_STALL, WRITE_STALL)
+	type ALUstate is (ALU_FETCH, ALU_EXE, READ_STALL, WRITE_STALL);
+	Signal state : ALUstate;
 
 begin
 
@@ -37,40 +38,40 @@ begin
 		if rising_edge(CLK) then
 			if reset = '1' then
 				state 		<= ALU_FETCH;
-				--ALUOp		<= (others => '0');?
+				
 				RegDst		<= '0';
 				Branch		<= '0';
 				MemRead		<= '0';
-				MemtoReg	<= '0';
-				MemWrite	<= '0';
+				MemtoReg		<= '0';
+				MemWrite		<= '0';
 				ALUSrc		<= '0';
-				RegWrite	<= '0';
-				Jump		<= '0';
+				RegWrite		<= '0';
+				Jump			<= '0';
 				PCWriteEnb	<= '0';
 				SRWriteEnb	<= '0';
 			else
 				case state is
 					when ALU_FETCH =>
-						PCWriteEnb	<= '1';
+						state 	<= ALU_EXE;
+						PCWriteEnb	<= '0';
 
 					when ALU_EXE =>
-						PCWriteReg 	<= '0';
+						PCWriteEnb 	<= '1';
 						case OpCode is
 							when "000000" =>	--R-instruction
 								RegDst		<= '1';
 								Branch		<= '0';
 								MemRead		<= '0';
-								MemtoReg	<= '0';
+								MemtoReg		<= '0';
 
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '1';
 								ALUOp.Op2	<= '0';
 
-								MemWrite	<= '0';
+								MemWrite		<= '0';
 								ALUSrc		<= '0';
-								RegWrite	<= '1';
-								Jump		<= '0';
-								PCWriteEnb	<= '0';
+								RegWrite		<= '1';
+								Jump			<= '0';
 								SRWriteEnb	<= '0';
 								
 								state 		<= ALU_FETCH;
@@ -79,17 +80,16 @@ begin
 								RegDst		<= '0';
 								Branch		<= '1';
 								MemRead		<= '0';
-								MemtoReg	<= '0';
+								MemtoReg		<= '0';
 
 								ALUOp.Op0	<= '1';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 
-								MemWrite	<= '0';
+								MemWrite		<= '0';
 								ALUSrc		<= '0';
-								RegWrite	<= '0';
-								Jump		<= '0';
-								PCWriteEnb	<= '0';
+								RegWrite		<= '0';
+								Jump			<= '0';
 								SRWriteEnb	<= '1';	--setting the zero flag if equal
 								
 								state 		<= ALU_FETCH;
@@ -98,17 +98,16 @@ begin
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '1';
-								MemtoReg	<= '1';
+								MemtoReg		<= '1';
 
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 
-								MemWrite	<= '0';
+								MemWrite		<= '0';
 								ALUSrc		<= '1';
-								RegWrite	<= '0';	--Have to wait until data has been updated
-								Jump		<= '0';
-								PCWriteEnb	<= '0';
+								RegWrite		<= '0';	--Have to wait until data has been updated
+								Jump			<= '0';
 								SRWriteEnb	<= '0';	
 
 								state 		<= READ_STALL;
@@ -116,17 +115,16 @@ begin
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
-								MemtoReg	<= '0';
+								MemtoReg		<= '0';
 
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 
-								MemWrite	<= '1';
+								MemWrite		<= '1';
 								ALUSrc		<= '1';
-								RegWrite	<= '0';
-								Jump		<= '0';
-								PCWriteEnb	<= '0';
+								RegWrite		<= '0';
+								Jump			<= '0';
 								SRWriteEnb	<= '0';	
 
 								state 		<= WRITE_STALL;
@@ -134,17 +132,16 @@ begin
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
-								MemtoReg	<= '0';
+								MemtoReg		<= '0';
 
 								ALUOp.Op0	<= '1';
 								ALUOp.Op1	<= '1';
 								ALUOp.Op2	<= '0';
 
-								MemWrite	<= '0';
+								MemWrite		<= '0';
 								ALUSrc		<= '1';
-								RegWrite	<= '1';
-								Jump		<= '0';
-								PCWriteEnb	<= '0';
+								RegWrite		<= '1';
+								Jump			<= '0';
 								SRWriteEnb	<= '0';	
 
 								state 		<= ALU_FETCH;
@@ -152,12 +149,12 @@ begin
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
-								MemtoReg	<= '0';
+								MemtoReg		<= '0';
 
-								MemWrite	<= '0';
+								MemWrite		<= '0';
 								ALUSrc		<= '0';
-								RegWrite	<= '0';
-								Jump		<= '1';
+								RegWrite		<= '0';
+								Jump			<= '1';
 								PCWriteEnb	<= '0';
 								SRWriteEnb	<= '0';	
 
@@ -166,8 +163,10 @@ begin
 					when READ_STALL =>
 						RegWrite 	<= '1';
 						state 		<= ALU_FETCH;
+						PCWriteEnb	<= '0';
 					when WRITE_STALL =>
 						state 		<= ALU_FETCH;
+						PCWriteEnb	<= '0';
 				end case;
 			end if;
 		end if;

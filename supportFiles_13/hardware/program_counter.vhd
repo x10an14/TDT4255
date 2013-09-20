@@ -29,7 +29,8 @@ begin
 			REG <= PC_IN;
 		
 	PC_OUT <= REG;
+	end process;
 
-end Behavioral
+end Behavioral;
 
 
