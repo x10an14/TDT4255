@@ -35,7 +35,7 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity toplevel is
 
-	generic  (
+	generic (
 		MEM_ADDR_BUS	: integer	:= 32;
 		MEM_DATA_BUS	: integer	:= 32 );
 
@@ -80,7 +80,7 @@ architecture Behavioral of toplevel is
 		imem_data_in 		: in STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
 		dmem_data_in 		: in STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
 		dmem_address 		: out STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
-		dmem_address_wr		: out STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
+		dmem_address_wr	: out STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_data_out		: out STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
 		dmem_write_enable	: out STD_LOGIC
 	);
