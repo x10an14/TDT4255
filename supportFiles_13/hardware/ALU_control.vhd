@@ -19,21 +19,21 @@ architecture Behavioral of ALU_control is
 	
 begin
 	case ALUOp is
-		when "000" =>	--LW, SW, LDI
+		when "000" =>	-- LW, SW, LDI
 			ALU_FUNC <= "0010";
-		when "001" =>	--BEQ
+		when "001" =>	-- BEQ
 			ALU_FUNC <= "0110";
-		when "010" =>	--Function dependent
+		when "010" =>	-- Function dependent
 			case FUNC is
-				when "100000" =>	--ADD
+				when "100000" =>	-- ADD
 					ALU_FUNC <= "0010";
-				when "100010" =>	--SUB
+				when "100010" =>	-- SUBt
 					ALU_FUNC <=	"0110";
-				when "101010" =>	--SLT
+				when "101010" =>	-- SLT
 					ALU_FUNC <= "0111";
-				when "100100" =>	--AND
+				when "100100" =>	-- AND
 					ALU_FUNC => "0000";
-				when "100101" =>	--OR
+				when "100101" =>	-- OR
 					ALU_FUNC <= "0001";
 			end case;
 	end case;
