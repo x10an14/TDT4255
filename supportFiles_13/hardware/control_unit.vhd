@@ -7,20 +7,20 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity control_unit is
 	port(
-		CLK 		: in 	STD_LOGIC;
-		RESET		: in 	STD_LOGIC;
+		CLK 			: in 	STD_LOGIC;
+		RESET			: in 	STD_LOGIC;
 		OpCode		: in	STD_LOGIC_VECTOR (5 downto 0);
-		ALUOp		: out	ALU_OP_INPUT;
-		RegDst		: out 	STD_LOGIC;
-		Branch		: out 	STD_LOGIC;
-		MemRead		: out 	STD_LOGIC;
-		MemtoReg	: out 	STD_LOGIC;
-		MemWrite	: out 	STD_LOGIC;
-		ALUSrc		: out 	STD_LOGIC;
-		RegWrite	: out 	STD_LOGIC;
-		Jump		: out 	STD_LOGIC;
-		PCWriteEnb	: out 	STD_LOGIC;
-		SRWriteEnb	: out 	STD_LOGIC
+		ALUOp			: out	ALU_OP_INPUT;
+		RegDst		: out STD_LOGIC;
+		Branch		: out STD_LOGIC;
+		MemRead		: out STD_LOGIC;
+		MemtoReg		: out STD_LOGIC;
+		MemWrite		: out STD_LOGIC;
+		ALUSrc		: out STD_LOGIC;
+		RegWrite		: out STD_LOGIC;
+		Jump			: out STD_LOGIC;
+		PCWriteEnb	: out STD_LOGIC;
+		SRWriteEnb	: out STD_LOGIC
 		--control write enable for register file is the same as RegWrite?
 	);
 end control_unit;

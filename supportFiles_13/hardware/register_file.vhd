@@ -35,15 +35,15 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity register_file is
 	port(
-			CLK 			:	in	STD_LOGIC;				
-			RESET			:	in	STD_LOGIC;				
-			RW				:	in	STD_LOGIC;				
-			RS_ADDR 		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
-			RT_ADDR 		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
-			RD_ADDR 		:	in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0);
-			WRITE_DATA	:	in	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0); 
-			RS				:	out	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0);
-			RT				:	out	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0)
+			CLK 			: in	STD_LOGIC;				
+			RESET			: in	STD_LOGIC;				
+			RW				: in	STD_LOGIC;				
+			RS_ADDR 		: in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
+			RT_ADDR 		: in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0); 
+			RD_ADDR 		: in	STD_LOGIC_VECTOR (RADDR_BUS-1 downto 0);
+			WRITE_DATA	: in	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0); 
+			RS				: out	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0);
+			RT				: out	STD_LOGIC_VECTOR (DDATA_BUS-1 downto 0)
 	);
 
 end register_file;

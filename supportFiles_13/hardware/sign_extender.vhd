@@ -7,8 +7,8 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity sign_extender is
 	port(
-		CLK 		: in 	STD_LOGIC;
-		RESET		: in 	STD_LOGIC;
+		CLK 			: in 	STD_LOGIC;
+		RESET			: in 	STD_LOGIC;
 		IMMIDIATE16	: in 	STD_LOGIC_VECTOR(15 downto 0);
 		IMMIDIATE32	: out	STD_LOGIC_VECTOR(31 downto 0)
 	);

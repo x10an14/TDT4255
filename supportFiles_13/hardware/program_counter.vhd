@@ -8,10 +8,10 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity program_counter is
 	port(
-			CLK 	: in 	STD_LOGIC;
-			RESET	: in 	STD_LOGIC;
+			CLK 		: in 	STD_LOGIC;
+			RESET		: in 	STD_LOGIC;
 			PC_CON	: in 	STD_LOGIC;
-			PC_IN	: in 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
+			PC_IN		: in 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
 			PC_OUT	: out 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0)
 	);
 end program_counter;

@@ -41,7 +41,7 @@ entity toplevel is
 
 	Port (
 		clk				: in STD_LOGIC;
-		reset			: in STD_LOGIC;
+		reset				: in STD_LOGIC;
 		command			: in STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in	: in STD_LOGIC_VECTOR (0 to 31);
 		bus_data_in		: in STD_LOGIC_VECTOR (0 to 31);
@@ -55,7 +55,7 @@ architecture Behavioral of toplevel is
 	component com
 	port (
 		clk					: in STD_LOGIC;
-		reset				: in STD_LOGIC;
+		reset					: in STD_LOGIC;
 		command				: in STD_LOGIC_VECTOR (0 to 31);
 		bus_address_in		: in STD_LOGIC_VECTOR (0 to 31);
 		bus_data_in			: in STD_LOGIC_VECTOR (0 to 31);
@@ -73,8 +73,8 @@ architecture Behavioral of toplevel is
 
 	component processor is
 	Port (
-		clk				: in STD_LOGIC;
-		reset				: in STD_LOGIC;
+		clk					: in STD_LOGIC;
+		reset					: in STD_LOGIC;
 		processor_enable	: in STD_LOGIC;
 		imem_address 		: out STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		imem_data_in 		: in STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
@@ -90,11 +90,11 @@ architecture Behavioral of toplevel is
 		generic (M :NATURAL :=MEM_ADDR_COUNT; N :NATURAL :=DDATA_BUS);
 		port(
 			CLK			: in STD_LOGIC;
-			RESET		: in STD_LOGIC;
+			RESET			: in STD_LOGIC;
 			W_ADDR		: in STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to write data
 			WRITE_DATA	: in STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
-			MemWrite	: in STD_LOGIC;									-- Write Signal
-			ADDR		: in STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
+			MemWrite		: in STD_LOGIC;									-- Write Signal
+			ADDR			: in STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
 			READ_DATA	: out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
 		);
 	end component MEMORY;
@@ -103,15 +103,15 @@ architecture Behavioral of toplevel is
 	signal com_write_en				: std_logic;
 	signal dmem_write_enable_com	: std_logic;
 	signal imem_write_enable_com	: std_logic;
-	signal instr_data				: std_logic_vector(MEM_DATA_BUS-1 downto 0);
-	signal instr_addr				: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
+	signal instr_data					: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal instr_addr					: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
 	signal dmem_address_wr			: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
 	signal dmem_write_data			: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal dmem_address				: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
-	signal dmem_address_wr_proc		: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
+	signal dmem_address_wr_proc	: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
 	signal dmem_data_in				: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal dmem_write_enable 		: std_logic;
-	signal dmem_write_data_proc		: std_logic_vector(MEM_DATA_BUS-1 downto 0);
+	signal dmem_write_data_proc	: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal dmem_address_proc		: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
 	signal dmem_write_enable_proc	: std_logic;
 	signal dmem_address_wr_com		: std_logic_vector(MEM_ADDR_BUS-1 downto 0);
@@ -123,7 +123,7 @@ begin
 
 	TDT4255_COM : com port map(
 		clk					=> clk,
-		reset				=> reset,
+		reset					=> reset,
 		command				=> command,
 		bus_address_in		=> bus_address_in,
 		bus_data_in			=> bus_data_in,
@@ -143,14 +143,14 @@ begin
 	begin
 		if proc_enable = '1' then
 			dmem_address		<= dmem_address_proc;
-			dmem_address_wr		<= dmem_address_wr_proc;
-			dmem_write_data		<= dmem_write_data_proc;
+			dmem_address_wr	<= dmem_address_wr_proc;
+			dmem_write_data	<= dmem_write_data_proc;
 			dmem_write_enable	<= dmem_write_enable_proc;
 		else
 			dmem_address		<= dmem_address_com;
-			dmem_address_wr		<= dmem_address_wr_com;
-			dmem_write_data		<= dmem_write_data_com;
-			dmem_write_enable 	<= dmem_write_enable_com;
+			dmem_address_wr	<= dmem_address_wr_com;
+			dmem_write_data	<= dmem_write_data_com;
+			dmem_write_enable <= dmem_write_enable_com;
 		end if;
 	end process;
 
@@ -168,35 +168,35 @@ begin
 	DATA_MEM: MEMORY generic map (M=>MEM_ADDR_COUNT, N=>DDATA_BUS)
 	port map(
 		CLK			=> clk,
-		RESET		=> reset,
+		RESET			=> reset,
 		W_ADDR		=> dmem_address_wr,		-- ADDRESS TO BE WRITTEN
 		WRITE_DATA	=> dmem_write_data,		-- DATA TO BE WRITTEN
-		ADDR		=> dmem_address,			-- ADDRESS TO BE READ
+		ADDR			=> dmem_address,			-- ADDRESS TO BE READ
 		READ_DATA	=> dmem_data_in,			-- DATA READ OUT
-		MemWrite	=> dmem_write_enable
+		MemWrite		=> dmem_write_enable
 	);
 
 	INST_MEM: MEMORY generic map (M=>MEM_ADDR_COUNT, N=>IDATA_BUS)
 	port map(
 		CLK			=> clk,
-		RESET		=> reset,
+		RESET			=> reset,
 		W_ADDR		=> dmem_address_wr_com,		-- ADDRESS TO BE WRITTEN
 		WRITE_DATA	=> dmem_write_data_com,		-- DATA TO BE WRITTEN
-		ADDR		=> instr_addr,					-- ADDRESS TO BE READ
+		ADDR			=> instr_addr,					-- ADDRESS TO BE READ
 		READ_DATA	=> instr_data,					-- DATA READ OUT
-		MemWrite	=> imem_write_enable_com
+		MemWrite		=> imem_write_enable_com
 	);
 
 	MIPS_SC_PROCESSOR: processor
 	port map(
-		clk 				=> clk,
-		reset				=> reset,
+		clk 					=> clk,
+		reset					=> reset,
 		processor_enable	=> proc_enable,
 		imem_data_in		=> instr_data,
 		imem_address		=> instr_addr,
 		dmem_data_in		=> dmem_data_in,				-- DATA READ FROM THE MEMORY
 		dmem_address		=> dmem_address_proc,			-- ADDRESS TO BE READ
-		dmem_address_wr		=> dmem_address_wr_proc,		-- ADDRESS OF DATA TO BE WRITTEN
+		dmem_address_wr	=> dmem_address_wr_proc,		-- ADDRESS OF DATA TO BE WRITTEN
 		dmem_data_out		=> dmem_write_data_proc,		-- DATA TO BE WRITTEN
 		dmem_write_enable	=> dmem_write_enable_proc
 	);
