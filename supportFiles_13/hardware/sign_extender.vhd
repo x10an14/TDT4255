@@ -16,6 +16,6 @@ end sign_extender;
 
 architecture Behavioral of sign_extender is
 begin
-	IMMIDIATE32 <= resize(signed(IMMIDIATE16), 32);
+	IMMIDIATE32 <= STD_LOGIC_VECTOR(resize(signed(IMMIDIATE16), 32));
 end Behavioral;
 	

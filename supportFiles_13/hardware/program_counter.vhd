@@ -22,11 +22,12 @@ architecture Behavioral of program_counter is
 
 begin
 
-	UPDATE_PC: process(PC_CON)
+	UPDATE_PC: process(PC_CON) is
 	begin
 		--some reset code...
 		if rising_edge(PC_CON) then
 			REG <= PC_IN;
+		end if;
 		
 	PC_OUT <= REG;
 	end process;
