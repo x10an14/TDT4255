@@ -18,13 +18,15 @@ end ALU_control;
 architecture Behavioral of ALU_control is
 	
 begin
-	case ALUOp is
-		when "000" =>	-- LW, SW, LDI
-			ALU_FUNC <= "0010";
-		when "001" =>	-- BEQ
-			ALU_FUNC <= "0110";
-		when "010" =>	-- Function dependent
-			case FUNC is
+	if (ALUOp.Op0 = 0) then
+		if (ALUOp.Op1 = 0) then
+			if (ALUOp.Op2 = '0') then
+				ALU_FUNC <= X"2";
+			elsif (ALUOp.Op2 = '1') then
+				ALU_FUNC <= X"6";
+			end if;
+		elsif (ALUOp.Op1 = '1') then
+			case (FUNC) is
 				when "100000" =>	-- ADD
 					ALU_FUNC <= "0010";
 				when "100010" =>	-- SUBt
@@ -36,5 +38,27 @@ begin
 				when "100101" =>	-- OR
 					ALU_FUNC <= "0001";
 			end case;
-	end case;
+		else
+		
+--		end if;
+--	end if;
+--	case (ALUOp) is
+--		when O"0" =>	-- LW, SW, LDI
+--			ALU_FUNC <= "0010";
+--		when O"1" =>	-- BEQ
+--			ALU_FUNC <= "0110";
+--		when O"2" =>	-- Function dependent
+--			case (FUNC) is
+--				when "100000" =>	-- ADD
+--					ALU_FUNC <= "0010";
+--				when "100010" =>	-- SUBt
+--					ALU_FUNC <=	"0110";
+--				when "101010" =>	-- SLT
+--					ALU_FUNC <= "0111";
+--				when "100100" =>	-- AND
+--					ALU_FUNC => "0000";
+--				when "100101" =>	-- OR
+--					ALU_FUNC <= "0001";
+--			end case;
+--	end case;
 end Behavioral; 

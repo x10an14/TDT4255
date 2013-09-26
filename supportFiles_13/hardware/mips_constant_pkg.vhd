@@ -18,11 +18,11 @@ package MIPS_CONSTANT_PKG is
 	
 	constant MEM_ADDR_COUNT	: integer	:= 8;
 	
-	constant ZERO1b	: STD_LOGIC							          :=  '0';
+	constant ZERO1b	: STD_LOGIC							  :=  '0';
 	constant ZERO32b	: STD_LOGIC_VECTOR(31 downto 0) :=  "00000000000000000000000000000000";	
 	constant ZERO16b	: STD_LOGIC_VECTOR(15 downto 0) :=  "0000000000000000";
-	constant ONE32b	: STD_LOGIC_VECTOR(31 downto 0)   :=  "11111111111111111111111111111111";	
-	constant ONE16b	: STD_LOGIC_VECTOR(15 downto 0)   :=  "1111111111111111";	
+	constant ONE32b	: STD_LOGIC_VECTOR(31 downto 0) :=  "11111111111111111111111111111111";	
+	constant ONE16b	: STD_LOGIC_VECTOR(15 downto 0) :=  "1111111111111111";	
   
 	-- RECORDS
 	type ALU_OP_INPUT is
