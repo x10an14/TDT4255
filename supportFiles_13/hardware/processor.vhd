@@ -21,7 +21,6 @@ entity processor is
 end processor;
 
 architecture behave of processor is
-
 	--component ALU_control
 
 begin
