@@ -18,47 +18,25 @@ end ALU_control;
 architecture Behavioral of ALU_control is
 	
 begin
-	if (ALUOp.Op0 = 0) then
-		if (ALUOp.Op1 = 0) then
-			if (ALUOp.Op2 = '0') then
-				ALU_FUNC <= X"2";
-			elsif (ALUOp.Op2 = '1') then
-				ALU_FUNC <= X"6";
-			end if;
-		elsif (ALUOp.Op1 = '1') then
+	ALU_LOGIC: process(ALUOp)
+	begin
+		if (ALUOp = ALU_OP_ZERO) then		-- if ALUOp == "000" AKA LW, SW, LDI
+			ALU_FUNC <= X"2";
+		elsif (ALUOp = ALU_OP_ONE) then	-- if ALUOp == "001" AKA BEQ
+			ALU_FUNC <= X"6";
+		elsif (ALUOP = ALU_OP_TWO) then	-- if ALUOp == "010" AKA function dependent
 			case (FUNC) is
-				when "100000" =>	-- ADD
-					ALU_FUNC <= "0010";
-				when "100010" =>	-- SUBt
-					ALU_FUNC <=	"0110";
-				when "101010" =>	-- SLT
-					ALU_FUNC <= "0111";
-				when "100100" =>	-- AND
-					ALU_FUNC => "0000";
-				when "100101" =>	-- OR
-					ALU_FUNC <= "0001";
+				when O"40" =>	-- ADD
+					ALU_FUNC <= ALU_OP_ADD;
+				when O"42" =>	-- SUB
+					ALU_FUNC <= ALU_OP_SUB;
+				when O"52" =>	-- SLT
+					ALU_FUNC <= ALU_OP_SLT;
+				when O"44" =>	-- AND
+					ALU_FUNC <= ALU_OP_AND;
+				when O"45" =>	-- OR
+					ALU_FUNC <= ALU_OP_OR;
 			end case;
-		else
-		
---		end if;
---	end if;
---	case (ALUOp) is
---		when O"0" =>	-- LW, SW, LDI
---			ALU_FUNC <= "0010";
---		when O"1" =>	-- BEQ
---			ALU_FUNC <= "0110";
---		when O"2" =>	-- Function dependent
---			case (FUNC) is
---				when "100000" =>	-- ADD
---					ALU_FUNC <= "0010";
---				when "100010" =>	-- SUBt
---					ALU_FUNC <=	"0110";
---				when "101010" =>	-- SLT
---					ALU_FUNC <= "0111";
---				when "100100" =>	-- AND
---					ALU_FUNC => "0000";
---				when "100101" =>	-- OR
---					ALU_FUNC <= "0001";
---			end case;
---	end case;
+		end if;
+	end process;
 end Behavioral; 
