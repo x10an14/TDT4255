@@ -7,10 +7,10 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity control_unit is
 	port(
-		CLK 			: in 	STD_LOGIC;
-		RESET			: in 	STD_LOGIC;
-		OpCode		: in	STD_LOGIC_VECTOR (5 downto 0);
-		ALUOp			: out	ALU_OP_INPUT;
+		CLK 			: in STD_LOGIC;
+		RESET			: in STD_LOGIC;
+		OpCode		: in STD_LOGIC_VECTOR (5 downto 0);
+		ALUOp			: out ALU_OP_INPUT;
 		RegDst		: out STD_LOGIC;
 		Branch		: out STD_LOGIC;
 		MemRead		: out STD_LOGIC;
@@ -52,13 +52,14 @@ begin
 			else
 				case state is
 					when ALU_FETCH =>
-						state 	<= ALU_EXE;
+						state 		<= ALU_EXE;
+						RegWrite 	<= '0';
 						PCWriteEnb	<= '0';
 
 					when ALU_EXE =>
 						PCWriteEnb 	<= '1';
 						case OpCode is
-							when "000000" =>	--R-instruction
+							when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 								RegDst		<= '1';
 								Branch		<= '0';
 								MemRead		<= '0';
@@ -75,17 +76,16 @@ begin
 								SRWriteEnb	<= '0';
 								
 								state 		<= ALU_FETCH;
-							
-							when "000100" =>	--Branch opcode
+							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 								RegDst		<= '0';
 								Branch		<= '1';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
-
+								
 								ALUOp.Op0	<= '1';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
-
+								
 								MemWrite		<= '0';
 								ALUSrc		<= '0';
 								RegWrite		<= '0';
@@ -93,8 +93,7 @@ begin
 								SRWriteEnb	<= '1';	--setting the zero flag if equal
 								
 								state 		<= ALU_FETCH;
-
-							when "100011" =>	--Load word
+							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '1';
@@ -111,12 +110,12 @@ begin
 								SRWriteEnb	<= '0';	
 
 								state 		<= READ_STALL;
-							when "101011" =>	--Store word
+							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
-
+								
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
@@ -128,7 +127,7 @@ begin
 								SRWriteEnb	<= '0';	
 
 								state 		<= WRITE_STALL;
-							when "001000" =>	--Load immidiate. (Implemented as add immidiate where you add with the zero register)
+							when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
@@ -145,11 +144,15 @@ begin
 								SRWriteEnb	<= '0';	
 
 								state 		<= ALU_FETCH;
-							when "000010" =>	--Jump
+							when "000010" =>	--Jump (2 Hex - J Opcode - J-instruction format)
 								RegDst		<= '0';
 								Branch		<= '0';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
+								
+								ALUOp.Op0	<= '0';
+								ALUOp.Op1	<= '0';
+								ALUOp.Op2	<= '0';
 
 								MemWrite		<= '0';
 								ALUSrc		<= '0';
@@ -161,11 +164,11 @@ begin
 								state 		<= ALU_FETCH;
 						end case;
 					when READ_STALL =>
-						RegWrite 	<= '1';
 						state 		<= ALU_FETCH;
 						PCWriteEnb	<= '0';
 					when WRITE_STALL =>
 						state 		<= ALU_FETCH;
+						RegWrite 	<= '1';
 						PCWriteEnb	<= '0';
 				end case;
 			end if;
