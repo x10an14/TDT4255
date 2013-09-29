@@ -56,7 +56,7 @@ package MIPS_CONSTANT_PKG is
 	-- constant ALU_OP_OR	: ALU_INPUT := (Op0 = '1', others => '0');				-- AKA X"1"
 	-- constant ALU_OP_ADD	: ALU_INPUT := (Op1 = '1', others => '0');				-- AKA X"2"
 	-- constant ALU_OP_SLT	: ALU_INPUT := (Op3 = '0', others => '1');				-- AKA X"7"
-	-- constant ALU_OP_SUB	: ALU_INPUT := (Op2 = '1', Op1 = '1', others => '0');	-- AKA X"6"
+--	 constant ALU_OP_SUB	: ALU_INPUT := (Op2 = '1', Op1 = '1', others => '0');	-- AKA X"6"
 
 	-- constant ALU_OP_ZERO	: ALU_OP_INPUT := (others => '0');
 	-- constant ALU_OP_ONE	: ALU_OP_INPUT	:= (Op0 = '1', others => '0');

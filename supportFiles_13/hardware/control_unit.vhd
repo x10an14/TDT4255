@@ -162,6 +162,8 @@ begin
 								SRWriteEnb	<= '0';	
 
 								state 		<= ALU_FETCH;
+							when others =>
+							
 						end case;
 					when READ_STALL =>
 						state 		<= ALU_FETCH;
