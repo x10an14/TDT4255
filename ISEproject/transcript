@@ -1,0 +1,224 @@
+# //  ModelSim SE 6.6d Nov  1 2010 
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do \{do \{proc_control_module_tb.fdo\}\} 
+# ** Error: (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+vlib work
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# ** Error: (vcom-11) Could not find work.mips_constant_pkg.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu.vhd(25): (vcom-1195) Cannot find expanded name "work.mips_constant_pkg".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu.vhd(25): Unknown expanded name.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu.vhd(36): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu_1bit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/com.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity com
+# -- Compiling architecture behavioral of com
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/full_adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/memory.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity memory
+# -- Compiling architecture behavioral of memory
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/mips_constant_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/proc_control_module.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module
+# -- Compiling architecture behavioral of proc_control_module
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/proc_control_module_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module_tb
+# -- Compiling architecture behavior of proc_control_module_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/register_file.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/sign_extender.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender
+# -- Compiling architecture behavioral of sign_extender
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/sign_extender_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender_tb
+# -- Compiling architecture behavior of sign_extender_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/tb_toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_toplevel
+# -- Compiling architecture behavior of tb_toplevel
+vcom -reportprogress 30 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity toplevel
+# -- Compiling architecture behavioral of toplevel
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/alu_1bit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/com.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity com
+# -- Compiling architecture behavioral of com
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/full_adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/memory.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity memory
+# -- Compiling architecture behavioral of memory
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/mips_constant_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/proc_control_module.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module
+# -- Compiling architecture behavioral of proc_control_module
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/proc_control_module_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module_tb
+# -- Compiling architecture behavior of proc_control_module_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/register_file.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/sign_extender.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender
+# -- Compiling architecture behavioral of sign_extender
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/sign_extender_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender_tb
+# -- Compiling architecture behavior of sign_extender_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/tb_toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_toplevel
+# -- Compiling architecture behavior of tb_toplevel
+vcom -reportprogress 30 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware_old_project/toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity toplevel
+# -- Compiling architecture behavioral of toplevel
+vsim work.proc_control_module_tb
+# vsim work.proc_control_module_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.proc_control_module_tb(behavior)#1
+add wave sim:/proc_control_module_tb/*
+run
