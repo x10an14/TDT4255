@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    00:31:41 09/28/2013 
+-- Create Date:    15:01:07 09/20/2013 
 -- Design Name: 
--- Module Name:    sign_extender - Behavioral 
+-- Module Name:    simple_multiplexer - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,19 +29,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity sign_extender is
-   generic (IN_WIDTH: NATURAL := 16;
-               OUT_WIDTH: NATURAL := 32);
-    Port ( input : in  STD_LOGIC_VECTOR ( IN_WIDTH-1 downto 0);
-           output : out  STD_LOGIC_VECTOR (OUT_WIDTH-1 downto 0));
-end sign_extender;
+entity simple_multiplexer is
+generic (N :NATURAL);
+    Port ( a : in  STD_LOGIC_VECTOR (N-1 downto 0);
+           b : in  STD_LOGIC_VECTOR (N-1 downto 0);
+           control_signal : in  STD_LOGIC;
+           output : out  STD_LOGIC_VECTOR (N-1 downto 0));
+end simple_multiplexer;
 
-architecture Behavioral of sign_extender is
-  
+architecture Behavioral of simple_multiplexer is
+
 begin
-   output(IN_WIDTH-1 downto 0) <= input(IN_WIDTH-1 downto 0);
-   output(OUT_WIDTH-1 downto IN_WIDTH) <= ( others => input(IN_WIDTH-1));
-
+	output <= b when control_signal = '1' else
+				a;
 
 end Behavioral;
-
