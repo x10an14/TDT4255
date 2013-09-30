@@ -33,16 +33,21 @@ architecture Behavioral of control_unit is
 begin
 
 	ALU_STATE_MACHINE: process(CLK, RESET, OpCode)
-		
+
 	begin
 		if rising_edge(CLK) then
 			if reset = '1' then
 				state 		<= ALU_FETCH;
-				
+
 				RegDst		<= '0';
 				Branch		<= '0';
 				MemRead		<= '0';
 				MemtoReg		<= '0';
+
+				ALUOp.Op0	<= '0';
+				ALUOp.Op1	<= '1';
+				ALUOp.Op2	<= '0';
+
 				MemWrite		<= '0';
 				ALUSrc		<= '0';
 				RegWrite		<= '0';
@@ -74,24 +79,24 @@ begin
 								RegWrite		<= '1';
 								Jump			<= '0';
 								SRWriteEnb	<= '0';
-								
+
 								state 		<= ALU_FETCH;
 							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 								RegDst		<= '0';
 								Branch		<= '1';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
-								
+
 								ALUOp.Op0	<= '1';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
-								
+
 								MemWrite		<= '0';
 								ALUSrc		<= '0';
 								RegWrite		<= '0';
 								Jump			<= '0';
 								SRWriteEnb	<= '1';	--setting the zero flag if equal
-								
+
 								state 		<= ALU_FETCH;
 							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 								RegDst		<= '0';
@@ -107,7 +112,7 @@ begin
 								ALUSrc		<= '1';
 								RegWrite		<= '0';	--Have to wait until data has been updated
 								Jump			<= '0';
-								SRWriteEnb	<= '0';	
+								SRWriteEnb	<= '0';
 
 								state 		<= READ_STALL;
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
@@ -115,7 +120,7 @@ begin
 								Branch		<= '0';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
-								
+
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
@@ -124,7 +129,7 @@ begin
 								ALUSrc		<= '1';
 								RegWrite		<= '0';
 								Jump			<= '0';
-								SRWriteEnb	<= '0';	
+								SRWriteEnb	<= '0';
 
 								state 		<= WRITE_STALL;
 							when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
@@ -141,7 +146,7 @@ begin
 								ALUSrc		<= '1';
 								RegWrite		<= '1';
 								Jump			<= '0';
-								SRWriteEnb	<= '0';	
+								SRWriteEnb	<= '0';
 
 								state 		<= ALU_FETCH;
 							when "000010" =>	--Jump (2 Hex - J Opcode - J-instruction format)
@@ -149,7 +154,7 @@ begin
 								Branch		<= '0';
 								MemRead		<= '0';
 								MemtoReg		<= '0';
-								
+
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
@@ -159,11 +164,11 @@ begin
 								RegWrite		<= '0';
 								Jump			<= '1';
 								PCWriteEnb	<= '0';
-								SRWriteEnb	<= '0';	
+								SRWriteEnb	<= '0';
 
 								state 		<= ALU_FETCH;
 							when others =>
-							
+
 						end case;
 					when READ_STALL =>
 						state 		<= ALU_FETCH;

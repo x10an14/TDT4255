@@ -123,7 +123,7 @@ BEGIN
 
 		reset <= '1';
 
-		wait for CLK_period;
+		wait for CLK_period*4;
 
 		reset <= '0';
 		ALUOp.Op0 <= '0';
