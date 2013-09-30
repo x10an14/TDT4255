@@ -124,33 +124,36 @@ BEGIN
 		reset <= '1';
 
 		wait for CLK_period*4;
-
+		assert (reset /= '1') report "RESET IS NOT ONE!!" severity error;
+		assert ((ALUOp.Op0 /= '0') and (ALUOp.Op1 /= '0') and (ALUOp.Op2 /= '0')) report "ALUOp not reset..." severity error;
+		
 		reset <= '0';
-		ALUOp.Op0 <= '0';
-		ALUOp.Op1 <= '0';
-		ALUOp.Op2 <= '0';
 
 		wait for CLK_period*4;
 
 		opcode <= "000000";
 
-		wait for CLK_period;
+		wait for CLK_period*3;
+		assert (PCWriteEnb /= '1') report "PCWriteEnb is not 1..." severity error;
+		assert (RegDst /= '1') report "RegDst is not 1..." severity error;
+		assert (RegWrite /= '1') report "RegWrite is not 1..." severity error;
+		assert (ALUOp.Op1 /= '1') report "ALUOp.Op1 is not 1..." severity error;
 
 		opcode <= "000100";
 
-		wait for CLK_period;
+		wait for CLK_period*3;
 
 		opcode <= "100011";
 
-		wait for CLK_period;
+		wait for CLK_period*3;
 
 		opcode <= "101011";
 
-		wait for CLK_period;
+		wait for CLK_period*3;
 
 		opcode <= "001111";
 
-		wait for CLK_period;
+		wait for CLK_period*3;
 
 		opcode <= "000010";
 
