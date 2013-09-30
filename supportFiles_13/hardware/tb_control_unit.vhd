@@ -129,6 +129,9 @@ BEGIN
 		ALUOp.Op0 <= '0';
 		ALUOp.Op1 <= '0';
 		ALUOp.Op2 <= '0';
+
+		wait for CLK_period*4;
+
 		opcode <= "000000";
 
 		wait for CLK_period;
