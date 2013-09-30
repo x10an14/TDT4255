@@ -45,7 +45,7 @@ begin
 				MemtoReg		<= '0';
 
 				ALUOp.Op0	<= '0';
-				ALUOp.Op1	<= '1';
+				ALUOp.Op1	<= '0';
 				ALUOp.Op2	<= '0';
 
 				MemWrite		<= '0';
