@@ -1,4 +1,4 @@
-library IEEE;
+ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
@@ -7,7 +7,7 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity ALU_control is
 	port(
-		CLK		: in STD_LOGIC;
+		CLK			: in STD_LOGIC;
 		RESET		: in STD_LOGIC;
 		FUNC		: in STD_LOGIC_VECTOR (5 downto 0);
 		ALUOp		: in ALU_OP_INPUT;
