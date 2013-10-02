@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   16:21:39 09/29/2013
+-- Create Date:   22:07:18 10/02/2013
 -- Design Name:   
 -- Module Name:   M:/Github/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
 -- Project Name:  TDT4255_Project_Assignment1
@@ -27,9 +27,6 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-
-LIBRARY WORK;
-USE WORK.MIPS_CONSTANT_PKG.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -46,7 +43,7 @@ ARCHITECTURE behavior OF tb_program_counter IS
     PORT(
          CLK : IN  std_logic;
          RESET : IN  std_logic;
-         PC_CON : IN  std_logic;
+         PC_WR_EN : IN  std_logic;
          PC_IN : IN  std_logic_vector(31 downto 0);
          PC_OUT : OUT  std_logic_vector(31 downto 0)
         );
@@ -56,7 +53,7 @@ ARCHITECTURE behavior OF tb_program_counter IS
    --Inputs
    signal CLK : std_logic := '0';
    signal RESET : std_logic := '0';
-   signal PC_CON : std_logic := '0';
+   signal PC_WR_EN : std_logic := '0';
    signal PC_IN : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
@@ -71,7 +68,7 @@ BEGIN
    uut: program_counter PORT MAP (
           CLK => CLK,
           RESET => RESET,
-          PC_CON => PC_CON,
+          PC_WR_EN => PC_WR_EN,
           PC_IN => PC_IN,
           PC_OUT => PC_OUT
         );
@@ -90,11 +87,34 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for CLK_period*10;
+		RESET <= '1';
+		wait for CLK_period;
+		assert (RESET /= '1') report "Reset is not 1..." severity error;
+		assert (PC_OUT /= X"00000000") report "Out is not 0..." severity error;
+      wait for 100 ns;
 
       -- insert stimulus here 
+		
+		RESET <= '0';
+		PC_IN <= X"00000001";
+		wait for CLK_period;
+		assert (PC_IN /= X"00000001") report "In is not 1..." severity error;
+		PC_WR_EN <= '1';
+		wait for CLK_period;
+		assert (PC_OUT /= X"00000001") report "Out is not 1..." severity error;
+		wait for CLK_period*3;
+		
+		PC_IN <= X"F0F0F0F0";
+		wait for CLK_period;
+		assert (PC_OUT /= X"F0F0F0F0") report "Out is not 4 042 322 160..." severity error;
+		PC_WR_EN <= '0';
+		wait for CLK_period*3;
+		
+		PC_IN <= X"FFFFFFFF";
+		wait for CLK_period;
+		assert (PC_OUT /= X"F0F0F0F0") report "Out changed when it shouldn't have =(... " severity error;
+		RESET <= '1';
+		
 
       wait;
    end process;
