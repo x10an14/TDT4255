@@ -98,17 +98,17 @@ begin
 				CLK => clk,
 				RESET => reset,
 				OpCode => imem_data_in (31 downto 26),
-				ALUOp => , --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
+--				ALUOp => , --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
 				RegDst => RegDst,
 				Branch => Branch,
 				MemRead => MemRead,
 				MemtoReg => MemtoReg,
 				MemWrite => MemWrite,
 				ALUSrc => ALUSrc,
-				RegWrite => RegWrite,
-				Jump => , --This has to be figured out too
-				PCWriteEnb => , --Same as above comment
-				SRWriteEnb => , --Same as above comment
+				RegWrite => RegWrite --,
+--				Jump => , --This has to be figured out too
+--				PCWriteEnb => , --Same as above comment
+--				SRWriteEnb => , --Same as above comment
 		 );
 
 --			setting up program counter circuit - PC itself, ALU that increments it
