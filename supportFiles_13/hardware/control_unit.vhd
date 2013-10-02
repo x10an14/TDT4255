@@ -60,6 +60,7 @@ begin
 						state 		<= ALU_EXE;
 						RegWrite 	<= '0';
 						PCWriteEnb	<= '0';
+						SRWriteEnb	<= '0';
 
 					when ALU_EXE =>
 						PCWriteEnb 	<= '1';
