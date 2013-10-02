@@ -29,24 +29,24 @@ Library WORK;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-function BUS_SIGNAL_TO_ALU_INPUT(X: STD_LOGIC_VECTOR) 
-return ALU_INPUT is variable retval: ALU_INPUT;
-begin
-	retval.Op0 := X(0);
-	retval.Op1 := X(1);
-	retval.Op2 := X(2);
-	retval.Op3 := X(3);
-	return retval;
-end function BUS_SIGNAL_TO_ALU_INPUT;
-
-function ALU_OP_INPUT_TO_BUS_SIGNAL(X: ALU_OP_INPUT) 
-return STD_LOGIC_VECTOR is variable retval: STD_LOGIC_VECTOR(2 downto 0);
-begin
-	retval(0) := X.Op0;
-	retval(1) := X.Op1;
-	retval(2) := X.Op2;
-	return retval;
-end function ALU_OP_INPUT_TO_BUS_SIGNAL;
+--function BUS_SIGNAL_TO_ALU_INPUT(X: STD_LOGIC_VECTOR) 
+--return ALU_INPUT is variable retval: ALU_INPUT;
+--begin
+--	retval.Op0 := X(0);
+--	retval.Op1 := X(1);
+--	retval.Op2 := X(2);
+--	retval.Op3 := X(3);
+--	return retval;
+--end function BUS_SIGNAL_TO_ALU_INPUT;
+--
+--function ALU_OP_INPUT_TO_BUS_SIGNAL(X: ALU_OP_INPUT) 
+--return STD_LOGIC_VECTOR is variable retval: STD_LOGIC_VECTOR(2 downto 0);
+--begin
+--	retval(0) := X.Op0;
+--	retval(1) := X.Op1;
+--	retval(2) := X.Op2;
+--	return retval;
+--end function ALU_OP_INPUT_TO_BUS_SIGNAL;
 
 
 architecture Behavioral of mips_functions_pkg is
