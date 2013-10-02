@@ -20,6 +20,9 @@ architecture Behavioral of program_counter is
 	signal REG : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
 
 begin
+	-- Set output to reg
+   PC_OUT <= REG;
+   
 	process(CLK) is
 	begin
 		-- Here's were we decide what input (if any) to utilize
@@ -28,9 +31,6 @@ begin
 		elsif RESET = '1' then
 			REG <= X"00000000"; --Hardcoded reset value
 		end if;
-
-		-- Here's where we set output
-		PC_OUT <= REG;
-
 	end process;
+   
 end Behavioral;
