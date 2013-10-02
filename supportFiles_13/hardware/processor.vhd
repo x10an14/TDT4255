@@ -23,20 +23,22 @@ end processor;
 architecture behave of processor is
 	 --component control unit
 		 component proc_control_module is
-				 port(Opcode : in	STD_LOGIC_VECTOR (5 downto 0);
-							clk : in STD_LOGIC;
-							processor_enable : in STD_LOGIC;
-							reset : in STD_LOGIC;
+				 port(
+							CLK : in STD_LOGIC;
+							RESET : in STD_LOGIC;
+							OpCode : in	STD_LOGIC_VECTOR (5 downto 0);
+							ALUOp : out ALU_OP_INPUT;
 							RegDst : out STD_LOGIC;
-							RegWrite : out STD_LOGIC;
-							ALUSrc : out STD_LOGIC;
-							MemtoReg : out STD_LOGIC;
-							MemRead : out STD_LOGIC;
-							MemWrite : out STD_LOGIC;
-							ALUOp0 : out STD_LOGIC; -- this signal and the next one are to be worked on, they are meant to deal with branching
-							ALUOp1 : out STD_LOGIC;
 							Branch : out STD_LOGIC;
-							state_vector : out STD_LOGIC_VECTOR(1 downto 0));
+							MemRead : out STD_LOGIC;
+							MemtoReg : out STD_LOGIC;
+							MemWrite : out STD_LOGIC;
+							ALUSrc : out STD_LOGIC;
+							RegWrite : out STD_LOGIC;
+							Jump : out STD_LOGIC;
+							PCWriteEnb : out STD_LOGIC;
+							SRWriteEnb : out STD_LOGIC
+							);
 			end component proc_control_module;
 	--component ALU_control
 	--component ALU
@@ -53,7 +55,7 @@ architecture behave of processor is
 		 component program_counter is
 				 port( CLK 		: in 	STD_LOGIC;
 							 RESET		: in 	STD_LOGIC;
-							 PC_CON	: in 	STD_LOGIC;
+							 PC_WR_EN	: in 	STD_LOGIC;
 							 PC_IN		: in 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
 							 PC_OUT	: out	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0)
 				 );
@@ -81,7 +83,7 @@ architecture behave of processor is
 	 --signals definition
 --			PC related signals:
 			signal alu_output_to_PC, PC_output, PC_increment_signal : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
-			signal pc_con : STD_LOGIC := '0';
+			signal PC_WR_EN : STD_LOGIC := '0';
 			signal alu_in : ALU_INPUT;
 			signal alu_flags : ALU_FLAGS;
 --			control unit related signals
@@ -93,20 +95,20 @@ begin
 --			setting up control unit
 		 CU : proc_control_module
 		 port map (
-				 Opcode => imem_data_in (31 downto 26),
-				 clk => clk,
-				 processor_enable => processor_enable,
-				 reset => reset,
-				 RegDst => RegDst,
-				 RegWrite => RegWrite,
-				 ALUSrc => ALUSrc,
-				 MemtoReg => MemtoReg,
-				 MemRead => MemRead,
-				 MemWrite => MemWrite,
-				 ALUOp0 => ALUOp0,
-				 ALUOp1 => ALUOp1,
-				 Branch => Branch,
-				 state_vector => state_vector
+				CLK => clk,
+				RESET => reset,
+				OpCode => imem_data_in (31 downto 26),
+				ALUOp => , --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
+				RegDst => RegDst,
+				Branch => Branch,
+				MemRead => MemRead,
+				MemtoReg => MemtoReg,
+				MemWrite => MemWrite,
+				ALUSrc => ALUSrc,
+				RegWrite => RegWrite,
+				Jump => , --This has to be figured out too
+				PCWriteEnb => , --Same as above comment
+				SRWriteEnb => , --Same as above comment
 		 );
 
 --			setting up program counter circuit - PC itself, ALU that increments it
@@ -115,7 +117,7 @@ begin
 		 port map (
 				 CLK => clk,
 				 RESET => reset,
-				 PC_CON => pc_con,
+				 PC_WR_EN => PC_WR_EN,
 				 PC_IN => alu_output_to_PC,
 				 PC_OUT => PC_output
 		 );
