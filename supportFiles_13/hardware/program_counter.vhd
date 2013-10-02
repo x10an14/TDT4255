@@ -22,16 +22,15 @@ architecture Behavioral of program_counter is
 begin
 	process(CLK) is
 	begin
-		if rising_edge(CLK) then
-			-- Here's were we decide what input (if any) to utilize
-			if  PC_WR_EN = '1' then
-				REG <= PC_IN;
-			elsif RESET = '1' then
-				REG <= X"00000"; --Hardcoded reset value
-			end if;
+		-- Here's were we decide what input (if any) to utilize
+		if  PC_WR_EN = '1' then
+			REG <= PC_IN;
+		elsif RESET = '1' then
+			REG <= X"00000"; --Hardcoded reset value
+		end if;
 
-			-- Here's where we set output
-			PC_OUT <= REG;
+		-- Here's where we set output
+		PC_OUT <= REG;
 
 	end process;
 end Behavioral;
