@@ -117,16 +117,14 @@ BEGIN
 	 stim_proc: process
 	 begin
 			-- hold reset state for 100 ns.
-			wait for 100 ns;
-
-			-- insert stimulus here
-
+		wait for 100 ns;
 		reset <= '1';
-
-		wait for CLK_period*4;
 		assert (reset /= '1') report "RESET IS NOT ONE!!" severity error;
+		wait for 75 ns; --Needed to let reset propagate through simulation
 		assert ((ALUOp.Op0 /= '0') and (ALUOp.Op1 /= '0') and (ALUOp.Op2 /= '0')) report "ALUOp not reset..." severity error;
-		
+			
+			-- insert stimulus here
+			
 		reset <= '0';
 
 		wait for CLK_period*4;
