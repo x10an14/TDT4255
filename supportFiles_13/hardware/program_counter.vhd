@@ -26,7 +26,7 @@ begin
 		if  PC_WR_EN = '1' then
 			REG <= PC_IN;
 		elsif RESET = '1' then
-			REG <= X"00000"; --Hardcoded reset value
+			REG <= X"00000000"; --Hardcoded reset value
 		end if;
 
 		-- Here's where we set output
