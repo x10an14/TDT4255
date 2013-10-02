@@ -131,11 +131,13 @@ BEGIN
 
 		opcode <= "000000";
 
-		wait for CLK_period*3;
+		wait for CLK_period;
 		assert (PCWriteEnb /= '1') report "PCWriteEnb is not 1..." severity error;
 		assert (RegDst /= '1') report "RegDst is not 1..." severity error;
 		assert (RegWrite /= '1') report "RegWrite is not 1..." severity error;
 		assert (ALUOp.Op1 /= '1') report "ALUOp.Op1 is not 1..." severity error;
+		
+		wait for CLK_period*2;
 
 		opcode <= "000100";
 
