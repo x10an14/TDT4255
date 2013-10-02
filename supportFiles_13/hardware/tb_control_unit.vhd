@@ -119,6 +119,7 @@ BEGIN
 			-- hold reset state for 100 ns.
 		wait for 100 ns;
 		reset <= '1';
+		wait for CLK_period;
 		assert (reset /= '1') report "RESET IS NOT ONE!!" severity error;
 		wait for 75 ns; --Needed to let reset propagate through simulation
 		assert ((ALUOp.Op0 /= '0') and (ALUOp.Op1 /= '0') and (ALUOp.Op2 /= '0')) report "ALUOp not reset..." severity error;
@@ -127,7 +128,7 @@ BEGIN
 			
 		reset <= '0';
 
-		wait for CLK_period*4;
+		wait for CLK_period*3;
 
 		opcode <= "000000";
 
@@ -141,19 +142,19 @@ BEGIN
 
 		opcode <= "000100";
 
-		wait for CLK_period*3;
+		wait for CLK_period*4;
 
 		opcode <= "100011";
 
-		wait for CLK_period*3;
+		wait for CLK_period*4;
 
 		opcode <= "101011";
 
-		wait for CLK_period*3;
+		wait for CLK_period*4;
 
 		opcode <= "001111";
 
-		wait for CLK_period*3;
+		wait for CLK_period*4;
 
 		opcode <= "000010";
 
