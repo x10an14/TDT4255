@@ -115,7 +115,6 @@ BEGIN
 		assert (PC_OUT /= X"F0F0F0F0") report "Out changed when it shouldn't have =(... " severity error;
 		RESET <= '1';
 		
-
       wait;
    end process;
 
