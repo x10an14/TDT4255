@@ -59,7 +59,7 @@ ARCHITECTURE behavior OF processor_tb IS
    signal clk : std_logic := '0';
    signal reset : std_logic := '0';
    signal processor_enable : std_logic := '1';
-   signal imem_data_in : std_logic_vector(31 downto 0) := "";
+   signal imem_data_in : std_logic_vector(31 downto 0) := (others => '0');
    signal dmem_data_in : std_logic_vector(31 downto 0) := (others => '0');
    signal dmem_address : std_logic_vector(31 downto 0) := (others => '0');
 

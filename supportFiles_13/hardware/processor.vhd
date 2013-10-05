@@ -1,4 +1,4 @@
-library IEEE;
+								library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
@@ -13,7 +13,7 @@ entity processor is
 		imem_data_in			: in STD_LOGIC_VECTOR (IDATA_BUS - 1 downto 0);
 		dmem_data_in			: in STD_LOGIC_VECTOR (DDATA_BUS - 1 downto 0);
 		imem_address			: out STD_LOGIC_VECTOR (IADDR_BUS - 1 downto 0);
-		dmem_address			: in STD_LOGIC_VECTOR (DADDR_BUS - 1 downto 0);
+		dmem_address			: out STD_LOGIC_VECTOR (DADDR_BUS - 1 downto 0);
 		dmem_address_wr		: out STD_LOGIC_VECTOR (DADDR_BUS - 1 downto 0);
 		dmem_data_out			: out STD_LOGIC_VECTOR (DDATA_BUS - 1 downto 0);
 		dmem_write_enable		: out STD_LOGIC
@@ -22,23 +22,22 @@ end processor;
 
 architecture behave of processor is
 	 --component control unit
-		 component proc_control_module is
+		 component control_unit is
 				 port(
-							CLK : in STD_LOGIC;
-							RESET : in STD_LOGIC;
-							OpCode : in	STD_LOGIC_VECTOR (5 downto 0);
-							ALUOp : out ALU_OP_INPUT;
-							RegDst : out STD_LOGIC;
-							Branch : out STD_LOGIC;
-							MemRead : out STD_LOGIC;
-							MemtoReg : out STD_LOGIC;
-							MemWrite : out STD_LOGIC;
-							ALUSrc : out STD_LOGIC;
-							RegWrite : out STD_LOGIC;
-							Jump : out STD_LOGIC;
-							PCWriteEnb : out STD_LOGIC;
-							SRWriteEnb : out STD_LOGIC
-							);
+							CLK : IN	std_logic;
+							RESET : IN	std_logic;
+							OpCode : IN	std_logic_vector(5 downto 0);
+							ALUOp : OUT	ALU_OP_INPUT;
+							RegDst : OUT	std_logic;
+							Branch : OUT	std_logic;
+							MemRead : OUT	std_logic;
+							MemtoReg : OUT	std_logic;
+							MemWrite : OUT	std_logic;
+							ALUSrc : OUT	std_logic;
+							RegWrite : OUT	std_logic;
+							PCWriteEnb : OUT	std_logic
+					);
+							
 			end component proc_control_module;
 	--component ALU_control
 	--component ALU
@@ -91,24 +90,24 @@ architecture behave of processor is
 			signal state_vector : STD_LOGIC_VECTOR(1 downto 0) := "00"; -- to be removed
 --			main ALU related signals
 			signal main_alu_result, main_alu_RS, main_alu_RT : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
+--			shit to be dealt with later
+			signal aluOpInput : ALU_OP_INPUT;
 begin
 --			setting up control unit
-		 CU : proc_control_module
+		 CU : control_unit
 		 port map (
 				CLK => clk,
 				RESET => reset,
 				OpCode => imem_data_in (31 downto 26),
---				ALUOp => , --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
+				ALUOp => aluOpInput, --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
 				RegDst => RegDst,
 				Branch => Branch,
 				MemRead => MemRead,
 				MemtoReg => MemtoReg,
 				MemWrite => MemWrite,
 				ALUSrc => ALUSrc,
-				RegWrite => RegWrite --,
---				Jump => , --This has to be figured out too
---				PCWriteEnb => , --Same as above comment
---				SRWriteEnb => , --Same as above comment
+				RegWrite => RegWrite,
+				PCWriteEnb => PC_WR_EN --Same as above comment
 		 );
 
 --			setting up program counter circuit - PC itself, ALU that increments it

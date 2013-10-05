@@ -56,8 +56,7 @@ ARCHITECTURE behavior OF tb_control_unit IS
 				 ALUSrc : OUT	std_logic;
 				 RegWrite : OUT	std_logic;
 				 Jump : OUT	std_logic;
-				 PCWriteEnb : OUT	std_logic;
-				 SRWriteEnb : OUT	std_logic
+				 PCWriteEnb : OUT	std_logic
 				);
 		END COMPONENT;
 
@@ -69,16 +68,15 @@ ARCHITECTURE behavior OF tb_control_unit IS
 
  	--Outputs
 	 signal ALUOp : ALU_OP_INPUT;
-	 signal RegDst : std_logic;
-	 signal Branch : std_logic;
-	 signal MemRead : std_logic;
-	 signal MemtoReg : std_logic;
-	 signal MemWrite : std_logic;
-	 signal ALUSrc : std_logic;
-	 signal RegWrite : std_logic;
-	 signal Jump : std_logic;
-	 signal PCWriteEnb : std_logic;
-	 signal SRWriteEnb : std_logic;
+	 signal RegDst : std_logic := '0';
+	 signal Branch : std_logic := '0';
+	 signal MemRead : std_logic := '0';
+	 signal MemtoReg : std_logic := '0';
+	 signal MemWrite : std_logic := '0';
+	 signal ALUSrc : std_logic := '0';
+	 signal RegWrite : std_logic := '0';
+	 signal Jump : std_logic := '0';
+	 signal PCWriteEnb : std_logic := '0';
 
 	 -- Clock period definitions
 	 constant CLK_period : time := 10 ns;
@@ -99,8 +97,7 @@ BEGIN
 					ALUSrc => ALUSrc,
 					RegWrite => RegWrite,
 					Jump => Jump,
-					PCWriteEnb => PCWriteEnb,
-					SRWriteEnb => SRWriteEnb
+					PCWriteEnb => PCWriteEnb
 				);
 
 	 -- Clock process definitions
@@ -116,48 +113,22 @@ BEGIN
 	 -- Stimulus process
 	 stim_proc: process
 	 begin
-			-- hold reset state for 100 ns.
-		wait for 100 ns;
-		reset <= '1';
-		wait for CLK_period;
-		assert (reset /= '1') report "RESET IS NOT ONE!!" severity error;
-		wait for 75 ns; --Needed to let reset propagate through simulation
-		assert ((ALUOp.Op0 /= '0') and (ALUOp.Op1 /= '0') and (ALUOp.Op2 /= '0')) report "ALUOp not reset..." severity error;
-			
-			-- insert stimulus here
-			
+ 		reset <= '1';
+		wait for 50 ns; -- hold reset for 50 ns
 		reset <= '0';
-
-		wait for CLK_period*3;
-
-		opcode <= "000000";
-
-		wait for CLK_period;
-		assert (PCWriteEnb /= '1') report "PCWriteEnb is not 1..." severity error;
-		assert (RegDst /= '1') report "RegDst is not 1..." severity error;
-		assert (RegWrite /= '1') report "RegWrite is not 1..." severity error;
-		assert (ALUOp.Op1 /= '1') report "ALUOp.Op1 is not 1..." severity error;
 		
-		wait for CLK_period*2;
-
-		opcode <= "000100";
-
-		wait for CLK_period*4;
-
-		opcode <= "100011";
-
-		wait for CLK_period*4;
-
-		opcode <= "101011";
-
-		wait for CLK_period*4;
-
-		opcode <= "001111";
-
-		wait for CLK_period*4;
-
-		opcode <= "000010";
-
+		wait for CLK_period;
+--		assert ((ALUOp.Op0 = '0') and (ALUOp.Op1 = '0') and (ALUOp.Op2 = '0')) report "ALUOp not reset" severity error;
+		-- insert stimulus here
+			
+		opcode <= "000000";
+		wait for CLK_period;
+--		assert (PCWriteEnb = '1') report "PCWriteEnb is not 1..." severity error;
+--		assert (RegDst = '1') report "RegDst is not 1..." severity error;
+--		assert (RegWrite = '1') report "RegWrite is not 1..." severity error;
+--		assert (ALUOp.Op1 = '1') report "ALUOp.Op1 is not 1..." severity error;
+		
+		
 			wait;
 	 end process;
 
