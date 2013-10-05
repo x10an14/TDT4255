@@ -1,0 +1,526 @@
+# //  ModelSim SE 6.6d Nov  1 2010 
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do \{do \{processor_tb.fdo\}\} 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlft1tg32h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1tg32h
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-19) Failed to access library 'work.{processor_tb' at "work.{processor_tb".
+# No such file or directory. (errno = ENOENT)
+# ** Error: Library work.{processor_tb not found.
+# Error loading design
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/com.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity com
+# -- Compiling architecture behavioral of com
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/memory.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity memory
+# -- Compiling architecture behavioral of memory
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_toplevel
+# -- Compiling architecture behavior of tb_toplevel
+vcom -reportprogress 30 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity toplevel
+# -- Compiling architecture behavioral of toplevel
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling architecture behavioral of mips_functions_pkg
+# ** Error: (vcom-11) Could not find work.mips_functions_pkg.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd(52): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module
+# -- Compiling architecture behavioral of proc_control_module
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module_tb
+# -- Compiling architecture behavior of proc_control_module_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(41): Labels do not match: 'control_unit' and 'proc_control_module'.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity program_counter
+# -- Compiling architecture behavioral of program_counter
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender
+# -- Compiling architecture behavioral of sign_extender
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender_tb
+# -- Compiling architecture behavior of sign_extender_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity tb_control_unit
+# -- Compiling architecture behavior of tb_control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_program_counter
+# -- Compiling architecture behavior of tb_program_counter
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling architecture behavioral of mips_functions_pkg
+# ** Error: (vcom-11) Could not find work.mips_functions_pkg.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd(52): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module
+# -- Compiling architecture behavioral of proc_control_module
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity proc_control_module_tb
+# -- Compiling architecture behavior of proc_control_module_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(41): Labels do not match: 'control_unit' and 'proc_control_module'.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity program_counter
+# -- Compiling architecture behavioral of program_counter
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender
+# -- Compiling architecture behavioral of sign_extender
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender_tb
+# -- Compiling architecture behavior of sign_extender_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity tb_control_unit
+# -- Compiling architecture behavior of tb_control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_program_counter
+# -- Compiling architecture behavior of tb_program_counter
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(186): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(190): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): Target of signal assignment is not a signal.
+# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): Target of signal assignment is not a signal.
+# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): Illegal target for signal assignment.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): Target of signal assignment is not a signal.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(192): Illegal name (type declaration "alu_op_input") in expression.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(194): VHDL Compiler exiting
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vsim work.processor_tb
+# vsim work.processor_tb 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlftx5ij49".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftx5ij49
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd(94): (vopt-1134) Incompatible modes for port "dmem_address" in component "processor" when binding to entity "processor".
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(23): Vopt Compiler exiting
+# Error loading design
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vsim work.processor_tb
+# vsim work.processor_tb 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlft1eervi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1eervi
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading work.processor_tb(behavior)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_data_out(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+add wave sim:/processor_tb/*
+run
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+restat
+# invalid command name "restat"
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading work.processor_tb(behavior)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+run
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading work.processor_tb(behavior)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+run
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading work.processor_tb(behavior)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+run
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading work.processor_tb(behavior)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+#         Region: /processor_tb
+run

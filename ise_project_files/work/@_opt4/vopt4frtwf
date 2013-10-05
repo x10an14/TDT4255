@@ -1,0 +1,691 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\fadeev\Documents\TDT4255\ise_project_files
+T_opt1
+Z1 V5]kzozIjLfeW0I>3b?3H@3
+Z2 04 15 8 work tb_control_unit behavior 1
+Z3 =1-00215a611f14-5250379e-377-394
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt1
+Z6 OE;O;6.6d;45
+Z7 dC:\Users\fadeev\Documents\TDT4255\ise_project_files
+T_opt3
+Z8 VBGS[TL4oFgc;cP:QGR5`92
+Z9 04 6 8 work alu_tb behavior 1
+Z10 =3-00215a611f14-52504acc-9b-bc4
+R4
+Z11 n@_opt3
+R6
+R7
+T_opt4
+Z12 VSm39oS88V>AYTC083?XPS3
+Z13 04 12 8 work processor_tb behavior 1
+Z14 =5-00215a611f14-52505388-316-1030
+R4
+Z15 n@_opt4
+R6
+R7
+Eadder
+Z16 w1380977869
+Z17 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z18 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+R7
+Z19 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/adder.vhd
+Z20 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/adder.vhd
+l0
+L33
+Z21 V9UP27P3nThNk5^h[BLcUI2
+Z22 OE;C;6.6d;45
+32
+Z23 o-work work
+Z24 tExplicit 1
+Z25 !s100 MC16gUE;:VACLmO2:0I8g3
+Abehavioral
+R17
+R18
+Z26 DEx4 work 5 adder 0 22 9UP27P3nThNk5^h[BLcUI2
+l58
+L44
+Z27 VSeNOR]EmTDI02;HSNWn`H3
+R22
+32
+Z28 Mx2 4 ieee 14 std_logic_1164
+Z29 Mx1 4 ieee 11 numeric_std
+R23
+R24
+Z30 !s100 ;4cW_;;^@`bD0ZjWIPoMU2
+Ealu
+R16
+Z31 DPx4 work 17 mips_constant_pkg 0 22 ]bjZDQH;XV^QVRoK6<ng@1
+R17
+R18
+R7
+Z32 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu.vhd
+Z33 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu.vhd
+l0
+L36
+Z34 VUIgodI[^E;6eN<:`Uf7[a3
+R22
+32
+R23
+R24
+Z35 !s100 m:z=BJPEiYaD=?7fWPQIc0
+Abehavioral
+Z36 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 10 full_adder 0 22 f<mIQ6T_]MOcL5a;^2[g72
+Z37 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 8 alu_1bit 0 22 h^D@6WX4SMabTcIXeZ@VS3
+Z38 DPx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 17 mips_constant_pkg 0 22 ]bjZDQH;XV^QVRoK6<ng@1
+Z39 DPx22 C:\modeltech_6.6d\ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z40 DPx22 C:\modeltech_6.6d\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z41 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 3 alu 0 22 UIgodI[^E;6eN<:`Uf7[a3
+32
+Z42 Mx3 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+Z43 Mx2 22 C:\modeltech_6.6d\ieee 11 numeric_std
+Z44 Mx1 56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 17 mips_constant_pkg
+l68
+L47
+Z45 V7[GI>oPJJb3Ai9EaAchQ=2
+R22
+R23
+R24
+Z46 !s100 23UcV149`ZXOcFo6WG]Oc2
+Ealu_1bit
+R16
+R18
+R7
+Z47 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd
+Z48 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd
+l0
+L32
+Z49 Vh^D@6WX4SMabTcIXeZ@VS3
+R22
+32
+R23
+R24
+Z50 !s100 `LFFVnEK1Vb6EVYnoM]AT3
+Abehavioral
+R18
+Z51 DEx4 work 8 alu_1bit 0 22 h^D@6WX4SMabTcIXeZ@VS3
+l65
+L49
+Z52 VN3>Z>UhW;@1mH;mbYm4J=0
+R22
+32
+Z53 Mx1 4 ieee 14 std_logic_1164
+R23
+R24
+Z54 !s100 IRM97U]?SoB`Y;<850An71
+Ealu_control
+Z55 w1380994013
+R31
+R17
+R18
+R7
+Z56 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+Z57 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+l0
+L8
+Z58 VRaiRiWOBWZYV@b`FZT36N2
+R22
+32
+R23
+R24
+Z59 !s100 1OcAhH_?L^<S]DWZ;?8af0
+Abehavioral
+R31
+R17
+R18
+Z60 DEx4 work 11 alu_control 0 22 RaiRiWOBWZYV@b`FZT36N2
+l20
+L18
+Z61 VDVNIEzf503Y1jG5NT_PfB3
+R22
+32
+Z62 Mx3 4 ieee 14 std_logic_1164
+Z63 Mx2 4 ieee 11 numeric_std
+Z64 Mx1 4 work 17 mips_constant_pkg
+R23
+R24
+Z65 !s100 eU]Hz79?;2;o6m:6eDmE53
+Ealu_tb
+Z66 w1380993732
+R31
+R18
+R7
+Z67 8C:/Users/fadeev/Documents/TDT4255/ise_project_files/alu_tb.vhd
+Z68 FC:/Users/fadeev/Documents/TDT4255/ise_project_files/alu_tb.vhd
+l0
+L37
+Z69 V]?CXe;?LW^CBVmoIach>O3
+R22
+32
+R23
+R24
+Z70 !s100 RCbIKdoe:kO4c8o:Go=X[2
+Abehavior
+R31
+R18
+Z71 DEx4 work 6 alu_tb 0 22 ]?CXe;?LW^CBVmoIach>O3
+l72
+L40
+Z72 VDSzYz8f@0oeVzF:b>T70P1
+R22
+32
+R28
+R64
+R23
+R24
+Z73 !s100 GV;2A@mE9Y7^i3XE4ILz30
+Ecom
+R16
+Z74 DPx4 ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+Z75 DPx4 ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+R18
+R7
+Z76 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/com.vhd
+Z77 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/com.vhd
+l0
+L33
+Z78 VY2WL=`kS59e5X1E1`Ylh93
+R22
+32
+R23
+R24
+Z79 !s100 nB]L6F:Z_>Fk:FA0o5KI^0
+Abehavioral
+R74
+R75
+R18
+Z80 DEx4 work 3 com 0 22 Y2WL=`kS59e5X1E1`Ylh93
+l77
+L60
+Z81 VnH`c:Z0m^za``o5QQmfY82
+R22
+32
+R62
+Z82 Mx2 4 ieee 18 std_logic_unsigned
+Z83 Mx1 4 ieee 15 std_logic_arith
+R23
+R24
+Z84 !s100 QB>Q3bm6HI;g`;cCHfbzN1
+Econtrol_unit
+Z85 w1380989298
+R31
+R17
+R18
+R7
+Z86 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
+Z87 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
+l0
+L8
+Z88 V5<RfKVaS8BocaZ;HG_Cnf1
+R22
+32
+R23
+R24
+Z89 !s100 DdAX6lUYa1oUNbk_>Fb7Q1
+Abehavioral
+R31
+R17
+R18
+Z90 DEx4 work 12 control_unit 0 22 5<RfKVaS8BocaZ;HG_Cnf1
+l32
+L27
+Z91 Vb><:0;=O8aoNoiMjPn55c0
+R22
+32
+R62
+R63
+R64
+R23
+R24
+Z92 !s100 zX]neU@zIg4Rf:S?3aRdh1
+Efull_adder
+R16
+R17
+R18
+R7
+Z93 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd
+Z94 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd
+l0
+L33
+Z95 Vf<mIQ6T_]MOcL5a;^2[g72
+R22
+32
+R23
+R24
+Z96 !s100 ^`l^^Ui_Q1V>EaR0gz7AP3
+Abehavioral
+R17
+R18
+Z97 DEx4 work 10 full_adder 0 22 f<mIQ6T_]MOcL5a;^2[g72
+l47
+L43
+Z98 VB:2iIo9QY]f^i3nn4;Y3I1
+R22
+32
+R28
+R29
+R23
+R24
+Z99 !s100 [8z9P?GWKmfGXn^enXj:;0
+Ememory
+R16
+R17
+R18
+R7
+Z100 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/memory.vhd
+Z101 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/memory.vhd
+l0
+L33
+Z102 V]KfEEzVSzGnhEb^Ykg@m?1
+R22
+32
+R23
+R24
+Z103 !s100 _enK[N3VAJ`3Yj>Ygie?90
+Abehavioral
+R17
+R18
+Z104 DEx4 work 6 memory 0 22 ]KfEEzVSzGnhEb^Ykg@m?1
+l54
+L46
+Z105 V;6;9Hd9kJK]4[f3oibjlG3
+R22
+32
+R28
+R29
+R23
+R24
+Z106 !s100 jG<?UWf^GTlOcK]3_FZ8k0
+Pmips_constant_pkg
+R40
+32
+Z107 Mx1 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+R16
+R7
+Z108 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd
+Z109 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd
+l0
+L10
+Z110 V]bjZDQH;XV^QVRoK6<ng@1
+R22
+R23
+R24
+Z111 !s100 6K_PRLRNEb;TD4nNkzkXC2
+Eproc_control_module
+R16
+R18
+R7
+Z112 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
+Z113 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
+l0
+L32
+Z114 Vb_1?971J6bd4[Gi3mafY53
+R22
+32
+R23
+R24
+Z115 !s100 1WcI=:DNgj]_MV?_Y`U_X0
+Abehavioral
+R18
+Z116 DEx4 work 19 proc_control_module 0 22 b_1?971J6bd4[Gi3mafY53
+l52
+L49
+Z117 V>k2J`0IeYi`k=8gCHJKQX1
+R22
+32
+R53
+R23
+R24
+Z118 !s100 2^oGi=Cd8S8``bmz[@I;d1
+Eproc_control_module_tb
+R16
+R18
+R7
+Z119 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
+Z120 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
+l0
+L35
+Z121 V>@^<DfOCHB@Vf<il<TS8N3
+R22
+32
+R23
+R24
+Z122 !s100 LBadBO=DN?4G2ZT11SLo52
+Abehavior
+R18
+Z123 DEx4 work 22 proc_control_module_tb 0 22 >@^<DfOCHB@Vf<il<TS8N3
+l83
+L38
+Z124 VRQDldjQ;9WbHlUVT`:jzW0
+R22
+32
+R53
+R23
+R24
+Z125 !s100 22d^C8ICVNM?@fllDFSDQ1
+Eprocessor
+Z126 w1380995472
+R31
+R17
+R18
+R7
+Z127 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+Z128 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+l0
+L8
+Z129 VS<N[7CI11G[IV]7hj3mG40
+R22
+32
+R23
+R24
+Z130 !s100 n0XoZOP[e:KKm2l0MGHLl1
+Abehave
+R31
+R17
+R18
+Z131 DEx4 work 9 processor 0 22 S<N[7CI11G[IV]7hj3mG40
+l106
+L23
+Z132 Va4fEbAa[O2iG8GeBAPmlD3
+R22
+32
+R62
+R63
+R64
+R23
+R24
+Z133 !s100 8EJ4L?ag@zR;Z>BmI0YL11
+Eprocessor_tb
+Z134 w1380995594
+R18
+R7
+Z135 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+Z136 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+l0
+L35
+Z137 V7K]SjWP6Mzk1;`mSa30Lc1
+R22
+32
+R23
+R24
+Z138 !s100 H3c@5zDd_JT[1PBlSQP3:1
+Abehavior
+Z139 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 11 alu_control 0 22 RaiRiWOBWZYV@b`FZT36N2
+Z140 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 13 register_file 0 22 lknUdZX7Jn1j:CL1CHNDz2
+R41
+Z141 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 15 program_counter 0 22 4c4E=TNn`>;_=YNJL4_YU2
+Z142 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 12 control_unit 0 22 5<RfKVaS8BocaZ;HG_Cnf1
+R38
+R39
+Z143 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 9 processor 0 22 S<N[7CI11G[IV]7hj3mG40
+R40
+Z144 DEx56 C:\Users\fadeev\Documents\TDT4255\ise_project_files\work 12 processor_tb 0 22 7K]SjWP6Mzk1;`mSa30Lc1
+32
+R42
+R43
+R44
+l80
+L38
+Z145 V57obiD9[7noPdL7Z@DU7e3
+R22
+R23
+R24
+Z146 !s100 `9Mz[2n]8=]C7b9aZbY@O0
+Eprogram_counter
+R16
+R31
+R17
+R18
+R7
+Z147 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
+Z148 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
+l0
+L9
+Z149 V4c4E=TNn`>;_=YNJL4_YU2
+R22
+32
+R23
+R24
+Z150 !s100 `V^^gh1HXTGLXY25^[?jA1
+Abehavioral
+R31
+R17
+R18
+Z151 DEx4 work 15 program_counter 0 22 4c4E=TNn`>;_=YNJL4_YU2
+l22
+L19
+Z152 VP13CekHS6ToGLG=4V^gCf1
+R22
+32
+R62
+R63
+R64
+R23
+R24
+Z153 !s100 cP6DJh<N:N2U4^WmHi>Vj0
+Eregister_file
+R16
+R31
+R17
+R18
+R7
+Z154 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd
+Z155 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd
+l0
+L36
+Z156 VlknUdZX7Jn1j:CL1CHNDz2
+R22
+32
+R23
+R24
+Z157 !s100 27PSd2dmMZZMX<nF`i5@_2
+Abehavioral
+R31
+R17
+R18
+Z158 DEx4 work 13 register_file 0 22 lknUdZX7Jn1j:CL1CHNDz2
+l58
+L51
+Z159 VNaB^;H]TN6g`VFf@;THj;3
+R22
+32
+R62
+R63
+R64
+R23
+R24
+Z160 !s100 68dUD_lXJ4MB7c9IQVkD^2
+Esign_extender
+R16
+R18
+R7
+Z161 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
+Z162 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
+l0
+L32
+Z163 VIMF4Wk1@1AODg`KLN=o3b3
+R22
+32
+R23
+R24
+Z164 !s100 A[CP;>H;0?in;D:2A_Km=2
+Abehavioral
+R18
+Z165 DEx4 work 13 sign_extender 0 22 IMF4Wk1@1AODg`KLN=o3b3
+l41
+L39
+Z166 VK`RX^9`[Ql>=dLMElhM]A2
+R22
+32
+R53
+R23
+R24
+Z167 !s100 J7Pz7[Q;EfL]<R><^Bl5g2
+Esign_extender_tb
+R16
+R18
+R7
+Z168 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
+Z169 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
+l0
+L35
+Z170 V:zYFamO[;5JoWQhf7HFMI1
+R22
+32
+R23
+R24
+Z171 !s100 =mGdSUc<4l?DgQ6zjf<LR0
+Abehavior
+R18
+Z172 DEx4 work 16 sign_extender_tb 0 22 :zYFamO[;5JoWQhf7HFMI1
+l60
+L38
+Z173 Vf6hYo7Y1>O]e@`^P9_Y4M1
+R22
+32
+R53
+R23
+R24
+Z174 !s100 ob8OD;PdUUA21NYFl2zlQ3
+Esimple_multiplexer
+R16
+R18
+R7
+Z175 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
+Z176 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
+l0
+L32
+Z177 VUV=LThIPh4YPbe^Az=UTi0
+R22
+32
+R23
+R24
+Z178 !s100 `FUY?K]8QJFU_kL<md3dJ0
+Abehavioral
+R18
+Z179 DEx4 work 18 simple_multiplexer 0 22 UV=LThIPh4YPbe^Az=UTi0
+l42
+L40
+Z180 V_fVES[JeDj;fPkRN2VSZ30
+R22
+32
+R53
+R23
+R24
+Z181 !s100 b5PHgi:k<R4@JKzWDL[6F2
+Etb_control_unit
+Z182 w1380988819
+R31
+R18
+R7
+Z183 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+Z184 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+l0
+L38
+Z185 VDoQVY8Xoz^hF6c2NYK82U3
+R22
+32
+R23
+R24
+Z186 !s100 BIJ[VP=QMn4TXEA4XVZVH1
+Abehavior
+R31
+R18
+Z187 DEx4 work 15 tb_control_unit 0 22 DoQVY8Xoz^hF6c2NYK82U3
+l84
+L41
+Z188 VNHE5e[;_cRnmF4;1?_NPK2
+R22
+32
+R28
+R64
+R23
+R24
+Z189 !s100 b]kHWJKk[A2k[=]AHFBIC0
+Etb_program_counter
+R16
+R18
+R7
+Z190 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
+Z191 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
+l0
+L35
+Z192 V5j:6ImC?Of_J4GiW_JAQl3
+R22
+32
+R23
+R24
+Z193 !s100 :kmE<PlIm55>DKz[K3<Gg3
+Abehavior
+R18
+Z194 DEx4 work 18 tb_program_counter 0 22 5j:6ImC?Of_J4GiW_JAQl3
+l65
+L38
+Z195 VL<GTLW^2[2KA1DJN=dm;E2
+R22
+32
+R53
+R23
+R24
+Z196 !s100 H6=URG9V>FAccU`QeXT[;1
+Etb_toplevel
+R16
+R18
+R7
+Z197 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd
+Z198 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd
+l0
+L32
+Z199 VWaX8GGfKiWY`PMJA3[^iW3
+R22
+32
+R23
+R24
+Z200 !s100 eEB4YbbN=XPPgjJc6gb=A2
+Abehavior
+R18
+Z201 DEx4 work 11 tb_toplevel 0 22 WaX8GGfKiWY`PMJA3[^iW3
+l113
+L35
+Z202 V@^Ecz:Q7D615RPfH7Ub9K1
+R22
+32
+R53
+R23
+R24
+Z203 !s100 HVi=:J0cG4PCkD>fXU8ij3
+Etoplevel
+R16
+R31
+R17
+R18
+R7
+Z204 8C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd
+Z205 FC:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd
+l0
+L36
+Z206 V5ghobM_1TNKGjKGZfZJJL1
+R22
+32
+R23
+R24
+Z207 !s100 ^50ZPI`ZT2AI]PNIG<B:X0
+Abehavioral
+R31
+R17
+R18
+Z208 DEx4 work 8 toplevel 0 22 5ghobM_1TNKGjKGZfZJJL1
+l122
+L53
+Z209 VlA0;P?zcVNfT8:8QZ7oYK1
+R22
+32
+R62
+R63
+R64
+R23
+R24
+Z210 !s100 Ko@S6WdE?IHHYbjW1`eYk1

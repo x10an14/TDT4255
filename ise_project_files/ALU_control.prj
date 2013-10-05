@@ -1,0 +1,2 @@
+vhdl work "../supportFiles_13/hardware/supplied/mips_constant_pkg.vhd"
+vhdl work "../supportFiles_13/hardware/ALU_control.vhd"

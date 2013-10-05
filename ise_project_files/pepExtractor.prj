@@ -1,0 +1,4 @@
+work	"../supportFiles_13/hardware/supplied/alu.vhd"
+work	"../supportFiles_13/hardware/supplied/alu_1bit.vhd"
+work	"../supportFiles_13/hardware/supplied/full_adder.vhd"
+work	"../supportFiles_13/hardware/supplied/mips_constant_pkg.vhd"

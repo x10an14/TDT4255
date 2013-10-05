@@ -21,8 +21,99 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="ise_project_files.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="ALU_control.fdo"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU_control.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALU_control.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ALU_control.xst"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="processor_tb.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="tb_control_unit.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="tb_toplevel.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1380978016" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1380978016">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380994904" xil_pn:in_ck="1829391032839165661" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1380994904">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/ALU_control.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/control_unit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/mips_functions_pkg.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/proc_control_module.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/proc_control_module_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/processor.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/processor_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/program_counter.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/sign_extender.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/sign_extender_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/simple_multiplexer.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/adder.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/alu.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/alu_1bit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/com.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/full_adder.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/memory.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/mips_constant_pkg.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/register_file.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/tb_toplevel.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/toplevel.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/tb_control_unit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/tb_program_counter.vhd"/>
+      <outfile xil_pn:name="alu_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1380994904" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8774242310017619531" xil_pn:start_ts="1380994904">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380994904" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8299669813291917513" xil_pn:start_ts="1380994904">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380978016" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4697832541985227280" xil_pn:start_ts="1380978016">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380994904" xil_pn:in_ck="1829391032839165661" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1380994904">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/ALU_control.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/control_unit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/mips_functions_pkg.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/proc_control_module.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/proc_control_module_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/processor.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/processor_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/program_counter.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/sign_extender.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/sign_extender_tb.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/simple_multiplexer.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/adder.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/alu.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/alu_1bit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/com.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/full_adder.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/memory.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/mips_constant_pkg.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/register_file.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/tb_toplevel.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/supplied/toplevel.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/tb_control_unit.vhd"/>
+      <outfile xil_pn:name="../supportFiles_13/hardware/tb_program_counter.vhd"/>
+      <outfile xil_pn:name="alu_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1380994905" xil_pn:in_ck="1829391032839165661" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1380994904">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="processor_tb.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
 
 </generated_project>
