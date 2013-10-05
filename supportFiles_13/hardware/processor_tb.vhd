@@ -47,7 +47,7 @@ ARCHITECTURE behavior OF processor_tb IS
          imem_data_in : IN  std_logic_vector(31 downto 0);
          dmem_data_in : IN  std_logic_vector(31 downto 0);
          imem_address : OUT  std_logic_vector(31 downto 0);
-         dmem_address : IN  std_logic_vector(31 downto 0);
+         dmem_address : OUT  std_logic_vector(31 downto 0);
          dmem_address_wr : OUT  std_logic_vector(31 downto 0);
          dmem_data_out : OUT  std_logic_vector(31 downto 0);
          dmem_write_enable : OUT  std_logic
@@ -71,6 +71,11 @@ ARCHITECTURE behavior OF processor_tb IS
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
+	
+	-- signals needed for testing
+	signal addi_1_1_f : std_logic_vector(31 downto 0) := "1111" & "000000000000" 
+									& "10000" & "10000" & "001000"; --add F to reg 1
+									
  
 BEGIN
  
@@ -102,12 +107,14 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
+		reset <= '1';
       wait for 100 ns;	
+		reset <= '0';
 
-      wait for clk_period*10;
+      wait for clk_period*2;
 
       -- insert stimulus here 
-
+		imem_data_in <= addi_1_1_f;
       wait;
    end process;
 

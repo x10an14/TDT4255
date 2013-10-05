@@ -38,8 +38,17 @@ architecture behave of processor is
 							PCWriteEnb : OUT	std_logic
 					);
 							
-			end component proc_control_module;
+			end component control_unit;
 	--component ALU_control
+		component ALU_control is
+				port(
+					CLK			: in STD_LOGIC;
+					RESET		: in STD_LOGIC;
+					FUNC		: in STD_LOGIC_VECTOR (5 downto 0);
+					ALUOp		: in ALU_OP_INPUT;
+					ALU_FUNC	: out ALU_INPUT
+				);
+		end component ALU_control;
 	--component ALU
 		 component ALU is
 				 generic (N: NATURAL);
@@ -84,12 +93,14 @@ architecture behave of processor is
 			signal alu_output_to_PC, PC_output, PC_increment_signal : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
 			signal PC_WR_EN : STD_LOGIC := '0';
 			signal alu_in : ALU_INPUT;
-			signal alu_flags : ALU_FLAGS;
+			signal pc_alu_flags : ALU_FLAGS;
 --			control unit related signals
 			signal RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
 			signal state_vector : STD_LOGIC_VECTOR(1 downto 0) := "00"; -- to be removed
 --			main ALU related signals
-			signal main_alu_result, main_alu_RS, main_alu_RT : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
+			signal main_alu_result, main_alu_X, main_alu_Y : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
+			signal main_alu_input : ALU_INPUT;
+			signal main_alu_flags : ALU_FLAGS;
 --			shit to be dealt with later
 			signal aluOpInput : ALU_OP_INPUT;
 begin
@@ -120,12 +131,11 @@ begin
 				 PC_IN => alu_output_to_PC,
 				 PC_OUT => PC_output
 		 );
-
-		 alu_in.Op0 <= '1';
+		 alu_in.Op0 <= '0';
 		 alu_in.Op1 <= '1';
-		 alu_in.Op2 <= '1';
-		 alu_in.Op3 <= '1';
-		 alu_flags.Carry <= '0';
+		 alu_in.Op2 <= '0';
+		 alu_in.Op3 <= '0';
+		 pc_alu_flags.Carry <= '0';
 
 		 PC_incrementer : ALU
 		 generic map (
@@ -136,7 +146,7 @@ begin
 				 Y => PC_output,
 				 ALU_IN => alu_in,
 				 R => alu_output_to_PC,
-				 FLAGS => alu_flags
+				 FLAGS => pc_alu_flags
 		 );
 
 --			setting up connection to instruction memory (using imem_data_in and imem_address processor-ports)
@@ -153,9 +163,34 @@ begin
 				 RT_ADDR => imem_data_in (20 downto 16),
 				 RD_ADDR => imem_data_in (15 downto 11),
 				 WRITE_DATA => main_alu_result,
-				 RS => main_alu_RS,
-				 RT => main_alu_RT
+				 RS => main_alu_X,
+				 RT => main_alu_Y
 		 );
 
+--			setting up main ALU
+		dmem_data_out <= main_alu_result;
+
+		ALU_main_unit : alu
+		generic map (N => 32)
+		port map (
+			X => main_alu_X,
+			Y => main_alu_Y,
+			ALU_IN => main_alu_input,
+			R => main_alu_result,
+			FLAGS => main_alu_flags
+		);
+		
+		aluOpInput.Op0 <= '0'; 
+		aluOpInput.Op1 <= '0';
+		aluOpInput.Op2 <= '0';
+		
+		ALU_control_unit : ALU_control
+		port map (
+			CLK => clk,
+			RESET => reset,
+			FUNC => "000000",
+			ALUOp => aluOpInput,
+			ALU_FUNC => main_alu_input
+		);
 
 end behave;

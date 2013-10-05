@@ -64,6 +64,12 @@ begin
 						MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
 						RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
 						case OpCode is
+							when "000100" =>	--addi-instruction
+								ALUSrc 		<= '1';
+								ALUOp.Op0	<= '0';
+								ALUOp.Op1	<= '0';
+								ALUOp.Op2	<= '0';
+								RegWrite		<= '1';
 							when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 								RegDst		<= '1';
 								ALUOp.Op0	<= '0';
