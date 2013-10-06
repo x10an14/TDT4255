@@ -8,16 +8,1745 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# vsim -do \{do \{processor_tb.fdo\}\} 
+# vsim -do \{do \{tb_toplevel.fdo\}\} 
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 2
-#           Attempting to use alternate WLF file "./wlft1tg32h".
+#           Attempting to use alternate WLF file "./wlftn1fwy3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft1tg32h
+#           Using alternate file: ./wlftn1fwy3
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Error: (vopt-19) Failed to access library 'work.{processor_tb' at "work.{processor_tb".
+# ** Error: (vopt-19) Failed to access library 'work.{tb_toplevel' at "work.{tb_toplevel".
 # No such file or directory. (errno = ENOENT)
-# ** Error: Library work.{processor_tb not found.
+# ** Error: Library work.{tb_toplevel not found.
+# Error loading design
+vsim work.tb_toplevel
+# vsim work.tb_toplevel 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlftvan5k9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvan5k9
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
+# Loading work.alu(behavioral)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_toplevel/uut/mips_sc_processor/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (X) to the signal network.
+#         Region: /tb_toplevel
+# ** Warning: (vsim-8683) Uninitialized out port /tb_toplevel/uut/mips_sc_processor/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (X) to the signal network.
+#         Region: /tb_toplevel
+add wave \
+{sim:/tb_toplevel/uut/tdt4255_com/command } 
+add wave \
+{sim:/tb_toplevel/clk } 
+add wave \
+{sim:/tb_toplevel/reset } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_output } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_wr_en } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_result } \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_x } \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_y } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_address } \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_address_wr } \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_data_in } \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_data_out } \
+{sim:/tb_toplevel/uut/mips_sc_processor/imem_address } \
+{sim:/tb_toplevel/uut/mips_sc_processor/imem_data_in } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/alu_output_to_pc } \
+{sim:/tb_toplevel/uut/mips_sc_processor/aluopinput } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/cu/state } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/cu/opcode } 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 80 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 140 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 340 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4420 ns  Iteration: 2  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4440 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4460 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4480 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4500 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4520 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4540 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4560 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4580 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4600 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4620 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4640 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4660 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4680 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4700 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4720 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4740 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4760 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4780 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4800 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4820 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4840 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4860 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4880 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4900 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4920 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4940 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4960 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4980 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 us  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5020 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5040 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5060 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5080 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5100 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5120 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5140 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5160 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5180 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5200 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /tb_toplevel/uut/mips_sc_processor/dmem_address(31 downto 0) has no driver.
+# This port will contribute value (X) to the signal network.
+#         Region: /tb_toplevel
+# ** Warning: (vsim-8683) Uninitialized out port /tb_toplevel/uut/mips_sc_processor/dmem_address_wr(31 downto 0) has no driver.
+# This port will contribute value (X) to the signal network.
+#         Region: /tb_toplevel
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 80 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 140 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 340 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 780 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 820 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1060 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1260 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1300 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1500 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1540 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1740 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1780 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1980 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2220 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2260 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2460 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2500 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2700 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2740 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2940 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2980 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3180 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3220 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3420 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3460 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3660 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3700 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3900 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3940 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4020 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4040 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4060 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4080 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4100 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4120 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4140 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4160 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4180 ns  Iteration: 3  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4200 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4220 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4240 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4260 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4280 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4300 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4320 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4340 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4360 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4380 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4400 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4420 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4420 ns  Iteration: 2  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4440 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4440 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4460 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4460 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4480 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4480 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4500 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4500 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4520 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4520 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4540 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4540 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4560 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4560 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4580 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4580 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4600 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4600 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4620 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4620 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4640 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4640 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4660 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4660 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4680 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4680 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4700 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4700 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4720 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4720 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4740 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4740 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4760 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4760 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4780 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4780 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4800 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4800 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4820 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4820 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4840 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4840 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4860 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4860 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4880 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4880 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4900 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4900 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4920 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4920 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4940 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4940 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4960 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4960 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4980 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4980 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 us  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 us  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/com.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity com
+# -- Compiling architecture behavioral of com
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/memory.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity memory
+# -- Compiling architecture behavioral of memory
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_toplevel
+# -- Compiling architecture behavior of tb_toplevel
+vcom -reportprogress 30 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity toplevel
+# -- Compiling architecture behavioral of toplevel
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity program_counter
+# -- Compiling architecture behavioral of program_counter
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender
+# -- Compiling architecture behavioral of sign_extender
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extender_tb
+# -- Compiling architecture behavior of sign_extender_tb
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity simple_multiplexer
+# -- Compiling architecture behavioral of simple_multiplexer
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity tb_control_unit
+# -- Compiling architecture behavior of tb_control_unit
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_program_counter
+# -- Compiling architecture behavior of tb_program_counter
+vsim work.tb_toplevel
+# vsim work.tb_toplevel 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlftf7shhr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf7shhr
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Warning: [1] C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(175): (vopt-3473) Component instance "pc_incrementer : alu" is not bound.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(247): (vopt-1127) Entity work.alu was not selected for default binding because it is out of date relative to dependency work.mips_constant_pkg. 
+# ** Warning: [1] C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(247): (vopt-3473) Component instance "alu_main_unit : alu" is not bound.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd(18): Vopt Compiler exiting
+# Error loading design
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behave of processor
+vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+vsim work.tb_toplevel
+# vsim work.tb_toplevel 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlftkc1g0k".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkc1g0k
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Warning: [1] C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(175): (vopt-3473) Component instance "pc_incrementer : alu" is not bound.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(247): (vopt-1127) Entity work.alu was not selected for default binding because it is out of date relative to dependency work.mips_constant_pkg. 
+# ** Warning: [1] C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(247): (vopt-3473) Component instance "alu_main_unit : alu" is not bound.
+# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd(18): Vopt Compiler exiting
 # Error loading design
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/supplied/adder.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
@@ -105,26 +1834,6 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package mips_constant_pkg
 # -- Compiling entity control_unit
 # -- Compiling architecture behavioral of control_unit
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Compiling architecture behavioral of mips_functions_pkg
-# ** Error: (vcom-11) Could not find work.mips_functions_pkg.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd(52): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity proc_control_module
-# -- Compiling architecture behavioral of proc_control_module
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity proc_control_module_tb
-# -- Compiling architecture behavior of proc_control_module_tb
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
@@ -133,13 +1842,6 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package mips_constant_pkg
 # -- Compiling entity processor
 # -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(41): Labels do not match: 'control_unit' and 'proc_control_module'.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
@@ -185,14 +1887,76 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package std_logic_1164
 # -- Compiling entity tb_program_counter
 # -- Compiling architecture behavior of tb_program_counter
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity alu_control
-# -- Compiling architecture behavioral of alu_control
+vsim work.tb_toplevel
+# vsim work.tb_toplevel 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 2
+#           Attempting to use alternate WLF file "./wlfttb6ay4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttb6ay4
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
+# Loading work.alu(behavioral)#1
+add wave \
+{sim:/tb_toplevel/clk } \
+{sim:/tb_toplevel/command } \
+{sim:/tb_toplevel/reset } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_data_in } \
+{sim:/tb_toplevel/uut/mips_sc_processor/dmem_data_out } \
+{sim:/tb_toplevel/uut/mips_sc_processor/imem_address } \
+{sim:/tb_toplevel/uut/mips_sc_processor/imem_data_in } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_result } \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_x } \
+{sim:/tb_toplevel/uut/mips_sc_processor/main_alu_y } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_increment_signal } \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_output } \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_wr_en } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/register_rs_output } \
+{sim:/tb_toplevel/uut/mips_sc_processor/register_rt_output } \
+{sim:/tb_toplevel/uut/mips_sc_processor/regwrite } \
+{sim:/tb_toplevel/uut/mips_sc_processor/sign_extender_output } 
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/cu/state } 
+rrun
+# invalid command name "rrun"
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/control_unit.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
@@ -201,26 +1965,6 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package mips_constant_pkg
 # -- Compiling entity control_unit
 # -- Compiling architecture behavioral of control_unit
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Compiling architecture behavioral of mips_functions_pkg
-# ** Error: (vcom-11) Could not find work.mips_functions_pkg.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd(52): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity proc_control_module
-# -- Compiling architecture behavioral of proc_control_module
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/proc_control_module_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity proc_control_module_tb
-# -- Compiling architecture behavior of proc_control_module_tb
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
@@ -229,19 +1973,52 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package mips_constant_pkg
 # -- Compiling entity processor
 # -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(41): Labels do not match: 'control_unit' and 'proc_control_module'.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
 # -- Loading package std_logic_1164
 # -- Compiling entity processor_tb
 # -- Compiling architecture behavior of processor_tb
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
+# Loading ieee.numeric_std(body)
+# Loading work.mips_constant_pkg
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
+# Loading work.alu(behavioral)#1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/imem_data_in } 
 vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/program_counter.vhd
 # Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
 # -- Loading package standard
@@ -250,277 +2027,125 @@ vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFil
 # -- Loading package mips_constant_pkg
 # -- Compiling entity program_counter
 # -- Compiling architecture behavioral of program_counter
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity sign_extender
-# -- Compiling architecture behavioral of sign_extender
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/sign_extender_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity sign_extender_tb
-# -- Compiling architecture behavior of sign_extender_tb
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity simple_multiplexer
-# -- Compiling architecture behavioral of simple_multiplexer
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package mips_constant_pkg
-# -- Compiling entity tb_control_unit
-# -- Compiling architecture behavior of tb_control_unit
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/tb_program_counter.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity tb_program_counter
-# -- Compiling architecture behavior of tb_program_counter
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity alu_control
-# -- Compiling architecture behavioral of alu_control
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/ALU_control.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity alu_control
-# -- Compiling architecture behavioral of alu_control
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(103): Expecting a type name, found signal "alu_flags" instead.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(166): (vcom-1136) Unknown identifier "main_alu_rs".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(167): (vcom-1136) Unknown identifier "main_alu_rt".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(178): (vcom-1031) Formal generic "n" has OPEN or no actual associated with it.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(185): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(189): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(186): Signal "alu_in" is type work.mips_constant_pkg.alu_input; expecting type work.mips_constant_pkg.alu_op_input.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(190): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): Illegal target for signal assignment.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(181): Target of signal assignment is not a signal.
-# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): Illegal target for signal assignment.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(182): Target of signal assignment is not a signal.
-# ** Warning: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): (vcom-1260) Type mark (alu_op_input) cannot be prefix of selected name.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): Illegal target for signal assignment.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(183): Target of signal assignment is not a signal.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(192): Illegal name (type declaration "alu_op_input") in expression.
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(194): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity processor_tb
-# -- Compiling architecture behavior of processor_tb
-vsim work.processor_tb
-# vsim work.processor_tb 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 2
-#           Attempting to use alternate WLF file "./wlftx5ij49".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftx5ij49
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd(94): (vopt-1134) Incompatible modes for port "dmem_address" in component "processor" when binding to entity "processor".
-# ** Error: C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd(23): Vopt Compiler exiting
-# Error loading design
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity processor_tb
-# -- Compiling architecture behavior of processor_tb
-vsim work.processor_tb
-# vsim work.processor_tb 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 2
-#           Attempting to use alternate WLF file "./wlft1eervi".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft1eervi
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading std.standard
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.mips_constant_pkg
-# Loading work.processor_tb(behavior)#1
-# Loading work.alu(behavioral)#1
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_data_out(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-add wave sim:/processor_tb/*
-run
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity processor_tb
-# -- Compiling architecture behavior of processor_tb
-restat
-# invalid command name "restat"
 restart
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
 # Loading std.standard
 # Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
 # Loading ieee.numeric_std(body)
 # Loading work.mips_constant_pkg
-# Loading work.processor_tb(behavior)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
 # Loading work.alu(behavioral)#1
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
 run
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity processor_tb
-# -- Compiling architecture behavior of processor_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+add wave \
+{sim:/tb_toplevel/uut/proc_enable } 
 restart
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
 # Loading std.standard
 # Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
 # Loading ieee.numeric_std(body)
 # Loading work.mips_constant_pkg
-# Loading work.processor_tb(behavior)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
 # Loading work.alu(behavioral)#1
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
 run
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package numeric_std
-# -- Loading package mips_constant_pkg
-# -- Compiling entity processor
-# -- Compiling architecture behave of processor
-vcom -reportprogress 300 -work work C:/Users/fadeev/Documents/TDT4255/supportFiles_13/hardware/processor_tb.vhd
-# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Compiling entity processor_tb
-# -- Compiling architecture behavior of processor_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+add wave \
+{sim:/tb_toplevel/uut/mips_sc_processor/alusrc } \
+{sim:/tb_toplevel/uut/mips_sc_processor/memwrite } \
+{sim:/tb_toplevel/uut/mips_sc_processor/pc_wr_en } \
+{sim:/tb_toplevel/uut/mips_sc_processor/regdst } \
+{sim:/tb_toplevel/uut/mips_sc_processor/regwrite } 
 restart
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
 # Loading std.standard
 # Loading ieee.std_logic_1164(body)
+# Loading work.tb_toplevel(behavior)#1
 # Loading ieee.numeric_std(body)
 # Loading work.mips_constant_pkg
-# Loading work.processor_tb(behavior)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.toplevel(behavioral)#1
 # Loading work.alu(behavioral)#1
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
 run
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.mips_constant_pkg
-# Loading work.processor_tb(behavior)#1
-# Loading work.alu(behavioral)#1
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-# ** Warning: (vsim-8683) Uninitialized out port /processor_tb/uut/dmem_address_wr(31 downto 0) has no driver.
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-#         Region: /processor_tb
-run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/mips_sc_processor/regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 1  Instance: /tb_toplevel/uut/inst_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 4  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /tb_toplevel/uut/data_mem
