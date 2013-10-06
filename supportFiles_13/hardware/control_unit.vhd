@@ -88,6 +88,7 @@ begin
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 								ALUSrc		<= '1';
+								PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
@@ -121,6 +122,11 @@ begin
 							when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
+									PCWriteEnb	<= '1'; -- was updated during execute state, will be sat to 0 until next execute-state
+									RegWrite		<= '1'; -- 
+									MemtoReg		<= '1';
+									MemRead		<= '1';
+									state 		<= ALU_STALL; 
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 							when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
 							when "000010" =>	--Jump (2 Hex - J Opcode - J-instruction format)
