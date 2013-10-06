@@ -121,7 +121,7 @@ begin
 --		reset_proc : process(reset)
 --		begin
 --			if (reset = '1') then
---				
+--				imem_address <= (others => '0');
 --			end if;
 --		end process;
 		 alu_in666.Op0 <= '0';
@@ -173,7 +173,7 @@ begin
 		 );
 
 --			setting up connection to instruction memory (using imem_data_in and imem_address processor-ports)
-		imem_address <= PC_output;
+--		imem_address <= PC_output;
 --		 setting up sign extender
 		sign_ext : sign_extender
 		generic map ( in_width => 16,

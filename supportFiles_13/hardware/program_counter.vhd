@@ -17,7 +17,7 @@ entity program_counter is
 end program_counter;
 
 architecture Behavioral of program_counter is
-	signal REG : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
+	signal REG : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0) := (others => '0');
 
 begin
 	-- Set output to reg
