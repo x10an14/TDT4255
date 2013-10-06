@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-10-05T14:59:07</DateModified>
+  <DateModified>2013-10-06T19:18:03</DateModified>
   <ModuleName>adder</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/fadeev/Documents/TDT4255/ise_project_files/iseconfig/adder.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/fadeev/Documents/TDT4255/ise_project_files</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/fadeev/Documents/TDT4255/ise_project_files\</ImplementationReportsDirectory>
   <DateInitialized>2013-10-05T14:59:07</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
