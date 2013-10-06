@@ -76,11 +76,11 @@ begin
 								ALUOp.Op1	<= '1';
 								ALUOp.Op2	<= '0';
 								RegWrite		<= '1';
-							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
-								Branch		<= '1';
-								ALUOp.Op0	<= '1';
-								ALUOp.Op1	<= '0';
-								ALUOp.Op2	<= '0';
+--							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
+--								Branch		<= '1';
+--								ALUOp.Op0	<= '1';
+--								ALUOp.Op1	<= '0';
+--								ALUOp.Op2	<= '0';
 							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 								MemRead		<= '1';
 								MemtoReg		<= '1';

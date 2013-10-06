@@ -55,7 +55,6 @@ ARCHITECTURE behavior OF tb_control_unit IS
 				 MemWrite : OUT	std_logic;
 				 ALUSrc : OUT	std_logic;
 				 RegWrite : OUT	std_logic;
-				 Jump : OUT	std_logic;
 				 PCWriteEnb : OUT	std_logic
 				);
 		END COMPONENT;
@@ -75,7 +74,6 @@ ARCHITECTURE behavior OF tb_control_unit IS
 	 signal MemWrite : std_logic := '0';
 	 signal ALUSrc : std_logic := '0';
 	 signal RegWrite : std_logic := '0';
-	 signal Jump : std_logic := '0';
 	 signal PCWriteEnb : std_logic := '0';
 
 	 -- Clock period definitions
@@ -96,7 +94,6 @@ BEGIN
 					MemWrite => MemWrite,
 					ALUSrc => ALUSrc,
 					RegWrite => RegWrite,
-					Jump => Jump,
 					PCWriteEnb => PCWriteEnb
 				);
 
@@ -121,7 +118,7 @@ BEGIN
 --		assert ((ALUOp.Op0 = '0') and (ALUOp.Op1 = '0') and (ALUOp.Op2 = '0')) report "ALUOp not reset" severity error;
 		-- insert stimulus here
 			
-		opcode <= "000000";
+		opcode <= "000100";
 		wait for CLK_period;
 --		assert (PCWriteEnb = '1') report "PCWriteEnb is not 1..." severity error;
 --		assert (RegDst = '1') report "RegDst is not 1..." severity error;

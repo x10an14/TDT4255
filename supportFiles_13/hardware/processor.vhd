@@ -69,6 +69,12 @@ architecture behave of processor is
 				 );
 		 end component program_counter;
 	--component sign extender
+		component sign_extender is
+				generic (IN_WIDTH, OUT_WIDTH: NATURAL);
+				port(		input : in  STD_LOGIC_VECTOR ( IN_WIDTH-1 downto 0);
+							output : out  STD_LOGIC_VECTOR (OUT_WIDTH-1 downto 0)
+				);
+		end component sign_extender;
 	--component instruction memory # defined and instantiated in toplevel
 	 --component register memory
 		 component register_file is
@@ -95,15 +101,30 @@ architecture behave of processor is
 			signal alu_in : ALU_INPUT;
 			signal pc_alu_flags : ALU_FLAGS;
 --			control unit related signals
-			signal RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
+			signal RegDst, RegWrite, MemtoReg, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
+			signal ALUSrc : std_logic := '1';
 			signal state_vector : STD_LOGIC_VECTOR(1 downto 0) := "00"; -- to be removed
 --			main ALU related signals
-			signal main_alu_result, main_alu_X, main_alu_Y : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
+			signal main_alu_X, main_alu_Y : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
+			signal main_alu_result : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
 			signal main_alu_input : ALU_INPUT;
 			signal main_alu_flags : ALU_FLAGS;
+--			sign extender signals
+			signal sign_extender_output : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+--			registers signals
+			signal register_rs_output, register_rt_output : STD_LOGIC_VECTOR(31 downto 0);
+			signal write_reg_addr : std_logic_vector(4 downto 0);
 --			shit to be dealt with later
 			signal aluOpInput : ALU_OP_INPUT;
 begin
+--			reset process
+--		reset_proc : process(reset)
+--		begin
+--			if (reset = '1') then
+--				
+--			end if;
+--		end process;
+		
 --			setting up control unit
 		 CU : control_unit
 		 port map (
@@ -151,24 +172,54 @@ begin
 
 --			setting up connection to instruction memory (using imem_data_in and imem_address processor-ports)
 		 imem_address <= PC_output;
+--		 setting up sign extender
+		sign_ext : sign_extender
+		generic map ( in_width => 16,
+							out_width => 32
+		)
+		port map (
+				input => imem_data_in (15 downto 0),
+--				input => (others => '1'),
+				output => sign_extender_output
+		);
+		
 
 --			 setting up register-file
-
-		 regs : register_file
-		 port map (
+		write_reg_proc : process(RegDst)
+		begin
+			if RegDst = '1' then
+				write_reg_addr <= imem_data_in (15 downto 11);
+			else 
+				write_reg_addr <= imem_data_in (20 downto 16);
+			end if;
+		end process;
+		
+		regs : register_file
+		port map (
 				 CLK => clk,
 				 RESET => reset,
 				 RW => RegWrite,
 				 RS_ADDR => imem_data_in (25 downto 21),
 				 RT_ADDR => imem_data_in (20 downto 16),
-				 RD_ADDR => imem_data_in (15 downto 11),
+				 RD_ADDR => write_reg_addr,
 				 WRITE_DATA => main_alu_result,
-				 RS => main_alu_X,
-				 RT => main_alu_Y
+				 RS => register_rs_output,
+				 RT => register_rt_output
 		 );
 
 --			setting up main ALU
-		dmem_data_out <= main_alu_result;
+		ALUSource_proc : process(ALUSrc)
+			begin
+				if ALUSrc = '1' then
+					main_alu_Y <= sign_extender_output;
+	--				main_alu_Y <= (others => '1');
+				else 
+					main_alu_Y <= register_rt_output;
+	--				main_alu_Y <= (others => '0');
+				end if;
+			end process;
+		main_alu_X <= register_rs_output;
+
 
 		ALU_main_unit : alu
 		generic map (N => 32)
@@ -192,5 +243,8 @@ begin
 			ALUOp => aluOpInput,
 			ALU_FUNC => main_alu_input
 		);
+		
+		
+				
 
 end behave;

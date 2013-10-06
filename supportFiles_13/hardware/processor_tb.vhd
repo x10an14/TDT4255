@@ -74,7 +74,8 @@ ARCHITECTURE behavior OF processor_tb IS
 	
 	-- signals needed for testing
 	signal addi_1_1_f : std_logic_vector(31 downto 0) := "1111" & "000000000000" 
-									& "10000" & "10000" & "001000"; --add F to reg 1
+									& "10000" & "10000" & "001000"; --add F to reg 
+	signal addi_1_1_f_reverse : std_logic_vector(31 downto 0) := "000100" & "00001" & "00001" & "0000000000001111";
 									
  
 BEGIN
@@ -111,10 +112,11 @@ BEGIN
       wait for 100 ns;	
 		reset <= '0';
 
-      wait for clk_period*2;
-
+      wait for clk_period*7;
       -- insert stimulus here 
-		imem_data_in <= addi_1_1_f;
+		imem_data_in <= addi_1_1_f_reverse;
+
+
       wait;
    end process;
 
