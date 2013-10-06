@@ -26,7 +26,7 @@ begin
 	process(CLK) is
 	begin
 		-- Here's were we decide what input (if any) to utilize
-		if  PC_WR_EN = '1' then
+		if  PC_WR_EN = '1' and rising_edge(clk) then
 			REG <= PC_IN;
 		elsif RESET = '1' then
 			REG <= X"00000000"; --Hardcoded reset value

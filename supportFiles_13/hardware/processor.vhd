@@ -26,6 +26,7 @@ architecture behave of processor is
 				 port(
 							CLK : IN	std_logic;
 							RESET : IN	std_logic;
+                     proc_enable : IN std_logic;
 							OpCode : IN	std_logic_vector(5 downto 0);
 							ALUOp : OUT	ALU_OP_INPUT;
 							RegDst : OUT	std_logic;
@@ -133,6 +134,7 @@ begin
 		 port map (
 				CLK => clk,
 				RESET => reset,
+            proc_enable => processor_enable,
 				OpCode => imem_data_in (31 downto 26),
 				ALUOp => aluOpInput, --this has to be figured out, would suggest making the functions I tried to work on actually work. would be very handy here and elswhere.
 				RegDst => RegDst,

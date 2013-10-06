@@ -9,6 +9,7 @@ entity control_unit is
 	port(
 		CLK 			: in STD_LOGIC;
 		RESET			: in STD_LOGIC;
+      proc_enable : in STD_LOGIC;
 		OpCode		: in STD_LOGIC_VECTOR (5 downto 0);
 		ALUOp			: out ALU_OP_INPUT;
 		RegDst		: out STD_LOGIC;
@@ -35,8 +36,20 @@ begin
 
 	begin
 		if rising_edge(CLK) then
-			
-			if reset = '1' then
+			if proc_enable /= '1' then
+            state       <= ALU_STALL;
+            RegDst		<= '0';
+				Branch		<= '0';
+				MemRead		<= '0';
+				MemtoReg		<= '0';
+				ALUOp.Op0	<= '0';
+				ALUOp.Op1	<= '0';
+				ALUOp.Op2	<= '0';
+				MemWrite		<= '0';
+				ALUSrc		<= '0';
+				RegWrite		<= '0';
+				PCWriteEnb	<= '0';
+         elsif reset = '1' then
 				state 		<= ALU_STALL; -- next state after reset is set to 0 after being = 1 is alu_fetch
 				RegDst		<= '0';
 				Branch		<= '0';
