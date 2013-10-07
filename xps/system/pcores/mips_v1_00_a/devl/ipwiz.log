@@ -1,25 +1,23 @@
-
-----------------------------------------------------------------------------
---                            Design Analysis                             --
-----------------------------------------------------------------------------
-Analyze pcore mips ...
-
-
-----------------------------------------------------------------------------
---                            Design Analysis                             --
-----------------------------------------------------------------------------
-Analyze pcore mips ...
-
-
-----------------------------------------------------------------------------
---                            File Generation                             --
-----------------------------------------------------------------------------
-Creating HDL source directory ...
-Generating top peripheral VHDL template ...
-Generating stub user logic VHDL template ...
-HDL templates successfully generated ...
-Creating data directory ...
-Generating XPS inteface files ...
+Parsing PAO project file successfully ...
+Analyzing HDL source files ...
+Analyzing HDL source files successfully ...
+HDL language for the peripheral (top level) design unit toplevel is vhdl ...
+INFO:EDK:3391 - Create temporary xst project file:
+   M:\Github\TDT4255\xps\system\pcores/mips.prj
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd" in Library
+mips_v1_00_a.
+Entity <full_adder> compiled.
+Entity <full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd" in
+Library mips_v1_00_a.
+Package <MIPS_CONSTANT_PKG> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd" in Library
+mips_v1_00_a.
+Entity <alu_1bit> compiled.
+Entity <alu_1bit> (Architecture <Behavioral>) compiled.
 Compiling vhdl file
 "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
 l/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
@@ -35,6 +33,35 @@ Compiling vhdl file
 l/vhdl/family_support.vhd" in Library proc_common_v3_00_a.
 Package <family_support> compiled.
 Package body <family_support> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/control_unit.vhd" in Library
+mips_v1_00_a.
+Entity <control_unit> compiled.
+Entity <control_unit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/program_counter.vhd" in Library
+mips_v1_00_a.
+Entity <program_counter> compiled.
+Entity <program_counter> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu.vhd" in Library
+mips_v1_00_a.
+Entity <alu> compiled.
+Entity <alu> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/sign_extender.vhd" in Library
+mips_v1_00_a.
+Entity <sign_extender> compiled.
+Entity <sign_extender> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd" in
+Library mips_v1_00_a.
+Entity <register_file> compiled.
+Entity <register_file> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/ALU_control.vhd"
+in Library mips_v1_00_a.
+Entity <ALU_control> compiled.
+Entity <ALU_control> (Architecture <Behavioral>) compiled.
 Compiling vhdl file
 "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
 l/vhdl/counter_f.vhd" in Library proc_common_v3_00_a.
@@ -56,10 +83,29 @@ l/vhdl/ipif_pkg.vhd" in Library proc_common_v3_00_a.
 Package <ipif_pkg> compiled.
 Package body <ipif_pkg> compiled.
 Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/com.vhd" in Library
+mips_v1_00_a.
+Entity <com> compiled.
+Entity <com> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/memory.vhd" in Library
+mips_v1_00_a.
+Entity <memory> compiled.
+Entity <memory> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/processor.vhd"
+in Library mips_v1_00_a.
+Entity <processor> compiled.
+Entity <processor> (Architecture <behave>) compiled.
+Compiling vhdl file
 "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
 _01_a/hdl/vhdl/plb_address_decoder.vhd" in Library plbv46_slave_single_v1_01_a.
 Entity <plb_address_decoder> compiled.
 Entity <plb_address_decoder> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd" in Library
+mips_v1_00_a.
+Entity <toplevel> compiled.
+Entity <toplevel> (Architecture <Behavioral>) compiled.
 Compiling vhdl file
 "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
 _01_a/hdl/vhdl/plb_slave_attachment.vhd" in Library plbv46_slave_single_v1_01_a.
@@ -71,13 +117,413 @@ _01_a/hdl/vhdl/plbv46_slave_single.vhd" in Library plbv46_slave_single_v1_01_a.
 Entity <plbv46_slave_single> compiled.
 Entity <plbv46_slave_single> (Architecture <implementation>) compiled.
 Compiling vhdl file
-"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/data/../hdl/vhdl/user_logic.vh
-d" in Library mips_v1_00_a.
+"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/hdl/vhdl/user_logic.vhd" in
+Library mips_v1_00_a.
 Entity <user_logic> compiled.
 Entity <user_logic> (Architecture <IMP>) compiled.
 Compiling vhdl file
-"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/data/../hdl/vhdl/mips.vhd" in
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" in Library
+mips_v1_00_a.
+Entity <tb_toplevel> compiled.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   130. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   132. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   141. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   149. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   154. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   159. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   164. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   170. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   175. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   181. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   186. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   192. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   197. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   203. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   208. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   214. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   219. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   225. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   230. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   236. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   241. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   247. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   252. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   258. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   263. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   269. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   274. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   280. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   285. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   291. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   296. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   302. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   307. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   313. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   318. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   324. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   329. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   335. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   340. Wait for statement unsupported.
+ERROR:HDLParsers:1015 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/supplied/tb_toplevel.vhd" Line
+   346. Wait for statement unsupported.
+ERROR:EDK:2121 - Parse Errors encountered in HDL source
+WARNING:EDK:3590 - Unable to delete temporary project file
+   M:\Github\TDT4255\xps\system\pcores\mips.prj : 13
+HDL language for the peripheral (top level) design unit toplevel is vhdl ...
+WARNING:EDK:2221 - Project file M:\Github\TDT4255\xps\system\pcores/mips.prj
+   already exists, will be overwrite and removed afterward ...
+INFO:EDK:3391 - Create temporary xst project file:
+   M:\Github\TDT4255\xps\system\pcores/mips.prj
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd" in Library
+mips_v1_00_a.
+Entity <full_adder> compiled.
+Entity <full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd" in
 Library mips_v1_00_a.
+Package <MIPS_CONSTANT_PKG> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd" in Library
+mips_v1_00_a.
+Entity <alu_1bit> compiled.
+Entity <alu_1bit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
+Package <proc_common_pkg> compiled.
+Package body <proc_common_pkg> compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_muxcy.vhd" in Library proc_common_v3_00_a.
+Entity <or_muxcy> compiled.
+Entity <or_muxcy> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/family_support.vhd" in Library proc_common_v3_00_a.
+Package <family_support> compiled.
+Package body <family_support> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/control_unit.vhd" in Library
+mips_v1_00_a.
+Entity <control_unit> compiled.
+Entity <control_unit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/program_counter.vhd" in Library
+mips_v1_00_a.
+Entity <program_counter> compiled.
+Entity <program_counter> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu.vhd" in Library
+mips_v1_00_a.
+Entity <alu> compiled.
+Entity <alu> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/sign_extender.vhd" in Library
+mips_v1_00_a.
+Entity <sign_extender> compiled.
+Entity <sign_extender> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd" in
+Library mips_v1_00_a.
+Entity <register_file> compiled.
+Entity <register_file> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/ALU_control.vhd"
+in Library mips_v1_00_a.
+Entity <ALU_control> compiled.
+Entity <ALU_control> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/counter_f.vhd" in Library proc_common_v3_00_a.
+Entity <counter_f> compiled.
+Entity <counter_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/pselect_f.vhd" in Library proc_common_v3_00_a.
+Entity <pselect_f> compiled.
+Entity <pselect_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_gate128.vhd" in Library proc_common_v3_00_a.
+Entity <or_gate128> compiled.
+Entity <or_gate128> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/ipif_pkg.vhd" in Library proc_common_v3_00_a.
+Package <ipif_pkg> compiled.
+Package body <ipif_pkg> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/com.vhd" in Library
+mips_v1_00_a.
+Entity <com> compiled.
+Entity <com> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/memory.vhd" in Library
+mips_v1_00_a.
+Entity <memory> compiled.
+Entity <memory> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/processor.vhd"
+in Library mips_v1_00_a.
+Entity <processor> compiled.
+Entity <processor> (Architecture <behave>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_address_decoder.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_address_decoder> compiled.
+Entity <plb_address_decoder> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd" in Library
+mips_v1_00_a.
+Entity <toplevel> compiled.
+Entity <toplevel> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_slave_attachment.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_slave_attachment> compiled.
+Entity <plb_slave_attachment> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plbv46_slave_single.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plbv46_slave_single> compiled.
+Entity <plbv46_slave_single> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/hdl/vhdl/user_logic.vhd" in
+Library mips_v1_00_a.
+Entity <user_logic> compiled.
+Entity <user_logic> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/adder.vhd" in Library
+mips_v1_00_a.
+Entity <adder> compiled.
+Entity <adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd" in Library
+mips_v1_00_a.
+Entity <simple_multiplexer> compiled.
+Entity <simple_multiplexer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd" in Library
+mips_v1_00_a.
+ERROR:HDLParsers:3010 -
+   "M:/Github/TDT4255/supportFiles_13/hardware/mips_functions_pkg.vhd" Line 52.
+   Entity mips_functions_pkg does not exist.
+ERROR:EDK:2121 - Parse Errors encountered in HDL source
+WARNING:EDK:3590 - Unable to delete temporary project file
+   M:\Github\TDT4255\xps\system\pcores\mips.prj : 13
+HDL language for the peripheral (top level) design unit toplevel is vhdl ...
+WARNING:EDK:2221 - Project file M:\Github\TDT4255\xps\system\pcores/mips.prj
+   already exists, will be overwrite and removed afterward ...
+INFO:EDK:3391 - Create temporary xst project file:
+   M:\Github\TDT4255\xps\system\pcores/mips.prj
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/full_adder.vhd" in Library
+mips_v1_00_a.
+Entity <full_adder> compiled.
+Entity <full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/mips_constant_pkg.vhd" in
+Library mips_v1_00_a.
+Package <MIPS_CONSTANT_PKG> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu_1bit.vhd" in Library
+mips_v1_00_a.
+Entity <alu_1bit> compiled.
+Entity <alu_1bit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
+Package <proc_common_pkg> compiled.
+Package body <proc_common_pkg> compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_muxcy.vhd" in Library proc_common_v3_00_a.
+Entity <or_muxcy> compiled.
+Entity <or_muxcy> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/family_support.vhd" in Library proc_common_v3_00_a.
+Package <family_support> compiled.
+Package body <family_support> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/control_unit.vhd" in Library
+mips_v1_00_a.
+Entity <control_unit> compiled.
+Entity <control_unit> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/program_counter.vhd" in Library
+mips_v1_00_a.
+Entity <program_counter> compiled.
+Entity <program_counter> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/alu.vhd" in Library
+mips_v1_00_a.
+Entity <alu> compiled.
+Entity <alu> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/sign_extender.vhd" in Library
+mips_v1_00_a.
+Entity <sign_extender> compiled.
+Entity <sign_extender> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/register_file.vhd" in
+Library mips_v1_00_a.
+Entity <register_file> compiled.
+Entity <register_file> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/ALU_control.vhd"
+in Library mips_v1_00_a.
+Entity <ALU_control> compiled.
+Entity <ALU_control> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/counter_f.vhd" in Library proc_common_v3_00_a.
+Entity <counter_f> compiled.
+Entity <counter_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/pselect_f.vhd" in Library proc_common_v3_00_a.
+Entity <pselect_f> compiled.
+Entity <pselect_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_gate128.vhd" in Library proc_common_v3_00_a.
+Entity <or_gate128> compiled.
+Entity <or_gate128> (Architecture <imp>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/ipif_pkg.vhd" in Library proc_common_v3_00_a.
+Package <ipif_pkg> compiled.
+Package body <ipif_pkg> compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/com.vhd" in Library
+mips_v1_00_a.
+Entity <com> compiled.
+Entity <com> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/memory.vhd" in Library
+mips_v1_00_a.
+Entity <memory> compiled.
+Entity <memory> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "M:/Github/TDT4255/supportFiles_13/hardware/processor.vhd"
+in Library mips_v1_00_a.
+Entity <processor> compiled.
+Entity <processor> (Architecture <behave>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_address_decoder.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_address_decoder> compiled.
+Entity <plb_address_decoder> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/toplevel.vhd" in Library
+mips_v1_00_a.
+Entity <toplevel> compiled.
+Entity <toplevel> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_slave_attachment.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_slave_attachment> compiled.
+Entity <plb_slave_attachment> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plbv46_slave_single.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plbv46_slave_single> compiled.
+Entity <plbv46_slave_single> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/hdl/vhdl/user_logic.vhd" in
+Library mips_v1_00_a.
+Entity <user_logic> compiled.
+Entity <user_logic> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/supplied/adder.vhd" in Library
+mips_v1_00_a.
+Entity <adder> compiled.
+Entity <adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/supportFiles_13/hardware/simple_multiplexer.vhd" in Library
+mips_v1_00_a.
+Entity <simple_multiplexer> compiled.
+Entity <simple_multiplexer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file
+"M:/Github/TDT4255/xps/system/pcores/mips_v1_00_a/hdl/vhdl/mips.vhd" in Library
+mips_v1_00_a.
 Entity <mips> compiled.
 Entity <mips> (Architecture <IMP>) compiled.
 
@@ -87,93 +533,86 @@ Entity name = mips
 INFO:EDK:1607 - IPTYPE set to value : PERIPHERAL
 INFO:EDK:1511 - IMP_NETLIST set to value : TRUE
 INFO:EDK:1486 - HDL set to value : VHDL
-WARNING:EDK:3588 - Unable to delete temporary XST project file
-   M:\Github\TDT4255\xps\system\pcores\mips_v1_00_a\data\_mips_xst.prj : 13
-XPS interface files successfully generated ...
-Creating development directory ...
-Generating command option file ...
-Generating readme file ...
-Development misc files successfully generated ...
-Creating projnav directory ...
-Generating ProjNav support files ...
-ProjNav support files successfully generated ...
-Creating synthesis directory ...
-Generating XST synthesis support files ...
-XST synthesis support files successfully generated ...
-No BFM simulation files will be generated at this time ...
-Creating software driver data directory ...
-Generating software driver XPS interface (mdd/tcl) files ...
-Software driver data definition file (.mdd) successfully generated ...
-Software driver data generation file (.tcl) successfully generated ...
-Creating software driver src directory ...
-Generating software driver template files ...
-Software driver compile file (Makefile) successfully generated ...
-output user slave register(s) offset to software driver header ...
-Software driver header file (.h) successfully generated ...
-Software driver source file (.c) successfully generated ...
-Software driver SelfTest file (.c) successfully generated ...
-Software driver template files successfully generated ...
+WARNING:EDK:3590 - Unable to delete temporary project file
+   M:\Github\TDT4255\xps\system\pcores\mips.prj : 13
+WARNING:EDK:2065 - PARAMETER:_NUM_SLAVES - SLAVE PLBV46 parameter is not defined
+   in the HDL source
+INFO:EDK:1631 - Infer bus clock [SPLB_Clk] for bus interface SPLB ...
+Copying file user_logic.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file mips.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file ALU_control.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file control_unit.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file processor.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file program_counter.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file sign_extender.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file simple_multiplexer.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file adder.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file alu.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file alu_1bit.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file com.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file full_adder.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file memory.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file mips_constant_pkg.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file register_file.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
+Copying file toplevel.vhd to
+M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/hdl/vhdl/ ...
 
-----------------------------------------------------------------------------
---                              Final Report                              --
-----------------------------------------------------------------------------
 Thank you for using Create and Import Peripheral Wizard! Please find your
-peripheral hardware templates under
-M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a and peripheral software
-templates under M:\Github\TDT4255\xps\system/drivers/mips_v1_00_a respectively.
+imported peripheral under M:\Github\TDT4255\xps\system\pcores\mips_v1_00_a.
 
-Peripheral Summary:
+Summary:
 
-  top name       : mips
-  version        : 1.00.a
-  type           : PLB (v4.6) slave
-  features       : slave attachment
-                   user s/w registers
+  Logical library     : mips_v1_00_a
+  Version             : 1.00.a
+  Bus interface(s)    : SPLB 
 
-Address Block Summary:
+The following sub-directories will be created:
 
-  user logic slv : C_BASEADDR + 0x00000000
-                 : C_BASEADDR + 0x000000FF
-
-File Summary
-
-  - HDL source -
-  M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a/hdl
-  top entity     : vhdl/mips.vhd
-  user logic     : vhdl/user_logic.vhd
-
-  - XPS interface -
-  M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a/data
-  mpd            : mips_v2_1_0.mpd
-  pao            : mips_v2_1_0.pao
-
-  - ISE project -
-  M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a/devl/projnav
-  ise project    : mips.xise
-  tcl script     : mips.tcl
+  - mips_v1_00_a\data
+  - mips_v1_00_a\hdl
+  - mips_v1_00_a\hdl\vhdl
 
 
-  - XST synthesis -
-  M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a/devl/synthesis
-  xst script     : mips_xst.scr
-  xst project    : mips_xst.prj
+The following HDL source files will be copied into the mips_v1_00_a\hdl\vhdl
+directory:
 
-  - Misc file -
-  M:\Github\TDT4255\xps\system/pcores/mips_v1_00_a/devl
-  help           : README.txt
-  option         : ipwiz.opt
-  log            : ipwiz.log
+  - user_logic.vhd
+  - mips.vhd
+  - ALU_control.vhd
+  - control_unit.vhd
+  - processor.vhd
+  - program_counter.vhd
+  - sign_extender.vhd
+  - simple_multiplexer.vhd
+  - adder.vhd
+  - alu.vhd
+  - alu_1bit.vhd
+  - com.vhd
+  - full_adder.vhd
+  - memory.vhd
+  - mips_constant_pkg.vhd
+  - register_file.vhd
+  - toplevel.vhd
 
-  - Driver source -
-  M:\Github\TDT4255\xps\system/drivers/mips_v1_00_a/src
-  makefile       : Makefile
-  header         : mips.h
-  source         : mips.c
-  selftest       : mips_selftest.c
+The following files will be created under the mips_v1_00_a\data directory:
 
-  - Driver interface -
-  M:\Github\TDT4255\xps\system/drivers/mips_v1_00_a/data
-  mdd            : mips_v2_1_0.mdd
-  tcl            : mips_v2_1_0.tcl
+  - mips_v2_1_0.mpd
+  - mips_v2_1_0.pao
 
 
