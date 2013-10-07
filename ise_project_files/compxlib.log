@@ -12,6 +12,7 @@ Release 12.4 - C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe 12.4 (n
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
 Processing command line ...
+Reading the compxlib configuration file - 'compxlib.cfg' ...
 WARNING:Compxlib - The legacy option '-exclude_deprecated' will be obsolete in version 13.1. Please use the option '-exclude_superseded' for the same.
 Library Source Paths => 'C:/Xilinx/12.4/ISE_DS/ISE'
 Current Working Directory => 'C:\Users\fadeev\Documents\TDT4255\ise_project_files'
@@ -872,7 +873,7 @@ compxlib[edk]: 0 error(s), 156 warning(s), 100.00 % complete
 *                                   COMPILATION SUMMARY                                      *
 *                                                                                            *
 *  Simulator used: mti_se                                                                    *
-*  Compiled on: Sun Oct 06 19:20:18 2013                                                     *
+*  Compiled on: Tue Oct 08 01:31:57 2013                                                     *
 *                                                                                            *
 **********************************************************************************************
 *               Library                |  Lang   |  Mapped Name(s)   | Err#(s)  |  Warn#(s)  *

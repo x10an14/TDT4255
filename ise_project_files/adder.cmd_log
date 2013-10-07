@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/fadeev/Documents/TDT4255/ise_project_files/adder.xst" -ofn "C:/Users/fadeev/Documents/TDT4255/ise_project_files/adder.syr" 

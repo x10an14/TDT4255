@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="432" delta="new" >"\Users\fadeev\Documents\TDT4255\ise_project_files\../supportFiles_13/hardware/supplied/adder.vhd" Line 34: Formal &lt;<arg fmt="%s" index="1">n</arg>&gt; has no actual or default value.
+</msg>
+
 </messages>
 
