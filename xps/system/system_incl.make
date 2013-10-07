@@ -93,7 +93,8 @@ implementation/lmb_bram_wrapper.ngc \
 implementation/usb_uart_wrapper.ngc \
 implementation/clock_generator_0_wrapper.ngc \
 implementation/mdm_0_wrapper.ngc \
-implementation/proc_sys_reset_0_wrapper.ngc
+implementation/proc_sys_reset_0_wrapper.ngc \
+implementation/mips_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

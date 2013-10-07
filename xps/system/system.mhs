@@ -134,3 +134,11 @@ BEGIN proc_sys_reset
  PORT Peripheral_Reset = sys_periph_reset
 END
 
+BEGIN mips
+ PARAMETER INSTANCE = mips_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_BASEADDR = 0x84418000
+ PARAMETER C_HIGHADDR = 0x8441803f
+ BUS_INTERFACE SPLB = mb_plb
+END
+
