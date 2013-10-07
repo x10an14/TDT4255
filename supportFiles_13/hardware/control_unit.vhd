@@ -67,7 +67,7 @@ begin
 				case state is
 					when ALU_FETCH =>
 						state 		<= ALU_EXE;
-						PCWriteEnb	<= '1'; --will be updated during execute-phase, will have new value on next fetch phase
+						PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
 						MemWrite		<= '0'; --nothing should be written to memory during exe phase
 						RegDst		<= '0'; -- 0 for every instruction type except R-type
 						Branch		<= '0'; -- 0 for every instruction type except branch-type
@@ -101,7 +101,6 @@ begin
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 								ALUSrc		<= '1';
-								PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 								ALUOp.Op0	<= '0';
 								ALUOp.Op1	<= '0';
@@ -119,8 +118,12 @@ begin
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 								RegWrite		<= '0';
+<<<<<<< HEAD
+								Branch			<= '1';
+=======
 								Branch		<= '1';
 								PCWriteEnb	<= '0';
+>>>>>>> c87eef30eba34ce9c0b9aca6585c0e200f11c0f0
 							when others =>
 						end case;
 					-- following is transference from execute-state to either fetch-state or stall-state
@@ -130,7 +133,7 @@ begin
 						MemtoReg		<= '0';
 						MemWrite		<= '0'; -- 
 						RegWrite		<= '0'; -- 
-						PCWriteEnb	<= '0'; -- was updated during execute state, will be sat to 0 until next execute-state
+						PCWriteEnb	<= '1'; -- was updated during execute state, will be sat to 0 until next execute-state
 						case OpCode is
 							when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)

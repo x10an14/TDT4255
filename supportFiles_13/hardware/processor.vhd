@@ -97,12 +97,14 @@ architecture behave of processor is
 
 	 --signals definition
 --			PC related signals:
-			signal alu_output_to_PC, PC_output, PC_increment_signal : STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
-			signal PC_WR_EN : STD_LOGIC := '0';
+			signal alu_output_to_PC, PC_output: STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
+         signal pc_increment_signal : std_logic_vector (0 to IADDR_BUS-1);
+			signal pc_write_enable : STD_LOGIC := '0';
 			signal alu_in666 : ALU_INPUT;
 			signal pc_alu_flags : ALU_FLAGS;
 --			control unit related signals
-			signal RegDst, RegWrite, MemtoReg, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
+			signal RegDst, RegWrite, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
+         signal MemtoReg : std_logic := '0';
 			signal ALUSrc : std_logic := '1';
 			signal state_vector : STD_LOGIC_VECTOR(1 downto 0) := "00"; -- to be removed
 --			main ALU related signals
@@ -144,17 +146,17 @@ begin
 				MemWrite => MemWrite,
 				ALUSrc => ALUSrc,
 				RegWrite => RegWrite,
-				PCWriteEnb => PC_WR_EN --Same as above comment
+				PCWriteEnb => pc_write_enable --Same as above comment
 		 );
 		 dmem_write_enable <= MemWrite;
 
 --			setting up program counter circuit - PC itself, ALU that increments it
-		 PC_increment_signal <= (1 => '1', others => '0');
+		 PC_increment_signal <= (31 => '1', others => '0');
 		 PC : program_counter
 		 port map (
 				 CLK => clk,
 				 RESET => reset,
-				 PC_WR_EN => PC_WR_EN,
+				 PC_WR_EN => pc_write_enable,
 				 PC_IN => alu_output_to_PC,
 				 PC_OUT => PC_output
 		 );
@@ -217,7 +219,7 @@ begin
 				 RS_ADDR => imem_data_in (25 downto 21),
 				 RT_ADDR => imem_data_in (20 downto 16),
 				 RD_ADDR => write_reg_addr,
-				 WRITE_DATA => main_alu_result,
+				 WRITE_DATA => register_write_data,
 				 RS => register_rs_output,
 				 RT => register_rt_output
 		 );
