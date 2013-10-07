@@ -12,7 +12,7 @@ entity program_counter is
 			RESET		: in 	STD_LOGIC;
 			PC_WR_EN	: in 	STD_LOGIC; --ProgramCounter Write Enable pin
 			PC_IN		: in 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
-			PC_OUT	: out STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0) := (others => '0')
+			PC_OUT	: out STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0) := (others => '1')
 	);
 end program_counter;
 

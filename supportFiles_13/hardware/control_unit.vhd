@@ -76,6 +76,10 @@ begin
 						ALUSrc 		<= '0'; -- 0 for every inst except for lw & sw type
 						MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
 						RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
+                  
+                  ALUOp.Op0	<= '0';
+						ALUOp.Op1	<= '0';
+						ALUOp.Op2	<= '0';
 						case OpCode is
 							when "000100" =>	--addi-instruction
 								ALUSrc 		<= '1';
@@ -96,17 +100,11 @@ begin
 --								ALUOp.Op2	<= '0';
 							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 								MemRead		<= '1';
-								MemtoReg		<= '1';
-								ALUOp.Op0	<= '0';
-								ALUOp.Op1	<= '0';
-								ALUOp.Op2	<= '0';
-								ALUSrc		<= '1';
+                        ALUSrc		<= '1';
+                        MemtoReg		<= '1';
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
-								ALUOp.Op0	<= '0';
-								ALUOp.Op1	<= '0';
-								ALUOp.Op2	<= '0';
 								ALUSrc		<= '1';
-								RegWrite		<= '0';
+
 							when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
 								ALUOp.Op0	<= '1';
 								ALUOp.Op1	<= '1';
@@ -118,12 +116,8 @@ begin
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 								RegWrite		<= '0';
-<<<<<<< HEAD
-								Branch			<= '1';
-=======
 								Branch		<= '1';
 								PCWriteEnb	<= '0';
->>>>>>> c87eef30eba34ce9c0b9aca6585c0e200f11c0f0
 							when others =>
 						end case;
 					-- following is transference from execute-state to either fetch-state or stall-state
@@ -138,19 +132,20 @@ begin
 							when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 							when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 							when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
-									PCWriteEnb	<= '1'; -- was updated during execute state, will be sat to 0 until next execute-state
 									RegWrite		<= '1'; -- 
 									MemtoReg		<= '1';
 									MemRead		<= '1';
 									state 		<= ALU_STALL; 
 							when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
+                           MemWrite    <= '1';
+                           state       <= ALU_STALL;
 							when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
 							when "000010" =>	--Jump (2 Hex - J Opcode - J-instruction format)
 							when others =>
 						end case;
 					when ALU_STALL =>
 						state 		<= ALU_FETCH;
-						PCWriteEnb	<= '0';
+						PCWriteEnb	<= '1';
 						RegWrite 	<= '0';  
 						Branch		<= '0';
 						MemRead		<= '0';
