@@ -119,7 +119,7 @@ begin
 								ALUOp.Op1	<= '0';
 								ALUOp.Op2	<= '0';
 								RegWrite		<= '0';
-								Branch			<= '1';
+								Branch		<= '1';
 								PCWriteEnb	<= '0';
 							when others =>
 						end case;
