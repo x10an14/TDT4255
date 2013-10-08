@@ -19,9 +19,9 @@ entity control_unit is
 		MemWrite		: out STD_LOGIC;
 		ALUSrc		: out STD_LOGIC;
 		RegWrite		: out STD_LOGIC;
-		PCWriteEnb	: out STD_LOGIC
+		PCWriteEnb	: out STD_LOGIC;
 --		SRWriteEnb	: out STD_LOGIC -- what is this?
-		--control write enable for register file is the same as RegWrite?
+		JumpEnb		: out STD_LOGIC
 	);
 end control_unit;
 
@@ -64,6 +64,7 @@ begin
 				MemRead		<= '0';
 				MemtoReg		<= '0';
 				MemWrite		<= '0';
+				JumpEnb		<= '0';
 			when ALU_EXE =>
 				PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
 				MemWrite		<= '0'; --nothing should be written to memory during exe phase
@@ -74,36 +75,34 @@ begin
 				ALUSrc 		<= '0'; -- 0 for every inst except for lw & sw type
 				MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
 				RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
+				JumpEnb		<= '0'; -- 0 for all except jump instructions, aka "000010" OpCode
+				
+				-- Default ALUOp values
+				ALUOp.Op0	<= '0';
+				ALUOp.Op1	<= '0';
+				ALUOp.Op2	<= '0';
 				case OpCode is
 					when "001111" =>	--load immediate instr
 						ALUSrc 		<= '1';
 						ALUOp.Op0	<= '1';
-						ALUOp.Op1	<= '0';
-						ALUOp.Op2	<= '0';
 						RegWrite		<= '1';
 					when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
 						RegDst		<= '1';
-						ALUOp.Op0	<= '0';
-						ALUOp.Op1	<= '0';
-						ALUOp.Op2	<= '0';
 						RegWrite		<= '1';
 					when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 						Branch		<= '1';
-						ALUOp.Op0	<= '0';
 						ALUOp.Op1	<= '1';
 						ALUOp.Op2	<= '1';
 					when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 						MemRead		<= '1';
 						ALUSrc		<= '1';
 						MemtoReg		<= '1';
-						ALUOp.Op0	<= '1';
-						ALUOp.Op1	<= '0';
-						ALUOp.Op2	<= '0';						
+						ALUOp.Op0	<= '1';					
 					when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 						ALUSrc		<= '1';
 						ALUOp.Op0	<= '1';
-						ALUOp.Op1	<= '0';
-						ALUOp.Op2	<= '0';							
+					when "000010" => --Jump (2 Hex - Jump Opcode - J-instruction format)
+						JmpEnb		<= '1';
 					when others =>
 				end case;
 			when ALU_STALL =>
