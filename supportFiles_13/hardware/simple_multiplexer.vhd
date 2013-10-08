@@ -1,20 +1,20 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    15:01:07 09/20/2013 
--- Design Name: 
--- Module Name:    simple_multiplexer - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date:	15:01:07 09/20/2013
+-- Design Name:
+-- Module Name:	simple_multiplexer - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -31,10 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity simple_multiplexer is
 generic (N :NATURAL);
-    Port ( a : in  STD_LOGIC_VECTOR (N-1 downto 0);
-           b : in  STD_LOGIC_VECTOR (N-1 downto 0);
-           control_signal : in  STD_LOGIC;
-           output : out  STD_LOGIC_VECTOR (N-1 downto 0));
+	Port(
+		a : in  STD_LOGIC_VECTOR (N-1 downto 0);
+		b : in  STD_LOGIC_VECTOR (N-1 downto 0);
+		control_signal : in  STD_LOGIC;
+		output : out  STD_LOGIC_VECTOR (N-1 downto 0));
 end simple_multiplexer;
 
 architecture Behavioral of simple_multiplexer is
