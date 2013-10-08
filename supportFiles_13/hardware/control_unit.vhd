@@ -20,7 +20,6 @@ entity control_unit is
 		ALUSrc		: out STD_LOGIC;
 		RegWrite		: out STD_LOGIC;
 		PCWriteEnb	: out STD_LOGIC;
---		SRWriteEnb	: out STD_LOGIC -- what is this?
 		JumpEnb		: out STD_LOGIC
 	);
 end control_unit;
@@ -39,7 +38,7 @@ begin
 		elsif rising_edge(clk) then
 			case state is
 				when ALU_FETCH =>
-					state	 <= ALU_EXE;
+					state <= ALU_EXE;
 				when ALU_EXE	=>
 					if OpCode = "000000" or OpCode = "000100" or OpCode = "001111" then
 						state <= ALU_FETCH;
@@ -76,7 +75,7 @@ begin
 				MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
 				RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
 				JumpEnb		<= '0'; -- 0 for all except jump instructions, aka "000010" OpCode
-				
+
 				-- Default ALUOp values
 				ALUOp.Op0	<= '0';
 				ALUOp.Op1	<= '0';
@@ -97,7 +96,7 @@ begin
 						MemRead		<= '1';
 						ALUSrc		<= '1';
 						MemtoReg		<= '1';
-						ALUOp.Op0	<= '1';					
+						ALUOp.Op0	<= '1';
 					when "101011" =>	--Store word (2B hex - SW Opcode - I-instruction format)
 						ALUSrc		<= '1';
 						ALUOp.Op0	<= '1';
@@ -108,8 +107,8 @@ begin
 			when ALU_STALL =>
 				MemRead		<= '0';
 				MemtoReg		<= '0';
-				MemWrite		<= '0'; 
-				RegWrite		<= '0'; 
+				MemWrite		<= '0';
+				RegWrite		<= '0';
 				case OpCode is
 					when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 							RegWrite		<= '1'; --
@@ -133,7 +132,6 @@ begin
 				RegWrite		<= '0';
 				PCWriteEnb	<= '0';
 		 end case;
-
-
 	end process;
+
 end Behavioral;
