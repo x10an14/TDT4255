@@ -56,7 +56,7 @@ ARCHITECTURE behavior OF alu_tb IS
    --Inputs
    signal X : std_logic_vector(31 downto 0) := (28 downto 25 => '1',
 																	others => '0');
-   signal Y : std_logic_vector(31 downto 0) := (28 downto 25 => '1',
+   signal Y : std_logic_vector(31 downto 0) := (26 downto 22 => '1',
 																	others => '0');
    signal ALU_IN : ALU_INPUT;
 	
@@ -93,7 +93,35 @@ BEGIN
 --		wait for <clock>_period/2;
    end process;
  
-
+	bitchange_proc: process
+	begin
+		ALU_IN.Op0 <= '0';
+		wait for clock_period;
+		ALU_IN.op0 <= '1';
+		wait for clock_period;
+	end process;
+	bitchange_proc2: process
+	begin
+		ALU_IN.Op1 <= '0';
+		wait for clock_period*2;
+		ALU_IN.op1 <= '1';
+		wait for clock_period*2;
+	end process;
+	bitchange_proc3: process
+	begin
+		ALU_IN.Op2 <= '0';
+		wait for clock_period*4;
+		ALU_IN.op2 <= '1';
+		wait for clock_period*4;
+	end process;
+	bitchange_proc4: process
+	begin
+		ALU_IN.Op3 <= '0';
+		wait for clock_period*8;
+		ALU_IN.op3 <= '1';
+		wait for clock_period*8;
+	end process;
+	
    -- Stimulus process
    stim_proc: process
    begin		
@@ -102,11 +130,11 @@ BEGIN
 
       wait for clock_period*2;
 
-      Y <= (15 downto 10 => '1', others => '0');
-      
-            wait for clock_period*2;
-
-      X <= (28 downto 25 => '1', others => '0');
+--      Y <= (15 downto 10 => '1', others => '0');
+--      
+--            wait for clock_period*2;
+--
+--      X <= (28 downto 25 => '1', others => '0');
 
       -- insert stimulus here 
 

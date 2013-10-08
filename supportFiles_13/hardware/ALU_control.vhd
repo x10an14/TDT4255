@@ -22,11 +22,31 @@ begin
 	begin
 			if FUNC = "000000" then -- R instructions
 				if (aluop.Op1 = '0' and aluop.Op2 = '0' and aluop.Op0 = '0') then --add
-						ALU_FUNC.Op0 <= '0';
+                  ALU_FUNC.Op0 <= '0';
 						ALU_FUNC.Op1 <= '1';
 						ALU_FUNC.Op2 <= '0';
 						ALU_FUNC.Op3 <= '0';
-				else
+				elsif (aluop.Op1 = '0' and aluop.Op2 = '0' and aluop.Op0 = '1') then -- subtract
+                  ALU_FUNC.Op0 <= '0';
+						ALU_FUNC.Op1 <= '1';
+						ALU_FUNC.Op2 <= '1';
+						ALU_FUNC.Op3 <= '0';
+				elsif (aluop.Op1 = '0' and aluop.Op2 = '1' and aluop.Op0 = '0') then	--	set less than
+                  ALU_FUNC.Op0 <= '0';
+						ALU_FUNC.Op1 <= '1';
+						ALU_FUNC.Op2 <= '0';
+						ALU_FUNC.Op3 <= '0';
+				elsif (aluop.Op1 = '0' and aluop.Op2 = '1' and aluop.Op0 = '1') then	--	and
+                  ALU_FUNC.Op0 <= '0';
+						ALU_FUNC.Op1 <= '1';
+						ALU_FUNC.Op2 <= '0';
+						ALU_FUNC.Op3 <= '0';
+				elsif (aluop.Op1 = '1' and aluop.Op2 = '0' and aluop.Op0 = '0') then	-- or
+                  ALU_FUNC.Op0 <= '0';
+						ALU_FUNC.Op1 <= '1';
+						ALU_FUNC.Op2 <= '0';
+						ALU_FUNC.Op3 <= '0';						
+            else
 									--something else
 				end if;
 			elsif FUNC = "000100" then -- BEQ ins, act as subtracter
