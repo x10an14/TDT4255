@@ -105,7 +105,7 @@ architecture behave of processor is
          signal MemtoReg 									: std_logic := '0';
 			signal ALUSrc 										: std_logic := '1';
 			signal JmpEnable									: STD_LOGIC := '0';
-			signal ALU_ADD_Result							: STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
+			signal Branching_Mux_Output									: STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
 --			main ALU related signals
 			signal main_alu_X, main_alu_Y : STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0);
 			signal main_alu_result 			: STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
@@ -147,9 +147,9 @@ begin
        branching_control_process: process (Branch, main_alu_flags.Zero, CLK)
        begin
             if (Branch = '1' and main_alu_flags.Zero = '1') then
-               pc_input <= branching_alu_output;
+               Branching_Mux_Output <= branching_alu_output;
             else
-               pc_input <= alu_pc_output;
+               Branching_Mux_Output <= alu_pc_output;
             end if;
        end process;
        branching_alu : ALU
@@ -158,7 +158,7 @@ begin
 		 )
 		 port map (
 				 X => sign_extender_output,
-				 Y => ALU_ADD_Result,
+				 Y => alu_pc_output,
 				 ALU_IN => alu_add_input_signal,
 				 R => branching_alu_output,
 				 FLAGS => branching_alu_flags
@@ -193,9 +193,9 @@ begin
 		 begin
 			if (CLK = '1' or CLK = '0') then
 				if (JmpEnable = '1') then
-					ALU_ADD_Result <= alu_pc_output(31 downto 26) & imem_data_in(25 downto 0);
+					pc_input <= alu_pc_output(31 downto 26) & imem_data_in(25 downto 0);
 				else
-					ALU_ADD_Result <= alu_pc_output;
+					pc_input <= branching_mux_output;
 				end if;
 			end if;		 
 		 end process;
