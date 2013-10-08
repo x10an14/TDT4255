@@ -22,43 +22,45 @@ begin
 	begin
 			if (aluop.Op1 = '0' and aluop.Op2 = '0' and aluop.Op0 = '0') then -- r instructions
 						case FUNC is
-							when "100000" => --add
+							when "100000" => --add OpCode
 								ALU_FUNC.Op0 <= '0';
 								ALU_FUNC.Op1 <= '1';
 								ALU_FUNC.Op2 <= '0';
-								ALU_FUNC.Op3 <= '0';							
-							when "100010" =>  --subtract
+								ALU_FUNC.Op3 <= '0';
+							when "100010" =>	--subtract OpCode
 								ALU_FUNC.Op0 <= '0';
 								ALU_FUNC.Op1 <= '1';
 								ALU_FUNC.Op2 <= '1';
-								ALU_FUNC.Op3 <= '0';		
-							when "101010" =>  --slt
+								ALU_FUNC.Op3 <= '0';
+							when "101010" =>	--slt OpCode
 								ALU_FUNC.Op0 <= '1';
 								ALU_FUNC.Op1 <= '1';
 								ALU_FUNC.Op2 <= '1';
-								ALU_FUNC.Op3 <= '0';	
-							when "100100" =>	--and
+								ALU_FUNC.Op3 <= '0';
+							when "100100" =>	--and OpCode
 								ALU_FUNC.Op0 <= '0';
 								ALU_FUNC.Op1 <= '0';
 								ALU_FUNC.Op2 <= '0';
-								ALU_FUNC.Op3 <= '0';		
-							when "100101" =>	--or
+								ALU_FUNC.Op3 <= '0';
+							when "100101" =>	--or OpCode
 								ALU_FUNC.Op0 <= '1';
 								ALU_FUNC.Op1 <= '0';
 								ALU_FUNC.Op2 <= '0';
-								ALU_FUNC.Op3 <= '0';	
+								ALU_FUNC.Op3 <= '0';
 							when others =>
 						end case;
+
 			elsif (aluop.Op0 = '0' and aluop.Op1 = '1' and aluop.Op2 = '1') then -- beq, do subtract function
 						ALU_FUNC.Op0 <= '0';
 						ALU_FUNC.Op1 <= '1';
 						ALU_FUNC.Op2 <= '1';
-						ALU_FUNC.Op3 <= '0';	
+						ALU_FUNC.Op3 <= '0';
 			elsif (aluop.Op0 = '1' and aluop.Op1 = '0' and aluop.Op2 = '0') then -- ls, sw, load imm, do add function
-                  ALU_FUNC.Op0 <= '0';
+						ALU_FUNC.Op0 <= '0';
 						ALU_FUNC.Op1 <= '1';
 						ALU_FUNC.Op2 <= '0';
-						ALU_FUNC.Op3 <= '0';			
+						ALU_FUNC.Op3 <= '0';
 			end if;
 	end process;
+
 end Behavioral;
