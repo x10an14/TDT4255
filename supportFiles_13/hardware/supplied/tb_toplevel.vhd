@@ -93,7 +93,6 @@ ARCHITECTURE behavior OF tb_toplevel IS
   
   constant ins4  : std_logic_vector(0 to 31) := X"AC030005"; -- sw rs = 0 rt = 3 imm = 5
   
---    constant ins5  : std_logic_vector(0 to 31) := X"10000002";
   constant ins5  : std_logic_vector(0 to 31) := X"10000002"; -- beq jump over 2 instr (to 8)
   constant ins6  : std_logic_vector(0 to 31) := X"AC030003"; -- 
   constant ins7  : std_logic_vector(0 to 31) := X"AC030004"; --
@@ -103,7 +102,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant ins11 : std_logic_vector(0 to 31) := X"AC030008"; -- sw rs = 0 rt = 3 imm 8
   constant ins12 : std_logic_vector(0 to 31) := X"00231820"; -- add rs = 1 rt = 3 rd = 3 
   constant ins13 : std_logic_vector(0 to 31) := X"AC030009"; -- sw rs = 0 rt = 3 imm = 9
-  constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD";
+  constant ins14 : std_logic_vector(0 to 31) := X"1000FFFD"; -- beq jump over x'fff & b'1101 instructions
   constant ins15 : std_logic_vector(0 to 31) := X"AC03000A";
    
   -- Used to control the COM-module
