@@ -2,9 +2,9 @@
 -- Company:
 -- Engineer:
 --
--- Create Date:	 16:39:33 09/29/2013
+-- Create Date:	16:39:33 09/29/2013
 -- Design Name:
--- Module Name:	 M:/Github/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
+-- Module Name:	M:/Github/TDT4255/supportFiles_13/hardware/tb_control_unit.vhd
 -- Project Name:	TDT4255_Project_Assignment1
 -- Target Device:
 -- Tool versions:
@@ -44,45 +44,45 @@ ARCHITECTURE behavior OF tb_control_unit IS
 
 		COMPONENT control_unit
 		PORT(
-				 CLK : IN	std_logic;
-				 RESET : IN	std_logic;
-				 OpCode : IN	std_logic_vector(5 downto 0);
-				 ALUOp : OUT	ALU_OP_INPUT;
-				 RegDst : OUT	std_logic;
-				 Branch : OUT	std_logic;
-				 MemRead : OUT	std_logic;
-				 MemtoReg : OUT	std_logic;
-				 MemWrite : OUT	std_logic;
-				 ALUSrc : OUT	std_logic;
-				 RegWrite : OUT	std_logic;
-				 PCWriteEnb : OUT	std_logic
+				CLK : IN	std_logic;
+				RESET : IN	std_logic;
+				OpCode : IN	std_logic_vector(5 downto 0);
+				ALUOp : OUT	ALU_OP_INPUT;
+				RegDst : OUT	std_logic;
+				Branch : OUT	std_logic;
+				MemRead : OUT	std_logic;
+				MemtoReg : OUT	std_logic;
+				MemWrite : OUT	std_logic;
+				ALUSrc : OUT	std_logic;
+				RegWrite : OUT	std_logic;
+				PCWriteEnb : OUT	std_logic
 				);
 		END COMPONENT;
 
 
-	 --Inputs
-	 signal CLK : std_logic := '0';
-	 signal RESET : std_logic := '0';
-	 signal OpCode : std_logic_vector(5 downto 0) := (others => '0');
+	--Inputs
+	signal CLK : std_logic := '0';
+	signal RESET : std_logic := '0';
+	signal OpCode : std_logic_vector(5 downto 0) := (others => '0');
 
  	--Outputs
-	 signal ALUOp : ALU_OP_INPUT;
-	 signal RegDst : std_logic := '0';
-	 signal Branch : std_logic := '0';
-	 signal MemRead : std_logic := '0';
-	 signal MemtoReg : std_logic := '0';
-	 signal MemWrite : std_logic := '0';
-	 signal ALUSrc : std_logic := '0';
-	 signal RegWrite : std_logic := '0';
-	 signal PCWriteEnb : std_logic := '0';
+	signal ALUOp : ALU_OP_INPUT;
+	signal RegDst : std_logic := '0';
+	signal Branch : std_logic := '0';
+	signal MemRead : std_logic := '0';
+	signal MemtoReg : std_logic := '0';
+	signal MemWrite : std_logic := '0';
+	signal ALUSrc : std_logic := '0';
+	signal RegWrite : std_logic := '0';
+	signal PCWriteEnb : std_logic := '0';
 
-	 -- Clock period definitions
-	 constant CLK_period : time := 10 ns;
+	-- Clock period definitions
+	constant CLK_period : time := 10 ns;
 
 BEGIN
 
 	-- Instantiate the Unit Under Test (UUT)
-	 uut: control_unit PORT MAP (
+	uut: control_unit PORT MAP (
 					CLK => CLK,
 					RESET => RESET,
 					OpCode => OpCode,
@@ -97,36 +97,36 @@ BEGIN
 					PCWriteEnb => PCWriteEnb
 				);
 
-	 -- Clock process definitions
-	 CLK_process :process
-	 begin
+	-- Clock process definitions
+	CLK_process :process
+	begin
 		CLK <= '0';
 		wait for CLK_period/2;
 		CLK <= '1';
 		wait for CLK_period/2;
-	 end process;
+	end process;
 
 
-	 -- Stimulus process
-	 stim_proc: process
-	 begin
- 		reset <= '1';
+	-- Stimulus process
+	stim_proc: process
+	begin
+		reset <= '1';
 		wait for 50 ns; -- hold reset for 50 ns
 		reset <= '0';
-		
+
 		wait for CLK_period;
---		assert ((ALUOp.Op0 = '0') and (ALUOp.Op1 = '0') and (ALUOp.Op2 = '0')) report "ALUOp not reset" severity error;
+		assert ((ALUOp.Op0 = '0') and (ALUOp.Op1 = '0') and (ALUOp.Op2 = '0')) report "ALUOp not reset" severity error;
 		-- insert stimulus here
-			
+
 		opcode <= "000100";
 		wait for CLK_period;
---		assert (PCWriteEnb = '1') report "PCWriteEnb is not 1..." severity error;
---		assert (RegDst = '1') report "RegDst is not 1..." severity error;
---		assert (RegWrite = '1') report "RegWrite is not 1..." severity error;
---		assert (ALUOp.Op1 = '1') report "ALUOp.Op1 is not 1..." severity error;
-		
-		
-			wait;
-	 end process;
+		assert (PCWriteEnb = '1') report "PCWriteEnb is not 1..." severity error;
+		assert (RegDst = '1') report "RegDst is not 1..." severity error;
+		assert (RegWrite = '1') report "RegWrite is not 1..." severity error;
+		assert (ALUOp.Op1 = '1') report "ALUOp.Op1 is not 1..." severity error;
+
+
+		wait;
+	end process;
 
 END;
