@@ -104,7 +104,6 @@ architecture behave of processor is
 			signal RegDst, RegWrite, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
          signal MemtoReg 									: std_logic := '0';
 			signal ALUSrc 										: std_logic := '1';
-			signal state_vector 								: STD_LOGIC_VECTOR(1 downto 0) := "00"; -- to be removed
 			signal JmpEnable									: STD_LOGIC := '0';
 			signal ALU_ADD_Result							: STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
 --			main ALU related signals
@@ -141,7 +140,7 @@ begin
 				ALUSrc 		=> ALUSrc,
 				RegWrite 	=> RegWrite,
 				PCWriteEnb	=> pc_write_enable,
-				JmpEnb 		=> JmpEnable
+				JumpEnb 		=> JmpEnable
 		 );
 		 dmem_write_enable <= MemWrite;
 --			setting up program counter circuit - PC itself, ALU that increments it

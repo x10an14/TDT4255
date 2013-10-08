@@ -102,7 +102,7 @@ begin
 						ALUSrc		<= '1';
 						ALUOp.Op0	<= '1';
 					when "000010" => --Jump (2 Hex - Jump Opcode - J-instruction format)
-						JmpEnb		<= '1';
+						JumpEnb		<= '1';
 					when others =>
 				end case;
 			when ALU_STALL =>
