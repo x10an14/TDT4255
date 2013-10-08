@@ -14,8 +14,11 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="129,1086,435" VERSION="0"/>
+    <SET ID="mips_0" IS_EXPANDED="TRUE"/>
     <STATUS>
-      <SELECTIONS/>
+      <SELECTIONS>
+        <VARIABLE ID="SPLB" PARENT="mips_0"/>
+      </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="microblaze_0" ROW_INDEX="3"/>
@@ -25,10 +28,11 @@
       <VARIABLE ID="dlmb_cntlr" ROW_INDEX="5"/>
       <VARIABLE ID="ilmb_cntlr" ROW_INDEX="6"/>
       <VARIABLE ID="lmb_bram" ROW_INDEX="4"/>
-      <VARIABLE ID="USB_UART" ROW_INDEX="8"/>
-      <VARIABLE ID="clock_generator_0" ROW_INDEX="9"/>
+      <VARIABLE ID="USB_UART" ROW_INDEX="9"/>
+      <VARIABLE ID="clock_generator_0" ROW_INDEX="10"/>
       <VARIABLE ID="mdm_0" ROW_INDEX="7"/>
-      <VARIABLE ID="proc_sys_reset_0" ROW_INDEX="10"/>
+      <VARIABLE ID="proc_sys_reset_0" ROW_INDEX="11"/>
+      <VARIABLE ID="mips_0" IS_EXPANDED="TRUE" ROW_INDEX="8"/>
     </SEQUENCES>
   </SET>
 
@@ -102,6 +106,9 @@
     <STATUS>
       <SELECTIONS/>
     </STATUS>
+    <SEQUENCES IS_DEF_SEQUENCES="TRUE">
+      <VARIABLE ID="microblaze_0" IS_EXPANDED="TRUE" ROW_INDEX="0"/>
+    </SEQUENCES>
   </SET>
 
   <SET CLASS="PROJECT" DISPLAYMODE="FLAT" VIEW_ID="ADDRESS">

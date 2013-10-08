@@ -86,7 +86,15 @@ ARCHITECTURE behavior OF tb_toplevel IS
   
   -- These are the instructions executed by the CPU (loaded to instruction-memory)
   -- See ins.txt for what they actually mean (that is a file used when loading them to the FPGA)
-  constant ins0  : std_logic_vector(0 to 31) := X"8C010001"; -- load word 1 into reg 1
+  
+--  constant ins0 : std_logic_vector(0 to 31) := "001111"&"00000"&"00001"&"0000000000000011"; -- I-instruction, LUI-w/value 7 into reg1
+--  constant ins1 : std_logic_vector(0 to 31) := "001111"&"00000"&"00010"&"0000000000000110"; -- I-instruction, LUI-w/value 6 into reg2
+--  constant ins2 : std_logic_vector(0 to 31) := "000000"&"00001"&"00010"&"00011"&"00000"&"100101"; --R-instruction, bitwise-and, reg3=reg2&reg1
+--  constant ins3 : std_logic_vector(0 to 31) := X"AC030005"; -- sw
+ 
+	constant ins0 : STD_LOGIC_VECTOR(0 to 31) := "00001000"&X"1F07C0"; -- J-instruction, Jump with value X"1F07C0"
+  
+--  constant ins0  : std_logic_vector(0 to 31) := X"8C010001"; -- load word 1 into reg 1
   constant ins1  : std_logic_vector(0 to 31) := X"8C020002"; -- load word 2 into reg 2
   constant ins2  : std_logic_vector(0 to 31) := X"8C020002"; -- load word 2 into reg 2
   constant ins3  : std_logic_vector(0 to 31) := X"00221820"; -- add rs = 1 rt = 2 rd = 3
