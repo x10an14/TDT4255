@@ -56,7 +56,8 @@ ARCHITECTURE behavior OF alu_tb IS
    --Inputs
    signal X : std_logic_vector(31 downto 0) := (28 downto 25 => '1',
 																	others => '0');
-   signal Y : std_logic_vector(31 downto 0) := (12 downto 8 => '1', others => '0');
+   signal Y : std_logic_vector(31 downto 0) := (28 downto 25 => '1',
+																	others => '0');
    signal ALU_IN : ALU_INPUT;
 	
 
@@ -72,7 +73,7 @@ ARCHITECTURE behavior OF alu_tb IS
 BEGIN
 	ALU_IN.Op0 <= '0';
 	ALU_IN.Op1 <= '1';
-	ALU_IN.Op2 <= '0';
+	ALU_IN.Op2 <= '1';
 	ALU_IN.Op3 <= '0';
 	-- Instantiate the Unit Under Test (UUT)
    uut: alu PORT MAP (
@@ -99,7 +100,13 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for clock_period*10;
+      wait for clock_period*2;
+
+      Y <= (15 downto 10 => '1', others => '0');
+      
+            wait for clock_period*2;
+
+      X <= (28 downto 25 => '1', others => '0');
 
       -- insert stimulus here 
 

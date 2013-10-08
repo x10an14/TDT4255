@@ -34,6 +34,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="adder.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="adder_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="adder_xst.xrpt"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="alu_tb.fdo"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="compxlib.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="processor_tb.fdo"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="tb_control_unit.fdo"/>
@@ -55,13 +56,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1381080026" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1381080026">
+    <transform xil_pn:end_ts="1381197567" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1381197567">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/ALU_control.vhd"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/control_unit.vhd"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/mips_functions_pkg.vhd"/>
@@ -85,11 +82,11 @@
       <outfile xil_pn:name="../supportFiles_13/hardware/tb_program_counter.vhd"/>
       <outfile xil_pn:name="alu_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1381080026" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-3623050530995557290" xil_pn:start_ts="1381080026">
+    <transform xil_pn:end_ts="1381197567" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2981265839048178253" xil_pn:start_ts="1381197567">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1381080026" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3144195386269199572" xil_pn:start_ts="1381080026">
+    <transform xil_pn:end_ts="1381197567" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8881255854359414987" xil_pn:start_ts="1381197567">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -97,14 +94,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1381080026" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1381080026">
+    <transform xil_pn:end_ts="1381197567" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1381197567">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/ALU_control.vhd"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/control_unit.vhd"/>
       <outfile xil_pn:name="../supportFiles_13/hardware/mips_functions_pkg.vhd"/>
@@ -128,15 +120,10 @@
       <outfile xil_pn:name="../supportFiles_13/hardware/tb_program_counter.vhd"/>
       <outfile xil_pn:name="alu_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1381185647" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1381185645">
+    <transform xil_pn:end_ts="1381197568" xil_pn:in_ck="3943618921650632610" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1381197567">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="tb_toplevel.fdo"/>
+      <outfile xil_pn:name="alu_tb.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>
     </transform>
@@ -171,6 +158,8 @@
     <transform xil_pn:end_ts="1381188695" xil_pn:in_ck="-4274057683267123890" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2946616822310394377" xil_pn:start_ts="1381188691">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="adder.lso"/>
       <outfile xil_pn:name="adder.prj"/>
