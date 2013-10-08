@@ -109,11 +109,9 @@ begin
 			when ALU_STALL =>
 				MemRead		<= '0';
 				MemtoReg		<= '0';
-				MemWrite		<= '0'; --
-				RegWrite		<= '0'; --
+				MemWrite		<= '0'; 
+				RegWrite		<= '0'; 
 				case OpCode is
-					when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
-					when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
 					when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 							RegWrite		<= '1'; --
 							MemtoReg		<= '1';
