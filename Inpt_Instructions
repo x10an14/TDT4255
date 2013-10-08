@@ -6,16 +6,12 @@ instruction format: (op=opcode, rs = register result, rt = register A, rd = regi
 --------------------------------------------------------------------------------------------
 
 "001111"&"00000"&"00001"&"0000000000000111"			== I-instruction, LUI-w/value 7 into reg1
-
 "001111"&"00000"&"00010"&"0000000000000110"			== I-instruction, LUI-w/value 6 into reg2
+"000000"&"00001"&"00010"&"00011"&"00000"&"100100"	== R-instruction, bitwise-and, reg3=reg2&reg1
 
-"000000"&"00001"&"00010"&"00011"&"00000"&"100100"	== R-instruction, and, reg3=reg2&reg1
+
 
 
 "001111"&"00000"&"00001"&"0101010101010101"			== I-instruction, LUI-w/value 7 into reg1
-
 "001111"&"00000"&"00010"&"0000000000000000"			== I-instruction, LUI-w/value 6 into reg2
-
-"000000"&"00001"&"00010"&"00011"&"00000"&"100101"	== R-instruction, and, reg3=reg2&reg1
-
-
+"000000"&"00001"&"00010"&"00011"&"00000"&"100101"	== R-instruction, bitwise-or, reg3=reg2|reg1
