@@ -97,11 +97,11 @@ architecture behave of processor is
 
 	 --signals definition
 --			PC related signals:
-			signal alu_output_to_PC, PC_output: STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
+			signal alu_pc_output, branching_alu_output, PC_input, PC_output: STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
          signal pc_increment_signal : std_logic_vector (0 to IADDR_BUS-1);
 			signal pc_write_enable : STD_LOGIC := '0';
-			signal alu_in666 : ALU_INPUT;
-			signal pc_alu_flags : ALU_FLAGS;
+			signal alu_add_input_signal : ALU_INPUT;
+			signal pc_alu_flags, branching_alu_flags : ALU_FLAGS;
 --			control unit related signals
 			signal RegDst, RegWrite, MemRead, MemWrite, ALUOp0, ALUOp1, Branch : STD_LOGIC;
          signal MemtoReg : std_logic := '0';
@@ -127,10 +127,10 @@ begin
 --				imem_address <= (others => '0');
 --			end if;
 --		end process;
-		 alu_in666.Op0 <= '0';
-		 alu_in666.Op1 <= '1';
-		 alu_in666.Op2 <= '0';
-		 alu_in666.Op3 <= '0';
+		 alu_add_input_signal.Op0 <= '0';
+		 alu_add_input_signal.Op1 <= '1';
+		 alu_add_input_signal.Op2 <= '0';
+		 alu_add_input_signal.Op3 <= '0';
 --			setting up control unit
 		 CU : control_unit
 		 port map (
@@ -151,13 +151,35 @@ begin
 		 dmem_write_enable <= MemWrite;
 
 --			setting up program counter circuit - PC itself, ALU that increments it
+
+       branching_control_process: process (Branch, main_alu_flags.Zero, CLK)
+       begin
+            if (Branch = '1' and main_alu_flags.Zero = '1') then
+               pc_input <= branching_alu_output;
+            else
+               pc_input <= alu_pc_output;
+            end if;
+       end process;
+       
+       branching_alu : ALU
+		 generic map (
+				 N => IADDR_BUS
+		 )
+		 port map (
+				 X => sign_extender_output,
+				 Y => alu_pc_output,
+				 ALU_IN => alu_add_input_signal,
+				 R => branching_alu_output,
+				 FLAGS => branching_alu_flags
+		 );
+       
 		 PC_increment_signal <= (31 => '1', others => '0');
 		 PC : program_counter
 		 port map (
 				 CLK => clk,
 				 RESET => reset,
 				 PC_WR_EN => pc_write_enable,
-				 PC_IN => alu_output_to_PC,
+				 PC_IN => PC_input,
 				 PC_OUT => PC_output
 		 );
 		 imem_address <= PC_output;
@@ -171,8 +193,8 @@ begin
 		 port map (
 				 X => PC_increment_signal,
 				 Y => PC_output,
-				 ALU_IN => alu_in666,
-				 R => alu_output_to_PC,
+				 ALU_IN => alu_add_input_signal,
+				 R => alu_pc_output,
 				 FLAGS => pc_alu_flags
 		 );
 
@@ -259,7 +281,7 @@ begin
 		port map (
 			CLK => clk,
 			RESET => reset,
-			FUNC => "000000",
+			FUNC => imem_data_in(5 downto 0),
 			ALUOp => aluOpInput,
 			ALU_FUNC => main_alu_input
 		);
