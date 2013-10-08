@@ -17,18 +17,20 @@ entity program_counter is
 end program_counter;
 
 architecture Behavioral of program_counter is
-	type PcClkState is (CLK_RISED, CLK_FELL);
+	type PcClkState is (CLK_ROSE, CLK_FELL);
 	Signal state : PcClkState := CLK_FELL;
 begin
 	process(CLK, PC_WR_EN) is
 	begin
 		-- Here's were we decide what input (if any) to utilize
 	if rising_edge(clk) then
-		 state <= CLK_RISED;
+		 state <= CLK_ROSE;
 	elsif falling_edge(clk) then
 		 state <= CLK_FELL;
+	else
 	end if;
-	if (PC_WR_EN = '1' and state = CLK_RISED and not falling_edge(clk)) then
+	
+	if (PC_WR_EN = '1' and state = CLK_ROSE and not falling_edge(clk)) then
 		 PC_OUT <= PC_IN;
 	end if;
 		if RESET = '1' then
