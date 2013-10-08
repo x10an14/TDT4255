@@ -117,6 +117,7 @@ architecture behave of processor is
 			signal main_alu_result			: STD_LOGIC_VECTOR(DDATA_BUS-1 downto 0) := (others => '0');
 			signal main_alu_input			: ALU_INPUT;
 			signal main_alu_flags			: ALU_FLAGS;
+			signal aluOpInput				: ALU_OP_INPUT;
 
 --			SignExtender signals
 			signal sign_extender_output	: STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
@@ -125,20 +126,26 @@ architecture behave of processor is
 			signal register_rs_output, register_rt_output, register_write_data : STD_LOGIC_VECTOR(31 downto 0);
 			signal write_reg_addr			: std_logic_vector(4 downto 0);
 
---			shit to be dealt with later
-			signal aluOpInput				: ALU_OP_INPUT;
-
 begin
+		--Signal values
 		alu_add_input_signal.Op0 <= '0';
 		alu_add_input_signal.Op1 <= '1';
 		alu_add_input_signal.Op2 <= '0';
 		alu_add_input_signal.Op3 <= '0';
+		dmem_write_enable <= MemWrite;
+		PC_increment_signal <= (31 => '1', others => '0');
+		imem_address <= PC_output;
+		dmem_data_out <= register_rt_output;
+		main_alu_X <= register_rs_output;
+		dmem_address <= main_alu_result;
+		dmem_address_wr <= main_alu_result;
+
 --			setting up control unit
 		CU : control_unit
 		port map (
 				CLK			=> clk,
 				RESET		=> reset,
-						proc_enable => processor_enable,
+				proc_enable => processor_enable,
 				OpCode		=> imem_data_in (31 downto 26),
 				ALUOp		=> aluOpInput,
 				RegDst		=> RegDst,
@@ -151,7 +158,7 @@ begin
 				PCWriteEnb	=> pc_write_enable,
 				JumpEnb		=> JmpEnable
 		);
-		dmem_write_enable <= MemWrite;
+
 --			setting up program counter circuit - PC itself, ALU that increments it
 			branching_control_process: process (Branch, main_alu_flags.Zero, CLK)
 			begin
@@ -161,40 +168,38 @@ begin
 							Branching_Mux_Output <= alu_pc_output;
 						end if;
 			end process;
+
 			branching_alu : ALU
-		generic map (
+			generic map (
 				N => IADDR_BUS
-		)
-		port map (
+			)
+			port map (
 				X => sign_extender_output,
 				Y => alu_pc_output,
 				ALU_IN => alu_add_input_signal,
 				R => branching_alu_output,
 				FLAGS => branching_alu_flags
-		);
-		PC_increment_signal <= (31 => '1', others => '0');
+			);
+
 		PC : program_counter
 		port map (
-				CLK => clk,
-				RESET => reset,
-				PC_WR_EN => pc_write_enable,
-				PC_IN => PC_input,
-				PC_OUT => PC_output
+			CLK => clk,
+			RESET => reset,
+			PC_WR_EN => pc_write_enable,
+			PC_IN => PC_input,
+			PC_OUT => PC_output
 		);
-		imem_address <= PC_output;
-
-		pc_alu_flags.Carry <= '0';
 
 		PC_incrementer : ALU
 		generic map (
-				N => IADDR_BUS
+			N => IADDR_BUS
 		)
 		port map (
-				X => PC_increment_signal,
-				Y => PC_output,
-				ALU_IN => alu_add_input_signal,
-				R => alu_pc_output,
-				FLAGS => pc_alu_flags
+			X => PC_increment_signal,
+			Y => PC_output,
+			ALU_IN => alu_add_input_signal,
+			R => alu_pc_output,
+			FLAGS => pc_alu_flags
 		);
 
 		--Jump Control Process
@@ -209,18 +214,17 @@ begin
 			end if;
 		end process;
 
---			setting up connection to instruction memory (using imem_data_in and imem_address processor-ports)
---		imem_address <= PC_output;
 --		setting up sign extender
 		sign_ext : sign_extender
-		generic map ( in_width => 16,
-							out_width => 32
+		generic map (
+			in_width => 16,
+			out_width => 32
 		)
 		port map (
-				input => imem_data_in (15 downto 0),
---				input => (others => '1'),
-				output => sign_extender_output
+			input => imem_data_in (15 downto 0),
+			output => sign_extender_output
 		);
+
 --			setting up register-file
 		write_reg_proc : process(RegDst, imem_data_in)
 		begin
@@ -230,6 +234,7 @@ begin
 				write_reg_addr <= imem_data_in (20 downto 16);
 			end if;
 		end process;
+
 		write_data_proc : process(MemtoReg, main_alu_result, dmem_data_in)
 		begin
 			if MemtoReg = '1' then
@@ -238,19 +243,20 @@ begin
 				register_write_data <= main_alu_result;
 			end if;
 		end process;
-		dmem_data_out <= register_rt_output;
+
 		regs : register_file
 		port map (
-				CLK => clk,
-				RESET => reset,
-				RW => RegWrite,
-				RS_ADDR => imem_data_in (25 downto 21),
-				RT_ADDR => imem_data_in (20 downto 16),
-				RD_ADDR => write_reg_addr,
-				WRITE_DATA => register_write_data,
-				RS => register_rs_output,
-				RT => register_rt_output
+			CLK => clk,
+			RESET => reset,
+			RW => RegWrite,
+			RS_ADDR => imem_data_in (25 downto 21),
+			RT_ADDR => imem_data_in (20 downto 16),
+			RD_ADDR => write_reg_addr,
+			WRITE_DATA => register_write_data,
+			RS => register_rs_output,
+			RT => register_rt_output
 		);
+
 --			setting up main ALU
 		ALUSource_proc : process(ALUSrc, sign_extender_output, register_rt_output)
 			begin
@@ -260,7 +266,7 @@ begin
 					main_alu_Y <= register_rt_output;
 				end if;
 			end process;
-		main_alu_X <= register_rs_output;
+
 		ALU_main_unit : alu
 		generic map (N => 32)
 		port map (
@@ -270,8 +276,6 @@ begin
 			R => main_alu_result,
 			FLAGS => main_alu_flags
 		);
-		dmem_address <= main_alu_result;
-		dmem_address_wr <= main_alu_result;
 		ALU_control_unit : ALU_control
 		port map (
 			CLK => clk,
@@ -280,4 +284,5 @@ begin
 			ALUOp => aluOpInput,
 			ALU_FUNC => main_alu_input
 		);
+
 end behave;
