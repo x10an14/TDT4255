@@ -121,7 +121,6 @@ begin
             MemtoReg		<= '0';
             MemWrite		<= '0'; -- 
             RegWrite		<= '0'; -- 
-            PCWriteEnb	<= '1'; -- was updated during execute state, will be sat to 0 until next execute-state
             case OpCode is
                when "000000" =>	--R-instruction (0 Hex - ALU operations probably)
                when "000100" =>	--Branch opcode (4 Hex - BEQ Opcode  - I-instruction format)
