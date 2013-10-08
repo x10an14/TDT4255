@@ -30,14 +30,14 @@ except getopt.error:
     print 'Error: You tried to use an unknown option or the argument for an option that requires it was missing. Try -h for more information.'
     sys.exit(0)
 
-    
+
 """ help message """
 for a in options[:]:
     if a[0] == '-h':
         help_message()
         sys.exit(0)
 
-        
+
 """ set COM port, COM5 otherwise """
 for a in options[:]:
     if a[0] == '-p' and a[1] != '':
@@ -48,7 +48,7 @@ for a in options[:]:
         print '-p expects an argument'
         sys.exit(0)
 
-        
+
 """ execute single command (i,d,r,s) """
 for a in options[:]:
     if a[0] == '-c' and a[1] != '':
@@ -57,7 +57,7 @@ for a in options[:]:
         except SE.SerialException:
             print 'COM port unknown'
             sys.exit(0)
-            
+
         if ser.isOpen():
             print 'port opened'
 
@@ -80,32 +80,32 @@ for a in options[:]:
                 d4 = int(data[6:8],16)
 
                 if d1 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d1 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d1)
+                    s +=  chr(d1)
 
                 if d2 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d2 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d2)
+                    s +=  chr(d2)
 
                 if d3 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d3 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d3)
+                    s +=  chr(d3)
 
                 if d4 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d4 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d4)
+                    s +=  chr(d4)
 
             elif a[1] == 'd':
 
@@ -125,32 +125,32 @@ for a in options[:]:
                 d4 = int(data[6:8],16)
 
                 if d1 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d1 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d1)
+                    s +=  chr(d1)
 
                 if d2 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d2 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d2)
+                    s +=  chr(d2)
 
                 if d3 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d3 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d3)
+                    s +=  chr(d3)
 
                 if d4 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d4 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d4)
+                    s +=  chr(d4)
 
             elif a[1] == 'r':
                 if int(xarguments[0],16) == 0:
@@ -174,7 +174,7 @@ for a in options[:]:
             elif a[1] == 'f':
 
                 for x in xarguments[:]:
-                    
+
                     data = str(hex(int(x,16) | 0x100000000))
                     data = data.replace('0x1','')
                     data = data.replace('L','')
@@ -184,33 +184,33 @@ for a in options[:]:
                     d4 = int(data[6:8],16)
 
                     if d1 == 0:
-                        s = s + chr(255) + chr(254)
+                        s +=  chr(255) + chr(254)
                     elif d1 == 255:
-                        s = s + chr(255) + chr(255)
+                        s +=  chr(255) + chr(255)
                     else:
-                        s = s + chr(d1)
+                        s +=  chr(d1)
 
                     if d2 == 0:
-                        s = s + chr(255) + chr(254)
+                        s +=  chr(255) + chr(254)
                     elif d2 == 255:
-                        s = s + chr(255) + chr(255)
+                        s +=  chr(255) + chr(255)
                     else:
-                        s = s + chr(d2)
+                        s +=  chr(d2)
 
                     if d3 == 0:
-                        s = s + chr(255) + chr(254)
+                        s +=  chr(255) + chr(254)
                     elif d3 == 255:
-                        s = s + chr(255) + chr(255)
+                        s +=  chr(255) + chr(255)
                     else:
-                        s = s + chr(d3)
+                        s +=  chr(d3)
 
                     if d4 == 0:
-                        s = s + chr(255) + chr(254)
+                        s +=  chr(255) + chr(254)
                     elif d4 == 255:
-                        s = s + chr(255) + chr(255)
+                        s +=  chr(255) + chr(255)
                     else:
-                        s = s + chr(d4)
-                        
+                        s +=  chr(d4)
+
                     ser.flush()
                     time.sleep(0.1)
                     ser.write(s)
@@ -219,7 +219,7 @@ for a in options[:]:
                 i1 = ser.readline()
                 i1 = i1.rstrip()
                 print i1
-                
+
                 time.sleep(0.1)
                 i1 = ser.readline()
                 i1 = i1.rstrip()
@@ -228,7 +228,7 @@ for a in options[:]:
                 ser.close()
                 print 'port closed'
                 sys.exit(0)
-                
+
             else:
                 ser.close()
                 print 'wrong command format, port closed'
@@ -240,7 +240,7 @@ for a in options[:]:
             i1 = ser.readline()
             i1 = i1.rstrip()
             print i1
-            
+
             ser.close()
             print 'port closed'
             sys.exit(0)
@@ -251,7 +251,7 @@ for a in options[:]:
         print '-c expects an argument'
         sys.exit(0)
 
-        
+
 """ read data memory and write to file """
 for a in options[:]:
     if a[0] == '-r' and a[1] != '':
@@ -264,7 +264,7 @@ for a in options[:]:
             print 'port opened'
             f = open(a[1], 'w')
             print 'writing file'
-            
+
             """ 0x00 corresponds to 0xFFFE """
             ser.write('r'+ chr(255) + chr(254))
             time.sleep(0.1)
@@ -343,39 +343,39 @@ for a in options[:]:
                 s = 'i'
 
                 if i1[0] == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif i1[0] == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(i1[0])
-                
+                    s +=  chr(i1[0])
+
                 if d1 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d1 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d1)
+                    s +=  chr(d1)
 
                 if d2 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d2 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d2)
+                    s +=  chr(d2)
 
                 if d3 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d3 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d3)
+                    s +=  chr(d3)
 
                 if d4 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d4 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d4)
+                    s +=  chr(d4)
 
                 ser.write(s)
                 time.sleep(0.1)
@@ -428,39 +428,39 @@ for a in options[:]:
                 s = 'd'
 
                 if i1[0] == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif i1[0] == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(i1[0])
-                
+                    s +=  chr(i1[0])
+
                 if d1 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d1 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d1)
+                    s +=  chr(d1)
 
                 if d2 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d2 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d2)
+                    s +=  chr(d2)
 
                 if d3 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d3 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d3)
+                    s +=  chr(d3)
 
                 if d4 == 0:
-                    s = s + chr(255) + chr(254)
+                    s +=  chr(255) + chr(254)
                 elif d4 == 255:
-                    s = s + chr(255) + chr(255)
+                    s +=  chr(255) + chr(255)
                 else:
-                    s = s + chr(d4)
+                    s +=  chr(d4)
 
                 ser.write(s)
                 time.sleep(0.1)
