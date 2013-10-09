@@ -1,0 +1,32 @@
+##############################################################################
+## Filename:          M:\Github\TDT4255\xps\system\pcores/mips_v1_00_a/data/mips_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Oct 09 05:18:40 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib plbv46_slave_single_v1_01_a plb_address_decoder vhdl
+lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
+lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
+lib mips_v1_00_a user_logic vhdl
+lib mips_v1_00_a mips vhdl
+lib mips_v1_00_a ALU_control vhdl
+lib mips_v1_00_a control_unit vhdl
+lib mips_v1_00_a processor vhdl
+lib mips_v1_00_a program_counter vhdl
+lib mips_v1_00_a sign_extender vhdl
+lib mips_v1_00_a adder vhdl
+lib mips_v1_00_a alu vhdl
+lib mips_v1_00_a alu_1bit vhdl
+lib mips_v1_00_a com vhdl
+lib mips_v1_00_a full_adder vhdl
+lib mips_v1_00_a memory vhdl
+lib mips_v1_00_a mips_constant_pkg vhdl
+lib mips_v1_00_a register_file vhdl
+lib mips_v1_00_a toplevel vhdl

@@ -1,0 +1,10 @@
+-batch 
+-create mips 
+-ver 1.00.a 
+-dir "M:\Github\TDT4255\xps\system" 
+-lang vhdl 
+-bus plbv46 s 
+-reg 5 
+-xps 
+-ise 
+-driver 

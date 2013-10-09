@@ -1,0 +1,22 @@
+microblaze_0
+RWMIPS_SOURCES = drivers/mips_v1_00_a/src/mips.c rwMips/src/rwMain.c 
+RWMIPS_HEADERS = rwMips/src/mips.h 
+RWMIPS_CC = mb-gcc
+RWMIPS_CC_SIZE = mb-size
+RWMIPS_CC_OPT = -O2
+RWMIPS_CFLAGS = 
+RWMIPS_CC_SEARCH = # -B
+RWMIPS_LIBPATH = -L./microblaze_0/lib/ # -L
+RWMIPS_INCLUDES = -I./microblaze_0/include/  -IrwMips/src/ # -I
+RWMIPS_LFLAGS = # -l
+RWMIPS_LINKER_SCRIPT = rwMips/rwMips_linker_script.ld
+RWMIPS_CC_DEBUG_FLAG =  -g 
+RWMIPS_CC_PROFILE_FLAG = # -pg
+RWMIPS_CC_GLOBPTR_FLAG= # -mxl-gp-opt
+RWMIPS_MODE = executable
+RWMIPS_LIBG_OPT = -$(RWMIPS_MODE) microblaze_0
+RWMIPS_CC_INFERRED_FLAGS= -mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.00.b 
+RWMIPS_CC_START_ADDR_FLAG=  #  # -Wl,-defsym -Wl,_TEXT_START_ADDR=
+RWMIPS_CC_STACK_SIZE_FLAG=  #  # -Wl,-defsym -Wl,_STACK_SIZE=
+RWMIPS_CC_HEAP_SIZE_FLAG=  #  # -Wl,-defsym -Wl,_HEAP_SIZE=
+                  $(RWMIPS_CC_INFERRED_FLAGS)  \
