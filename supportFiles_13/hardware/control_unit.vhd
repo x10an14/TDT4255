@@ -26,16 +26,14 @@ end control_unit;
 
 architecture Behavioral of control_unit is
 
-	type ALUstate is (ALU_FETCH, ALU_EXE, ALU_STALL, ALU_OFF);
+	type ALUstate is (ALU_FETCH, ALU_EXE, ALU_STALL);
 	Signal state : ALUstate;
 
 begin
 
 	ALU_STATE: process(clk)
 	begin
-		if proc_enable /= '1' then
-			state <= ALU_OFF;
-		elsif rising_edge(clk) then
+		if rising_edge(clk) then
 			case state is
 				when ALU_FETCH =>
 					state <= ALU_EXE;
@@ -47,39 +45,34 @@ begin
 					end if;
 				when ALU_STALL =>
 						state <= ALU_FETCH;
-				when ALU_OFF	=>
-						state <= ALU_FETCH;
 			end case;
+		else
 		end if;
 	end process;
 
 	SIGNAL_SETUP: process(OpCode, state)
 	begin
+	
+		PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
+		MemWrite		<= '0'; --nothing should be written to memory during exe phase
+		RegDst		<= '0'; -- 0 for every instruction type except R-type
+		Branch		<= '0'; -- 0 for every instruction type except branch-type
+		MemRead		<= '0'; -- 0 for every instruction type except lw-type
+		MemWrite		<= '0'; -- 0 for every instruction type except sw-type
+		ALUSrc 		<= '0'; -- 0 for every inst except for lw & sw type
+		MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
+		RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
+		JumpEnb		<= '0'; -- 0 for all except jump instructions, aka "000010" OpCode
+
+		-- Default ALUOp values
+		ALUOp.Op0	<= '0';
+		ALUOp.Op1	<= '0';
+		ALUOp.Op2	<= '0';
+		
 		case state is
 			when ALU_FETCH =>
 				PCWriteEnb	<= '1';
-				RegWrite 	<= '0';
-				Branch		<= '0';
-				MemRead		<= '0';
-				MemtoReg		<= '0';
-				MemWrite		<= '0';
-				JumpEnb		<= '0';
 			when ALU_EXE =>
-				PCWriteEnb	<= '0'; --will be updated during execute-phase, will have new value on next fetch phase
-				MemWrite		<= '0'; --nothing should be written to memory during exe phase
-				RegDst		<= '0'; -- 0 for every instruction type except R-type
-				Branch		<= '0'; -- 0 for every instruction type except branch-type
-				MemRead		<= '0'; -- 0 for every instruction type except lw-type
-				MemWrite		<= '0'; -- 0 for every instruction type except sw-type
-				ALUSrc 		<= '0'; -- 0 for every inst except for lw & sw type
-				MemtoReg		<= '0'; -- 1 for lw-type inst, 0 for R-type, don't-care for rest
-				RegWrite		<= '0'; -- 1 for lw- & R-type instructions. The former one sets RW to 1 during stall CC
-				JumpEnb		<= '0'; -- 0 for all except jump instructions, aka "000010" OpCode
-
-				-- Default ALUOp values
-				ALUOp.Op0	<= '0';
-				ALUOp.Op1	<= '0';
-				ALUOp.Op2	<= '0';
 				case OpCode is
 					when "001111" =>	--load immediate instr
 						ALUSrc 		<= '1';
@@ -105,10 +98,6 @@ begin
 					when others =>
 				end case;
 			when ALU_STALL =>
-				MemRead		<= '0';
-				MemtoReg		<= '0';
-				MemWrite		<= '0';
-				RegWrite		<= '0';
 				case OpCode is
 					when "100011" =>	--Load word opcode (23 Hex - LW Opcode - I-instruction format)
 							RegWrite		<= '1'; --
@@ -119,18 +108,6 @@ begin
 					when "001111" =>	--Load immediate. (Implemented as Load Upper Immediate - LUI Opcode - Hex(f) - I-instruction format)
 					when others =>
 				end case;
-			 when ALU_OFF =>
-				RegDst		<= '0';
-				Branch		<= '0';
-				MemRead		<= '0';
-				MemtoReg		<= '0';
-				ALUOp.Op0	<= '0';
-				ALUOp.Op1	<= '0';
-				ALUOp.Op2	<= '0';
-				MemWrite		<= '0';
-				ALUSrc		<= '0';
-				RegWrite		<= '0';
-				PCWriteEnb	<= '0';
 		 end case;
 	end process;
 
