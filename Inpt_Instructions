@@ -5,13 +5,43 @@ instruction format: (op=opcode, rs = register result, rt = register A, rd = regi
 
 --------------------------------------------------------------------------------------------
 
-"001111"&"00000"&"00001"&"0000000000000111"			== I-instruction, LUI-w/value 7 into reg1
-"001111"&"00000"&"00010"&"0000000000000110"			== I-instruction, LUI-w/value 6 into reg2
-"000000"&"00001"&"00010"&"00011"&"00000"&"100100"	== R-instruction, bitwise-and, reg3=reg2&reg1
+"00111100000000011010101001010101"			== I-instruction, LUI-w/value 7 into reg1
+"00111100000000100101010110101010"			== I-instruction, LUI-w/value 6 into reg2
+"00000000001000100001100000100100"	== R-instruction, bitwise-and, reg3=reg2&reg1
+
+"00111100000000110101010101010101"			== I-instruction, LUI-w/value 7 into reg1
+"00111100000001000000000000000000"			== I-instruction, LUI-w/value 6 into reg2
+"00000000001001000001100000100101"	== R-instruction, bitwise-or, reg3=reg2|reg1
+
+---------------------------------------------------------------------------------------------------
+1. open a windows cmd or powershell window on a lab computer
+2. find out which com-port the board is connected to through the AvProg program
+3. write commands with the format:
+"python <path to host.py file delivered with files from course staff> -<the flag you want to utilize (one is needed)>
+
+Here's what 
+"python M:\Github\TDT4255\supportFiles_13\driver\host.py -h" gives out:
+
+'''
+command format:
+i addr data         0x00 < addr < 0xFF, 0x00000000 < data < 0xFFFFFFFF
+d addr data         0x00 < addr < 0xFF, 0x00000000 < data < 0xFFFFFFFF
+r addr              0x00 < addr < 0xFF - read data memory address
+s                   enable / disable processor
+f funct inpA inpB   0x00000000 < funct, inpA, inpB < 0xFFFFFFFF'''
+
+All the input variables are hex values, so you absolutely need to convert from byte to hex.
+Then the command on line 8 becomes:
+"python M:\Github\TDT4255\supportFiles_13\driver\host.py -c i 00001 03"
+
+Where "00001" == address number, and "03" == value written to said address space.
+
+-------------------------------------------------------------------------------------------------
+python M:\Github\TDT4255\supportFiles_13\driver\host.py -p 5
+python M:\Github\TDT4255\supportFiles_13\driver\host.py -c s
 
 
+Commands on lines 8 and 9 in python form:
 
-
-"001111"&"00000"&"00001"&"0101010101010101"			== I-instruction, LUI-w/value 7 into reg1
-"001111"&"00000"&"00010"&"0000000000000000"			== I-instruction, LUI-w/value 6 into reg2
-"000000"&"00001"&"00010"&"00011"&"00000"&"100101"	== R-instruction, bitwise-or, reg3=reg2|reg1
+python M:\Github\TDT4255\supportFiles_13\driver\host.py -c i 0 3C01AA55
+python M:\Github\TDT4255\supportFiles_13\driver\host.py -c i 1 3C0255AA
