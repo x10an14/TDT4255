@@ -7,7 +7,7 @@ use WORK.MIPS_CONSTANT_PKG.ALL;
 
 entity ALU_control is
 	port(
-		CLK			: in STD_LOGIC;
+		CLK		: in STD_LOGIC;
 		RESET		: in STD_LOGIC;
 		FUNC		: in STD_LOGIC_VECTOR (5 downto 0);
 		ALUOp		: in ALU_OP_INPUT;
@@ -49,7 +49,6 @@ begin
 								ALU_FUNC.Op3 <= '0';
 							when others =>
 						end case;
-
 			elsif (aluop.Op0 = '0' and aluop.Op1 = '1' and aluop.Op2 = '1') then -- beq, do subtract function
 						ALU_FUNC.Op0 <= '0';
 						ALU_FUNC.Op1 <= '1';
@@ -60,6 +59,7 @@ begin
 						ALU_FUNC.Op1 <= '1';
 						ALU_FUNC.Op2 <= '0';
 						ALU_FUNC.Op3 <= '0';
+			else
 			end if;
 	end process;
 
