@@ -89,8 +89,8 @@ BEGIN
 			-- hold reset state for 100 ns.
 		RESET <= '1';
 		wait for CLK_period;
-		assert (RESET /= '1') report "Reset is not 1..." severity error;
-		assert (PC_OUT /= X"00000000") report "Out is not 0..." severity error;
+		assert (RESET = '1') report "Reset is not 1..." severity error;
+		assert (PC_OUT = X"00000000") report "Out is not 0..." severity error;
 		wait for 100 ns;
 
 			-- insert stimulus here
@@ -98,21 +98,21 @@ BEGIN
 		RESET <= '0';
 		PC_IN <= X"00000001";
 		wait for CLK_period;
-		assert (PC_IN /= X"00000001") report "In is not 1..." severity error;
+		assert (PC_IN = X"00000001") report "In is not 1..." severity error;
 		PC_WR_EN <= '1';
 		wait for CLK_period;
-		assert (PC_OUT /= X"00000001") report "Out is not 1..." severity error;
+		assert (PC_OUT = X"00000001") report "Out is not 1..." severity error;
 		wait for CLK_period*3;
 
 		PC_IN <= X"F0F0F0F0";
 		wait for CLK_period;
-		assert (PC_OUT /= X"F0F0F0F0") report "Out is not 4 042 322 160..." severity error;
+		assert (PC_OUT = X"F0F0F0F0") report "Out is not 4 042 322 160..." severity error;
 		PC_WR_EN <= '0';
 		wait for CLK_period*3;
 
 		PC_IN <= X"FFFFFFFF";
 		wait for CLK_period;
-		assert (PC_OUT /= X"F0F0F0F0") report "Out changed when it shouldn't have =(... " severity error;
+		assert (PC_OUT = X"F0F0F0F0") report "Out changed when it shouldn't have =(... " severity error;
 		RESET <= '1';
 
 			wait;

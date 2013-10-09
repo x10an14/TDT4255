@@ -12,31 +12,24 @@ entity program_counter is
 			RESET		: in 	STD_LOGIC;
 			PC_WR_EN	: in 	STD_LOGIC; --ProgramCounter Write Enable pin
 			PC_IN		: in 	STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0);
-			PC_OUT		: out STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0) := (others => '1')
+			PC_OUT	: out STD_LOGIC_VECTOR (IADDR_BUS-1 downto 0) := (others => '1')
 	);
 end program_counter;
 
 architecture Behavioral of program_counter is
-	type PcClkState is (CLK_HIGH, CLK_LOW);
-	Signal state : PcClkState := CLK_LOW;
-
 begin
-	process(CLK, PC_WR_EN)
+	process(CLK, PC_WR_EN, RESET)
 	begin
+	
 	-- Here's were we decide what input (if any) to utilize
-	if rising_edge(CLK) then
-		state <= CLK_HIGH;
-	elsif falling_edge(CLK) then
-		state <= CLK_LOW;
+	if (falling_edge(CLK)) then
+		if (RESET = '1') then
+			PC_OUT <= X"00000000"; --Hardcoded reset value
+		elsif (PC_WR_EN = '1') then
+			PC_OUT <= PC_IN;
+		end if;
 	else
-	end if;
-
-	if (PC_WR_EN = '1' and state = CLK_HIGH and not falling_edge(CLK)) then
-		PC_OUT <= PC_IN;
-	end if;
-
-	if RESET = '1' then
-		PC_OUT <= X"00000000"; --Hardcoded reset value
+		--Do nothing
 	end if;
 	end process;
 
